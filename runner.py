@@ -1,11 +1,11 @@
-from definitions import AdapterRun, StaticRuns
+from definitions import AdapterRunDefinition, StaticRunsDefinition
 
 
-def get_new_adapter_run_definitions() -> list[AdapterRun]:
+def get_new_adapter_run_definitions() -> list[AdapterRunDefinition]:
     return None
 
 
-def get_new_static_run_definitions() -> list[StaticRuns]:
+def get_new_static_run_definitions() -> list[StaticRunsDefinition]:
     return None
 
 

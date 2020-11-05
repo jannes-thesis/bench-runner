@@ -1,0 +1,6 @@
+[submodule "submodules/scaling-adapter"]
+	path = submodules/scaling-adapter
+	url = git@github.com:jannes/scaling-adapter.git
+[submodule "submodules/dynamic-io-pool"]
+	path = submodules/dynamic-io-pool
+	url = git@github.com:jannes/dynamic_io_tpool.git
