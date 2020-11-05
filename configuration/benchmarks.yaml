@@ -1,0 +1,9 @@
+benchmarks:
+  - name: dynamic io pool benchmark suite
+    description: benchmark executable for the C threadpool implementation
+    runner_script: dynamic-io-pool.sh
+    parameters: [ number of items ]
+    disk_params:
+      hdd: /hdd/dynamic-io-pool/out
+      ssd: /ssd/dynamic-io-pool/out
+    workloads_definition: dynamic-io-pool.yaml
