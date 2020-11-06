@@ -1,5 +1,5 @@
 benchmarks:
-  - name: dynamic io pool benchmark suite
+  - name: dynamic-io-pool-benchmark-suite
     description: benchmark executable for the C threadpool implementation
     runner_script: dynamic-io-pool.sh
     parameters: [ number of items ]

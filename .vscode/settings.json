@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/jannes/.pyenv/shims/python",
+    "python.pythonPath": "/Users/jannes/.pyenv/versions/3.9.0/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": false,
     "python.linting.enabled": true

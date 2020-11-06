@@ -16,6 +16,8 @@ class Workload:
     benchmark_suite: BenchmarkSuite
     name: str
     disk: str
+    use_adapter_param_names: list[str]
+    no_adapter_param_names: list[str]
     params: OrderedDict[str, int]
     static_sizes: list[int]
 
