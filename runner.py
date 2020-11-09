@@ -1,9 +1,8 @@
-from collections import OrderedDict
-
 from definitions import AdapterRunDefinition, StaticRunDefinition, AdapterConfig, Workload, StaticResult, AdapterResult, \
     BenchmarkSuite
-from ruamel.yaml import YAML
 import json
+import yaml
+import submodules
 
 
 def get_known_adapter_configs() -> set[AdapterConfig]:
@@ -12,17 +11,15 @@ def get_known_adapter_configs() -> set[AdapterConfig]:
     configs = set()
     for config_json in configs_json:
         version = config_json['version']
-        param_names: list[str] = config_json['param_names']
-        param_values: list = config_json['param_values']
-        params = OrderedDict(zip(param_names, param_values))
-        configs.add(AdapterConfig(version, params))
+        param_values = tuple(config_json['param_values'])
+        configs.add(AdapterConfig(version, param_values))
     return configs
 
 
-def get_new_adapter_configs() -> set[AdapterConfig]:
-    # update adapter submodule
-    # detect new versions & configs
-    return set()
+def get_new_adapter_configs(known_configs: set[AdapterConfig]) -> set[AdapterConfig]:
+    submodules.update_submodules()
+    adapter_configs = submodules.get_all_adapter_configs()
+    return adapter_configs.difference(known_configs)
 
 
 def add_adapter_configs(new_configs: set[AdapterConfig]):
@@ -33,36 +30,36 @@ def add_adapter_configs(new_configs: set[AdapterConfig]):
 
 
 def get_all_workloads() -> set[Workload]:
-    yaml = YAML()
-    benchmark_yaml = yaml.load('configuration/benchmarks.yaml')
+    with open('configuration/benchmarks.yaml') as f:
+        benchmark_yaml = yaml.load(f.read(), Loader=yaml.FullLoader)
     benchmarks = set()
     for benchmark in benchmark_yaml['benchmarks']:
         name = benchmark['name']
         runner_script_path = f'helper_scripts/benchmark_runners/{benchmark["runner_script"]}'
-        parameter_names = benchmark['parameters']
+        parameter_names = tuple(benchmark['parameters'])
         disk_params = benchmark['disk_params']
+        disk_param_hdd = disk_params['hdd']
+        disk_param_ssd = disk_params['ssd']
         workloads_definition_path = f'configuration/workloads/{benchmark["workloads_definition"]}'
         benchmarks.add(
-            BenchmarkSuite(name, runner_script_path, parameter_names, disk_params, workloads_definition_path))
+            BenchmarkSuite(name, runner_script_path, parameter_names, disk_param_hdd, disk_param_ssd,
+                           workloads_definition_path))
     workloads = set()
     for benchmark in benchmarks:
-        workloads_yaml = yaml.load(benchmark.workloads_definition_file)
-        parameter_names = benchmark.parameter_names
-        disks = benchmark.disk_params.keys()
+        with open(benchmark.workloads_definition_file) as f:
+            workloads_yaml = yaml.load(f.read(), Loader=yaml.FullLoader)
+        disks = ['ssd', 'hdd']
         for workload_set in workloads_yaml['workloads']:
             name = workload_set['name']
-            adapter_params = workload_set['adapter_params']
-            no_adapter_params = workload_set['no_adapter_params']
+            adapter_params = tuple(workload_set['adapter_params'])
+            no_adapter_params = tuple(workload_set['no_adapter_params'])
             param_combos = workload_set['parameter_combos']
-            static_sizes = workload_set['static_sizes']
+            static_sizes = tuple(workload_set['static_sizes'])
             for disk in disks:
                 for combo in param_combos:
-                    params = OrderedDict()
-                    for i, param_name in enumerate(parameter_names):
-                        params[param_name] = combo[i]
-                    workload = Workload(benchmark, name, disk,
+                    workload = Workload(benchmark, name, disk, tuple(combo),
                                         adapter_params, no_adapter_params,
-                                        params, static_sizes)
+                                        static_sizes)
                     workloads.add(workload)
     return workloads
 
@@ -133,10 +130,11 @@ def save_new_results(adapter_results: set[AdapterResult], static_results: set[St
 
 
 if __name__ == '__main__':
-    new_adapter_configs = get_new_adapter_configs()
+    all_workloads = get_all_workloads()
+    new_workloads = get_new_workloads(all_workloads)
+    known_workloads = get_known_workloads(all_workloads)
     known_adapter_configs = get_known_adapter_configs()
-    new_workloads = get_new_workloads()
-    known_workloads = get_known_workloads()
+    new_adapter_configs = get_new_adapter_configs(known_adapter_configs)
 
     adapter_runs = get_new_adapter_run_definitions(known_workloads, new_workloads, known_adapter_configs,
                                                    new_adapter_configs)

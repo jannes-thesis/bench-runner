@@ -1,13 +1,14 @@
-from collections import OrderedDict
 from subprocess import run, DEVNULL
 
-from ruamel.yaml import YAML
+import yaml
+import shutil
 
 from definitions import AdapterConfig
 
 
 def update_submodules():
     # update adapter repo
+    print('updating submodules')
     run(['git', '-C', 'submodules/scaling-adapter', 'pull'], stdout=DEVNULL, stderr=DEVNULL)
     adapter_remote_branches_output = run(['git', '-C', 'submodules/scaling-adapter', 'branch', '-r'],
                                          capture_output=True, text=True).stdout
@@ -17,10 +18,19 @@ def update_submodules():
     adapter_versions_tracked = get_all_adapter_versions()
     adapter_versions_untracked = adapter_versions.difference(adapter_versions_tracked)
     # create local branches for all new remote version branches
+    print(f'found {len(adapter_versions_untracked)} untracked adapter versions')
     for branch in adapter_versions_untracked:
         run(['git', '-C', 'submodules/scaling-adapter', 'checkout', '--track', f'origin/{branch}'])
-    run(['git', '-C', 'submodules/scaling-adapter', 'checkout', 'master'])
+    run(['git', '-C', 'submodules/scaling-adapter', 'checkout', 'master'], stdout=DEVNULL, stderr=DEVNULL)
     run(['git', '-C', 'submodules/dynamic-io-pool', 'pull'], stdout=DEVNULL, stderr=DEVNULL)
+
+
+def get_all_adapter_configs() -> set[AdapterConfig]:
+    result = set()
+    for version in get_all_adapter_versions():
+        configs = get_version_configs(version)
+        result = result.union(configs)
+    return result
 
 
 def get_all_adapter_versions() -> set[str]:
@@ -47,13 +57,27 @@ def switch_to_version_branch(version_branch: str):
 
 def get_version_configs(version_branch: str) -> set[AdapterConfig]:
     switch_to_version_branch(version_branch)
-    yaml = YAML()
-    adapter_yaml = yaml.load('submodules/scaling-adapter/adapter_info.yaml')
-    param_names = [param.name for param in adapter_yaml['algorithm_parameters']]
+    with open('submodules/scaling-adapter/adapter_info.yaml') as f:
+        adapter_yaml = yaml.load(f.read(), Loader=yaml.FullLoader)
     param_value_combos = adapter_yaml['algorithm_parameter_combos']
     result = set()
     for combo in param_value_combos:
-        param_dict = OrderedDict(zip(param_names, combo))
-        config = AdapterConfig(version_branch, param_dict)
+        config = AdapterConfig(version_branch, tuple(combo))
         result.add(config)
     return result
+
+
+def compile_adapter(version: str):
+    switch_to_version_branch(version)
+    run(['cargo', 'build', '--manifest-path=scaling-adapter/Cargo.toml', '--release'])
+    shutil.copyfile('submodules/scaling-adapter/scaling-adapter-clib/bindings.h',
+                    'submodules/dynamic-io-pool/adapter.h')
+    shutil.copyfile('submodules/scaling-adapter/target/release/libscaling_adapter_clib.a',
+                    'submodules/dynamic-io-pool/adapter.a')
+
+
+def compile_benchmarks():
+    command = ('cd submodules/dynamic-io-pool && '
+               'cmake --build /home/jannes/MasterThesis/dynamic_io_tpool/build --config Debug --target all; '
+               'cd -')
+    run(command, shell=True)
