@@ -9,15 +9,15 @@
                             "adapter_params": [
                                 "1000"
                             ],
-                            "avg_runtime_seconds": 6.341722670088333,
-                            "runtime_stddev": 1.1250931224942131
+                            "avg_runtime_seconds": 5.8860005375533335,
+                            "runtime_stddev": 0.9923359907238706
                         }
                     ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
-                            "avg_runtime_seconds": 7.721800256878333,
-                            "runtime_stddev": 0.707916339587708
+                            "avg_runtime_seconds": 7.601653883133333,
+                            "runtime_stddev": 0.700259345781861
                         }
                     ]
                 }
@@ -32,15 +32,15 @@
                             "adapter_params": [
                                 "1000"
                             ],
-                            "avg_runtime_seconds": 0.2913342631383334,
-                            "runtime_stddev": 0.018213919148577718
+                            "avg_runtime_seconds": 0.2879038388500001,
+                            "runtime_stddev": 0.012861599926931302
                         }
                     ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
-                            "avg_runtime_seconds": 0.280564539255,
-                            "runtime_stddev": 0.006642499157485698
+                            "avg_runtime_seconds": 0.291695247665,
+                            "runtime_stddev": 0.01449028491482004
                         }
                     ]
                 }

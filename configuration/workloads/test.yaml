@@ -3,7 +3,7 @@ workloads:
     adapter_params: [ worker_write_synced, adapt_pool-static_load ]
     no_adapter_params: [ worker_write_synced, static_pool-static_load ]
     parameter_combos_ssd:
-      - [ 200 ]
+      - [ 2 ]
     parameter_combos_hdd:
-      - [ 20 ]
-    static_sizes: [ 4 ]
+      - [ 1 ]
+    static_sizes: [ 1 ]

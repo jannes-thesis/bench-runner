@@ -1,0 +1,13 @@
+2020-11-10 16:44:41,202 - root - INFO - get new workload/adapter info
+2020-11-10 16:44:41,206 - submodules - INFO - updating submodules
+2020-11-10 16:44:42,708 - submodules - INFO - found 0 untracked adapter versions
+2020-11-10 16:44:44,168 - root - INFO - new workloads:
+2020-11-10 16:44:44,169 - root - INFO - --> hdd-write-synced-static-load-200
+2020-11-10 16:44:44,169 - root - INFO - --> ssd-write-synced-static-load-200
+2020-11-10 16:44:44,169 - root - INFO - new adapter configs:
+2020-11-10 16:44:44,169 - root - INFO - --> version: v-1, params: 1000
+2020-11-10 16:44:44,169 - root - INFO - calculate new run definitions
+2020-11-10 16:44:44,169 - root - INFO - 2 new adapter run defs
+2020-11-10 16:44:44,169 - root - INFO - 18 new static run defs
+2020-11-10 16:44:44,169 - root - INFO - adapter run: hdd-write-synced-static-load-200 with version: v-1, params: 1000
+2020-11-10 16:44:44,172 - root - INFO - already on branch for v-1, no compilation needed

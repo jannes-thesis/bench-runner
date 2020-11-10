@@ -9,15 +9,15 @@
                             "adapter_params": [
                                 "1000"
                             ],
-                            "avg_runtime_seconds": 6.341722670088333,
-                            "runtime_stddev": 1.1250931224942131
+                            "avg_runtime_seconds": 6.234836670495,
+                            "runtime_stddev": 0.9646694984117613
                         }
                     ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
-                            "avg_runtime_seconds": 7.721800256878333,
-                            "runtime_stddev": 0.707916339587708
+                            "avg_runtime_seconds": 7.639243225256667,
+                            "runtime_stddev": 0.7452716057224867
                         }
                     ]
                 }
@@ -25,22 +25,22 @@
         },
         "ssd": {
             "write-synced-static-load": {
-                "2": {
+                "1": {
                     "with_adapter": [
                         {
                             "adapter_version": "v-1",
                             "adapter_params": [
                                 "1000"
                             ],
-                            "avg_runtime_seconds": 0.2913342631383334,
-                            "runtime_stddev": 0.018213919148577718
+                            "avg_runtime_seconds": 0.16803094376,
+                            "runtime_stddev": 0.00398310925557042
                         }
                     ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
-                            "avg_runtime_seconds": 0.280564539255,
-                            "runtime_stddev": 0.006642499157485698
+                            "avg_runtime_seconds": 0.16246779493115385,
+                            "runtime_stddev": 0.011311781175972714
                         }
                     ]
                 }

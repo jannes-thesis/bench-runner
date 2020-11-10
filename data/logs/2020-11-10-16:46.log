@@ -1,0 +1,19 @@
+2020-11-10 16:46:16,011 - root - INFO - get new workload/adapter info
+2020-11-10 16:46:16,014 - submodules - INFO - updating submodules
+2020-11-10 16:46:17,525 - submodules - INFO - found 0 untracked adapter versions
+2020-11-10 16:46:19,021 - root - INFO - new workloads:
+2020-11-10 16:46:19,021 - root - INFO - --> hdd-write-synced-static-load-200
+2020-11-10 16:46:19,021 - root - INFO - --> ssd-write-synced-static-load-200
+2020-11-10 16:46:19,021 - root - INFO - new adapter configs:
+2020-11-10 16:46:19,021 - root - INFO - --> version: v-1, params: 1000
+2020-11-10 16:46:19,022 - root - INFO - calculate new run definitions
+2020-11-10 16:46:19,022 - root - INFO - 2 new adapter run defs
+2020-11-10 16:46:19,022 - root - INFO - 18 new static run defs
+2020-11-10 16:46:19,022 - root - INFO - adapter run: ssd-write-synced-static-load-200 with version: v-1, params: 1000
+2020-11-10 16:46:19,024 - root - INFO - already on branch for v-1, no compilation needed
+2020-11-10 16:46:19,024 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-static_load 200 /ssd2/dynamic-io-pool/out 1000
+2020-11-10 16:47:23,694 - root - INFO - adapter run: hdd-write-synced-static-load-200 with version: v-1, params: 1000
+2020-11-10 16:47:23,721 - root - INFO - already on branch for v-1, no compilation needed
+2020-11-10 16:47:23,722 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-static_load 200 /hdd/dynamic-io-pool/out 1000
+2020-11-10 17:30:05,927 - root - INFO - static run: hdd-write-synced-static-load-200 with size 1
+2020-11-10 17:30:05,927 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced static_pool-static_load 200 /hdd/dynamic-io-pool/out 1

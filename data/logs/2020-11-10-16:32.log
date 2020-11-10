@@ -1,0 +1,34 @@
+2020-11-10 16:32:27,342 - root - INFO - get new workload/adapter info
+2020-11-10 16:32:27,347 - submodules - INFO - updating submodules
+2020-11-10 16:32:28,847 - submodules - INFO - found 0 untracked adapter versions
+2020-11-10 16:32:30,327 - root - INFO - new workloads:
+2020-11-10 16:32:30,327 - root - INFO - --> ssd-write-synced-static-load-200
+2020-11-10 16:32:30,328 - root - INFO - --> hdd-write-synced-static-load-200
+2020-11-10 16:32:30,328 - root - INFO - new adapter configs:
+2020-11-10 16:32:30,328 - root - INFO - --> version: v-1, params: 1000
+2020-11-10 16:32:30,328 - root - INFO - calculate new run definitions
+2020-11-10 16:32:30,328 - root - INFO - 2 new adapter run defs
+2020-11-10 16:32:30,328 - root - INFO - 18 new static run defs
+2020-11-10 16:32:30,328 - root - INFO - adapter run: ssd-write-synced-static-load-200 with version: v-1, params: 1000
+2020-11-10 16:32:30,331 - root - INFO - already on branch for v-1, no compilation needed
+2020-11-10 16:32:30,868 - root - ERROR - non-zero exit code for adapter run, stderr:
+2020-11-10 16:32:30,869 - root - ERROR - ../benchmark.c:113:get_tpool(): creating tpool
+../adaptive_tpool.c:150:tpool_create(): queue initialized: 1
+../adaptive_tpool.c:155:tpool_create(): creating workers
+../adaptive_tpool.c:163:tpool_create(): creating worker 0
+../adaptive_tpool.c:171:tpool_create(): creating worker 0's pthread
+../benchmark.c:153:static_load(): start submitting jobs to tpool
+../benchmark.c:138:tpool_wait_destroy(): waiting for tpool
+../adaptive_tpool.c:415:worker_function(): worker 0 starting (pid: 15175)
+../adaptive_tpool.c:419:worker_function(): worker 0 added as tracee (pid: 15175)
+../adaptive_tpool.c:397:check_scaling(): worker 0 get scaling advice
+../adaptive_tpool.c:399:check_scaling(): worker 0 got scaling advice: scale by 0
+../adaptive_tpool.c:407:check_scaling(): worker 0 no scaling
+../adaptive_tpool.c:442:worker_function(): queue size: 200
+../adaptive_tpool.c:443:worker_function(): worker 0 popping job
+../adaptive_tpool.c:333:pop_next_job(): pop
+../adaptive_tpool.c:456:worker_function(): worker 0 executing job
+../benchmark.c:73:worker_write_synced(): user function start 0
+Segmentation fault (core dumped)
+Error: Command terminated with non-zero exit code. Use the '-i'/'--ignore-failure' option if you want to ignore this. Alternatively, use the '--show-output' option to debug what went wrong.
+
