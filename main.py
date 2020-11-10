@@ -143,6 +143,9 @@ def main():
     logger.info(f"{len(adapter_runs)} new adapter run defs")
     logger.info(f"{len(static_runs)} new static run defs")
 
+    # sort adapter runs by version to minimize compilations
+    adapter_runs = sorted(adapter_runs, key=lambda x: x.adapter_config.adapter_version)
+
     adapter_run_results = set()
     for adapter_run_def in adapter_runs:
         workload_description = adapter_run_def.workload.description()

@@ -1,7 +1,7 @@
 import json
 import os
 from datetime import datetime
-from subprocess import run
+from subprocess import run, DEVNULL
 from typing import Union
 
 from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterConfig, Workload
@@ -117,8 +117,10 @@ def save_new_results(adapter_results: set[AdapterResult],
         json.dump(results_dict, f, indent=4)
     with open('data/results/all_results.json') as f:
         all_results = json.load(f)
+    merge_results(results_dict, all_results)
     with open('data/results/all_results.json', 'w') as f:
-        merge_results(results_dict, all_results)
+        json.dump(all_results, f, indent=4)
+    with open(f'data/results/all_results-{timestamp}.json', 'w') as f:
         json.dump(all_results, f, indent=4)
 
 
@@ -129,9 +131,9 @@ def update_known_adapter_configs(new_configs: set[AdapterConfig]):
     } for conf in new_configs]
     with open('data/adapter_configs.json') as f:
         current = json.load(f)
-        current.append(to_add)
+        current.extend(to_add)
     with open('data/adapter_configs.json', 'w') as f:
-        json.dump(current, f)
+        json.dump(current, f, indent=4)
 
 
 def update_known_workloads(new_workloads: set[Workload]):
@@ -141,11 +143,13 @@ def update_known_workloads(new_workloads: set[Workload]):
     } for w in new_workloads]
     with open('data/known_workloads.json') as f:
         current = json.load(f)
-        current.append(to_add)
+        current.extend(to_add)
     with open('data/known_workloads.json', 'w') as f:
-        json.dump(current, f)
+        json.dump(current, f, indent=4)
 
 
 def commit():
-    run(['git', 'add', '.'])
-    run(['git', 'commit', '-m', 'Add new results'])
+    run(['git', 'add', '.'], stdout=DEVNULL, stderr=DEVNULL)
+    run(['git', 'commit', '-m', 'Add new results'],
+        stdout=DEVNULL,
+        stderr=DEVNULL)
