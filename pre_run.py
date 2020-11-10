@@ -12,7 +12,7 @@ def get_known_adapter_configs() -> set[AdapterConfig]:
     configs = set()
     for config_json in configs_json:
         version = config_json['version']
-        param_values = tuple(config_json['param_values'])
+        param_values = tuple([str(val) for val in config_json['param_values']])
         configs.add(AdapterConfig(version, param_values))
     return configs
 

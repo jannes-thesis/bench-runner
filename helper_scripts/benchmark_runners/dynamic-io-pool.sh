@@ -1,3 +1,4 @@
+#!/bin/bash
 worker_function=$1
 benchmark_name=$2
 num_items=$3
