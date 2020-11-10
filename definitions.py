@@ -1,14 +1,15 @@
-from collections import OrderedDict
 from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
 class BenchmarkSuite:
     name: str
+    # relative path to the runner script (needs to have shebang and exe rights)
     runner_script: str
     parameter_names: tuple[str]
     disk_param_hdd: str
     disk_param_ssd: str
+    # relative path to the workloads.yaml file
     workloads_definition_file: str
 
 
@@ -23,13 +24,8 @@ class Workload:
     no_adapter_parameters: tuple[str]
     static_sizes: tuple[int]
 
-    # def __hash__(self):
-    #     workload_parameter_list = tuple(self.workload_parameters.values())
-    #     to_hash = [str(hash(self.benchmark_suite)), self.name, self.disk, str(hash(workload_parameter_list))]
-    #     return hash(to_hash)
-    #
-    # def __eq__(self, other):
-    #     return type(self) == type(other) and self.__hash__() == other.__hash__()
+    def workload_parameters_str(self):
+        return ','.join([str(p) for p in self.workload_parameters])
 
 
 @dataclass(frozen=True)

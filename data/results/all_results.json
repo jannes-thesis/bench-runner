@@ -1,1 +1,32 @@
-{}
+{
+  "dummy-benchmark-suite": {
+    "ssd": {
+      "dummy_workload": [
+        {
+          "100,200": {
+            "with_adapter": [
+              {
+                "adapter_version": "v-1",
+                "adapter_params": [
+                  100,
+                  5
+                ],
+                "avg_runtime_seconds": 19.5,
+                "runtime_stddev": 0.5
+              }
+            ],
+            "without_adapter": [
+              {
+                "pool_size": 2,
+                "avg_runtime_seconds": 19.5,
+                "runtime_stddev": 0.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "hdd": {
+    }
+  }
+}

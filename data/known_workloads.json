@@ -1,0 +1,6 @@
+[
+  {
+    "name": "dummy-workload",
+    "benchmark_name": "dummy_bench"
+  }
+]

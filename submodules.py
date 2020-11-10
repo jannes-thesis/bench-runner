@@ -51,6 +51,17 @@ def switch_to_adapter_master():
     run(['git', '-C', 'submodules/scaling-adapter', 'checkout', 'master'])
 
 
+def get_current_adapter_branch() -> str:
+    git_branch_output = run(['git', '-C', 'submodules/scaling-adapter', 'branch'], capture_output=True,
+                            text=True)
+    current_branch = None
+    for line in git_branch_output.stdout.splitlines():
+        if line.startswith('*'):
+            line = line[1:]
+            current_branch = line.strip()
+    return current_branch
+
+
 def switch_to_version_branch(version_branch: str):
     run(['git', '-C', 'submodules/scaling-adapter', 'checkout', version_branch])
 
