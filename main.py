@@ -56,10 +56,20 @@ def main():
     known_adapter_configs = get_known_adapter_configs()
     new_adapter_configs = get_new_adapter_configs(known_adapter_configs)
 
+    logger.info('new workloads:')
+    for w in new_workloads:
+        logger.info(f'--> {w.description}')
+
+    logger.info('new adapter configs:')
+    for c in new_adapter_configs:
+        logger.info(f'--> {c.description}')
+
     logger.info('calculate new run definitions')
     adapter_runs = get_new_adapter_run_definitions(known_workloads, new_workloads, known_adapter_configs,
                                                    new_adapter_configs)
     static_runs = get_new_static_run_definitions(new_workloads)
+    logger.info(f'{len(adapter_runs)} new adapter run defs')
+    logger.info(f'{len(static_runs)} new static run defs')
 
     static_run_results = set()
     for static_run_def in static_runs:
