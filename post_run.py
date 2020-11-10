@@ -4,7 +4,6 @@ from subprocess import run
 from typing import Union
 
 from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterConfig, Workload
-from pre_run import get_known_adapter_configs
 
 
 def parse_result_json(run_definition: Union[AdapterRunDefinition, StaticRunDefinition]) -> \
@@ -38,7 +37,7 @@ def merge_results(results_a: dict, results_b: dict):
                         results_b[benchmark][disk][workload_name][params_str]['without_adapter'].append(static_results)
 
 
-def save_new_results(adapter_results: set[AdapterResult], static_results: set[StaticResult]):
+def save_new_results(adapter_results: set[AdapterResult], static_results: set[StaticResult], timestamp: str):
     results_dict = {}
     workloads = {res.adapter_run.workload for res in adapter_results}.union(
         {res.static_run.workload for res in static_results})
@@ -66,8 +65,7 @@ def save_new_results(adapter_results: set[AdapterResult], static_results: set[St
             res.static_run.workload.name][res.static_run.workload.workload_parameters_str()]['without_adapter']
         target_list.append(result_entry)
 
-    now = datetime.today().strftime('%Y-%m-%d-%H:%M')
-    with open(f'data/results/result-{now}.json', 'w') as f:
+    with open(f'data/results/result-{timestamp}.json', 'w') as f:
         json.dump(results_dict, f)
     with open('data/results/all_results.json', 'w') as f:
         all_results = json.load(f)
@@ -93,4 +91,4 @@ def update_known_workloads(new_workloads: set[Workload]):
 
 def commit():
     run(['git', 'add', '.'])
-    run(['git', 'commit', '-m', 'Finish up all needed functions for runner'])
+    run(['git', 'commit', '-m', 'Add new results'])

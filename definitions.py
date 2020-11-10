@@ -27,6 +27,9 @@ class Workload:
     def workload_parameters_str(self):
         return ','.join([str(p) for p in self.workload_parameters])
 
+    def description(self) -> str:
+        return f'{self.disk}-{self.name}-{self.workload_parameters_str()}'
+
 
 @dataclass(frozen=True)
 class AdapterConfig:
@@ -34,6 +37,9 @@ class AdapterConfig:
     adapter_version: str
     # the values for the adapter parameters of corresponding version, in same order
     adapter_parameters: tuple[str]
+
+    def description(self) -> str:
+        return f'version: {self.adapter_version}, params: {",".join(self.adapter_parameters)}'
 
 
 @dataclass(frozen=True)
