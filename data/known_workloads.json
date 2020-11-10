@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "name": "write-synced-static-load",
+        "benchmark_name": "dynamic-io-pool-benchmark-suite"
+    },
+    {
+        "name": "write-synced-static-load",
+        "benchmark_name": "dynamic-io-pool-benchmark-suite"
+    }
+]
