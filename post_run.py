@@ -137,13 +137,14 @@ def update_known_adapter_configs(new_configs: set[AdapterConfig]):
 
 
 def update_known_workloads(new_workloads: set[Workload]):
-    to_add = [{
+    to_add = {{
         'name': w.name,
         'benchmark_name': w.benchmark_suite.name
-    } for w in new_workloads]
+    }
+              for w in new_workloads}
     with open('data/known_workloads.json') as f:
         current = json.load(f)
-        current.extend(to_add)
+        current.extend(list(to_add))
     with open('data/known_workloads.json', 'w') as f:
         json.dump(current, f, indent=4)
 

@@ -6,4 +6,4 @@ benchmarks:
     disk_params:
       hdd: /hdd/dynamic-io-pool/out
       ssd: /ssd2/dynamic-io-pool/out
-    workloads_definition: test.yaml
+    workloads_definition: dynamic-io-pool.yaml
