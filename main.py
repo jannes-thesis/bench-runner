@@ -1,6 +1,8 @@
 from datetime import datetime
-from subprocess import run
+from subprocess import run, DEVNULL
+import dataclasses
 import logging
+import sys
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
@@ -20,20 +22,6 @@ from pre_run import (
     get_new_adapter_run_definitions,
     get_new_static_run_definitions,
 )
-
-# timestamp = datetime.today().strftime('%Y-%m-%d-%H:%M')
-# logger = logging.getLogger()
-# logger.setLevel = logging.DEBUG
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-# log_filename = f'data/logs/{timestamp}.log'
-# file_handle = logging.FileHandler(filename=log_filename, mode='w', encoding='utf-8')
-# file_handle.setLevel(logging.DEBUG)
-# file_handle.setFormatter(formatter)
-# console_handle = logging.StreamHandler()
-# console_handle.setLevel(logging.INFO)
-# console_handle.setFormatter(formatter)
-# logger.addHandler(file_handle)
-# logger.addHandler(console_handle)
 
 timestamp = datetime.today().strftime("%Y-%m-%d-%H:%M")
 log_filename = f"data/logs/{timestamp}.log"
@@ -73,7 +61,9 @@ def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
     workload_args = [
         str(arg) for arg in run_definition.workload.workload_parameters
     ]
-    disk_arg = run_definition.workload.disk
+    disk_arg = dataclasses.asdict(
+        run_definition.workload.benchmark_suite
+    )[f'disk_param_{run_definition.workload.disk}']
     adapter_algorithm_args = run_definition.adapter_config.adapter_parameters
     command_with_args = [
         runner_script,
@@ -82,7 +72,13 @@ def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
         disk_arg,
         *adapter_algorithm_args,
     ]
-    run(command_with_args)
+    command_str = ' '.join(command_with_args)
+    logger.info(f'command: {command_str}')
+    result = run(command_with_args, capture_output=True, text=True)
+    if result.returncode != 0:
+        logger.error(f'non-zero exit code for adapter run, stderr:')
+        logger.error(f'\n{result.stderr}')
+        return False
     return True
 
 
@@ -92,13 +88,26 @@ def do_static_run(run_definition: StaticRunDefinition) -> bool:
     workload_args = [
         str(arg) for arg in run_definition.workload.workload_parameters
     ]
-    disk_arg = run_definition.workload.disk
+    disk_arg = dataclasses.asdict(
+        run_definition.workload.benchmark_suite
+    )[f'disk_param_{run_definition.workload.disk}']
     size_arg = str(run_definition.static_size)
     command_with_args = [
         runner_script, *first_args, *workload_args, disk_arg, size_arg
     ]
-    run(command_with_args)
+    command_str = ' '.join(command_with_args)
+    logger.info(f'command: {command_str}')
+    result = run(command_with_args, capture_output=True, text=True)
+    if result.returncode != 0:
+        logger.error(f'non-zero exit code for adapter run, stderr:')
+        logger.error(f'\n{result.stderr}')
+        return False
     return True
+
+
+def is_root() -> bool:
+    output = run(['id', '-u'], capture_output=True, text=True).stdout
+    return output.strip() == '0'
 
 
 def main():
@@ -142,7 +151,9 @@ def main():
         logger.info(
             f"adapter run: {workload_description} with {adapter_config_description}"
         )
-        do_adapter_run(adapter_run_def)
+        success = do_adapter_run(adapter_run_def)
+        if not success:
+            raise Exception('adapter run fail')
         result = parse_result_json(adapter_run_def)
         adapter_run_results.add(result)
 
@@ -152,7 +163,9 @@ def main():
         pool_size = static_run_def.static_size
         logger.info(
             f"static run: {workload_description} with size {pool_size}")
-        do_static_run(static_run_def)
+        success = do_static_run(static_run_def)
+        if not success:
+            raise Exception('adapter run fail')
         result = parse_result_json(static_run_def)
         static_run_results.add(result)
 

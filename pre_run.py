@@ -47,9 +47,9 @@ def get_all_workloads() -> set[Workload]:
             name = workload_set['name']
             adapter_params = tuple(workload_set['adapter_params'])
             no_adapter_params = tuple(workload_set['no_adapter_params'])
-            param_combos = workload_set['parameter_combos']
             static_sizes = tuple(workload_set['static_sizes'])
             for disk in disks:
+                param_combos = workload_set[f'parameter_combos_{disk}']
                 for combo in param_combos:
                     workload = Workload(benchmark, name, disk, tuple(combo),
                                         adapter_params, no_adapter_params,

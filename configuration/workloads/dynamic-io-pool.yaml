@@ -2,48 +2,64 @@ workloads:
   - name: write-synced-static-load
     adapter_params: [ worker_write_synced, adapt_pool-static_load ]
     no_adapter_params: [ worker_write_synced, static_pool-static_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: write-synced-inc-load
     adapter_params: [ worker_write_synced, adapt_pool-inc_load ]
     no_adapter_params: [ worker_write_synced, static_pool-inc_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: write-synced-inc-background-load
     adapter_params: [ worker_write_synced, adapt_pool-inc_background_load ]
     no_adapter_params: [ worker_write_synced, static_pool-inc_background_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: write-synced-static-load-x2
     adapter_params: [ worker_write_synced, adapt_pool-static_load-x2 ]
     no_adapter_params: [ worker_write_synced, static_pool-static_load-x2 ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: read-buffered-static-load
     adapter_params: [ worker_read_buffered, adapt_pool-static_load ]
     no_adapter_params: [ worker_read_buffered, static_pool-static_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: read-buffered-inc-load
     adapter_params: [ worker_read_buffered, adapt_pool-inc_load ]
     no_adapter_params: [ worker_read_buffered, static_pool-inc_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: read-buffered-inc-background-load
     adapter_params: [ worker_read_buffered, adapt_pool-inc_background_load ]
     no_adapter_params: [ worker_read_buffered, static_pool-inc_background_load ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
   - name: read-buffered-static-load-x2
     adapter_params: [ worker_read_buffered, adapt_pool-static_load-x2 ]
     no_adapter_params: [ worker_read_buffered, static_pool-static_load-x2 ]
-    parameter_combos:
+    parameter_combos_ssd:
       - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]

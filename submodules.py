@@ -128,6 +128,6 @@ def compile_adapter(version: str):
 def compile_benchmarks():
     command = (
         'cd submodules/dynamic-io-pool && '
-        'cmake --build /home/jannes/MasterThesis/dynamic_io_tpool/build --config Debug --target all; '
+        'cmake --build build --config Debug --target all; '
         'cd -')
     run(command, shell=True)

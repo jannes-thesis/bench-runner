@@ -1,0 +1,9 @@
+workloads:
+  - name: write-synced-static-load
+    adapter_params: [ worker_write_synced, adapt_pool-static_load ]
+    no_adapter_params: [ worker_write_synced, static_pool-static_load ]
+    parameter_combos_ssd:
+      - [ 200 ]
+    parameter_combos_hdd:
+      - [ 20 ]
+    static_sizes: [ 4 ]

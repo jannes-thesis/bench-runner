@@ -14,7 +14,10 @@ def parse_result_json(run_definition: Union[AdapterRunDefinition, StaticRunDefin
     avg_runtime_seconds = result_json['results'][0]['mean']
     runtime_stddev = result_json['results'][0]['stddev']
     os.remove('data/results/tmp_result.json')
-    return type(run_definition)(run_definition, avg_runtime_seconds, runtime_stddev)
+    if type(run_definition) == AdapterRunDefinition:
+        return AdapterResult(run_definition, avg_runtime_seconds, runtime_stddev)
+    else:
+        return StaticResult(run_definition, avg_runtime_seconds, runtime_stddev)
 
 
 def merge_results(results_a: dict, results_b: dict):
