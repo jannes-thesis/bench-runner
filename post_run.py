@@ -100,6 +100,7 @@ def save_new_results(adapter_results: set[AdapterResult],
                     res.adapter_run.workload.workload_parameters_str(
                     )]['with_adapter']
         target_list.append(result_entry)
+    static_results = sorted(static_results, key=lambda x: x.static_run.static_size)
     for res in static_results:
         result_entry = {
             'pool_size': res.static_run.static_size,
@@ -137,16 +138,13 @@ def update_known_adapter_configs(new_configs: set[AdapterConfig]):
 
 
 def update_known_workloads(new_workloads: set[Workload]):
-    to_add = {{
-        'name': w.name,
-        'benchmark_name': w.benchmark_suite.name
-    }
-              for w in new_workloads}
-    with open('data/known_workloads.json') as f:
-        current = json.load(f)
-        current.extend(list(to_add))
-    with open('data/known_workloads.json', 'w') as f:
-        json.dump(current, f, indent=4)
+    to_add = {w.full_description() for w in new_workloads}
+    with open('data/known_workloads.txt') as f:
+        current = {line.strip() for line in f.readlines()}
+        current = current.union(to_add)
+    with open('data/known_workloads.txt', 'w') as f:
+        lines = sorted({s + '\n' for s in current})
+        f.writelines(lines)
 
 
 def commit():

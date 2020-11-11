@@ -30,6 +30,9 @@ class Workload:
     def description(self) -> str:
         return f'{self.disk}-{self.name}-{self.workload_parameters_str()}'
 
+    def full_description(self) -> str:
+        return f'{self.benchmark_suite.name}-{self.disk}-{self.name}-{self.workload_parameters_str()}'
+
 
 @dataclass(frozen=True)
 class AdapterConfig:

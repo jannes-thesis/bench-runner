@@ -178,7 +178,7 @@ def main():
     update_known_workloads(new_workloads)
     # generate new reports
     logger.info("commit new data")
-    commit()
+    # commit()
 
 
 if __name__ == "__main__":
