@@ -22,6 +22,7 @@ from pre_run import (
     get_new_adapter_run_definitions,
     get_new_static_run_definitions,
 )
+from reports import generate_report
 
 timestamp = datetime.today().strftime("%Y-%m-%d-%H:%M")
 log_filename = f"data/logs/{timestamp}.log"
@@ -176,9 +177,10 @@ def main():
     save_new_results(adapter_run_results, static_run_results, timestamp)
     update_known_adapter_configs(new_adapter_configs)
     update_known_workloads(new_workloads)
-    # generate new reports
+    logger.info("generating report")
+    generate_report(f'data/results/all_results-{timestamp}.json')
     logger.info("commit new data")
-    # commit()
+    commit()
 
 
 if __name__ == "__main__":

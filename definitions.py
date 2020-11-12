@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from enum import Enum
 
 
 @dataclass(frozen=True)
@@ -34,6 +35,11 @@ class Workload:
         return f'{self.benchmark_suite.name}-{self.disk}-{self.name}-{self.workload_parameters_str()}'
 
 
+class Disk(Enum):
+    HDD = 0
+    SSD = 1
+
+
 @dataclass(frozen=True)
 class AdapterConfig:
     # each branch starting with "v-" represents a version
@@ -43,6 +49,9 @@ class AdapterConfig:
 
     def description(self) -> str:
         return f'version: {self.adapter_version}, params: {",".join(self.adapter_parameters)}'
+
+    def short_description(self) -> str:
+        return f'{self.adapter_version}-{",".join(self.adapter_parameters)}'
 
 
 @dataclass(frozen=True)
