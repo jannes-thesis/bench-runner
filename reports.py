@@ -15,16 +15,42 @@ def generate_report(json_path: str):
     os.makedirs(report_dir)
     results = load_results(json_path)
     md_report_str = ''
+    benchmark_header = ''
+    disk_header = ''
+    workload_header = ''
+    workload_params_header = ''
     for (static_results, _) in results:
+        benchmark_name = static_results[0].static_run.workload.benchmark_suite.name
+        disk_name = static_results[0].static_run.workload.disk
+        workload_name = static_results[0].static_run.workload.name
+        workload_params = static_results[0].static_run.workload.workload_params_pretty()
+        if benchmark_name != benchmark_header:
+            md_report_str += f'# {benchmark_name}\n## {disk_name}\n### {workload_name}\n#### {workload_params}\n'
+            benchmark_header = benchmark_name
+            disk_header = disk_name
+            workload_header = workload_name
+            workload_params_header = workload_params
+        elif disk_name != disk_header:
+            md_report_str += f'## {disk_name}\n### {workload_name}\n#### {workload_params}\n'
+            disk_header = disk_name
+            workload_header = workload_name
+            workload_params_header = workload_params
+        elif workload_name != workload_header:
+            md_report_str += f'### {workload_name}\n#### {workload_params}\n'
+            workload_header = workload_name
+            workload_params_header = workload_params
+        elif workload_params != workload_params_header:
+            md_report_str += f'#### {workload_params}\n'
+            workload_params_header = workload_params
         workload_str = static_results[0].static_run.workload.full_description()
-        md_report_str += f'# {workload_str}\n'
-        md_report_str += f'![{workload_str} image](figures/{workload_str}.png)\n\n'
+        md_report_str += f'![{workload_str} image](figures/{workload_str}.png){{ width=100% }}\n\n'
     with open(f'{report_dir}/report.md', 'w') as f:
         f.write(md_report_str)
     plot_results(results, report_dir)
 
 
-def plot_results(results: set[tuple[tuple[StaticResult], tuple[AdapterResult]]], report_dir: str):
+def plot_results(results: list[tuple[tuple[StaticResult], tuple[AdapterResult]]], report_dir: str):
+    print(f'plotting {len(results)} pairs')
     report_figures_dir = f'{report_dir}/figures'
     os.makedirs(report_figures_dir)
     for (static_results, adapter_results) in results:
@@ -80,7 +106,7 @@ def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float, ylim_
     ax.grid(color='grey', linestyle='-', linewidth=0.25, alpha=0.5)
 
 
-def load_results(json_path: str) -> set[tuple[tuple[StaticResult], tuple[AdapterResult]]]:
+def load_results(json_path: str) -> list[tuple[tuple[StaticResult], tuple[AdapterResult]]]:
     """
     :param json_path: path to result file
     :return: for each bench-disk-workload-params set a tuple of static & adaptive results
@@ -89,21 +115,27 @@ def load_results(json_path: str) -> set[tuple[tuple[StaticResult], tuple[Adapter
         r_json = json.load(f)
     all_workloads = get_all_workloads()
 
-    tuples = set()
+    static_results_set = set()
+    adapter_results_set = set()
     for bench in r_json.keys():
         for disk in r_json[bench].keys():
             for wload in r_json[bench][disk].keys():
                 for w_params in r_json[bench][disk][wload].keys():
                     static_result_dicts = r_json[bench][disk][wload][w_params]['without_adapter']
                     adapter_result_dicts = r_json[bench][disk][wload][w_params]['with_adapter']
-                    workload = next(w for w in all_workloads if w.benchmark_suite.name == bench and w.disk == disk and
-                                    w.name == wload and w.workload_parameters_str() == w_params)
+                    workload = next(
+                        w for w in all_workloads if w.benchmark_suite.name == bench and w.disk == disk and
+                        w.name == wload and w.workload_parameters_str() == w_params)
                     static_results = tuple([StaticResult(StaticRunDefinition(res['pool_size'], workload),
-                                                         res['avg_runtime_seconds'], res['runtime_stddev']) for res in
+                                                         res['avg_runtime_seconds'], res['runtime_stddev']) for res
+                                            in
                                             static_result_dicts])
                     adapter_results = tuple([AdapterResult(
                         AdapterRunDefinition(AdapterConfig(res['adapter_version'], tuple(res['adapter_params'])),
                                              workload), res['avg_runtime_seconds'], res['runtime_stddev']) for res in
                         adapter_result_dicts])
-                    tuples.add((static_results, adapter_results))
-    return tuples
+                    static_results_set.add(static_results)
+                    adapter_results_set.add(adapter_results)
+    static_results_sorted = sorted(static_results_set, key=lambda x: x[0].static_run.workload.full_description())
+    adapter_results_sorted = sorted(adapter_results_set, key=lambda x: x[0].adapter_run.workload.full_description())
+    return list(zip(static_results_sorted, adapter_results_sorted))

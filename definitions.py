@@ -25,6 +25,12 @@ class Workload:
     no_adapter_parameters: tuple[str]
     static_sizes: tuple[int]
 
+    def workload_params_pretty(self) -> str:
+        result = ''
+        for i, name in enumerate(self.benchmark_suite.parameter_names):
+            result += f'{name}: {self.workload_parameters[i]}, '
+        return result[:-2]
+
     def workload_parameters_str(self):
         return ','.join([str(p) for p in self.workload_parameters])
 
