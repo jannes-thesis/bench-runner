@@ -7,6 +7,7 @@ from matplotlib.axes import Axes
 from definitions import StaticResult, AdapterResult, StaticRunDefinition, \
     AdapterRunDefinition, AdapterConfig
 from pre_run import get_all_workloads
+from subprocess import run
 
 
 def generate_report(json_path: str):
@@ -47,6 +48,7 @@ def generate_report(json_path: str):
     with open(f'{report_dir}/report.md', 'w') as f:
         f.write(md_report_str)
     plot_results(results, report_dir)
+    run(['pandoc', f'{report_dir}/report.md', '--toc', '-t', 'html', '-o', f'{report_dir}/report.pdf'])
 
 
 def plot_results(results: list[tuple[tuple[StaticResult], tuple[AdapterResult]]], report_dir: str):
