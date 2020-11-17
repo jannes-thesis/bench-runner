@@ -59,6 +59,9 @@ class AdapterConfig:
     def short_description(self) -> str:
         return f'{self.adapter_version}-{",".join(self.adapter_parameters)}'
 
+    def adapter_params_str(self) -> str:
+        return ','.join([str(p) for p in self.adapter_parameters])
+
 
 @dataclass(frozen=True)
 class AdapterRunDefinition:

@@ -65,13 +65,13 @@ def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
     disk_arg = dataclasses.asdict(
         run_definition.workload.benchmark_suite
     )[f'disk_param_{run_definition.workload.disk}']
-    adapter_algorithm_args = run_definition.adapter_config.adapter_parameters
+    adapter_algorithm_args_string = run_definition.adapter_config.adapter_params_str()
     command_with_args = [
         runner_script,
         *first_args,
         *workload_args,
         disk_arg,
-        *adapter_algorithm_args,
+        adapter_algorithm_args_string
     ]
     command_str = ' '.join(command_with_args)
     logger.info(f'command: {command_str}')
