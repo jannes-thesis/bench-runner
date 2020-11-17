@@ -1,15 +1,9 @@
 [
-    {
-        "version": "dummy-version",
-        "param_values": [
-            10,
-            "ja"
-        ]
-    },
-    {
-        "version": "v-1",
-        "param_values": [
-            "1000"
-        ]
-    }
+  {
+    "version": "dummy-version",
+    "param_values": [
+      10,
+      "ja"
+    ]
+  }
 ]
