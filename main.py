@@ -1,8 +1,7 @@
-from datetime import datetime
-from subprocess import run, DEVNULL
 import dataclasses
 import logging
-import sys
+from datetime import datetime
+from subprocess import run
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
@@ -71,6 +70,7 @@ def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
         *first_args,
         *workload_args,
         disk_arg,
+        'adaptive',
         adapter_algorithm_args_string
     ]
     command_str = ' '.join(command_with_args)
@@ -94,7 +94,7 @@ def do_static_run(run_definition: StaticRunDefinition) -> bool:
     )[f'disk_param_{run_definition.workload.disk}']
     size_arg = str(run_definition.static_size)
     command_with_args = [
-        runner_script, *first_args, *workload_args, disk_arg, size_arg
+        runner_script, *first_args, *workload_args, disk_arg, 'static', size_arg
     ]
     command_str = ' '.join(command_with_args)
     logger.info(f'command: {command_str}')
