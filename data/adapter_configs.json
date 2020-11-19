@@ -5,17 +5,5 @@
             10,
             "ja"
         ]
-    },
-    {
-        "version": "v-2",
-        "param_values": [
-            "1000"
-        ]
-    },
-    {
-        "version": "v-1",
-        "param_values": [
-            "1000"
-        ]
     }
 ]

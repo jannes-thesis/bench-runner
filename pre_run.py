@@ -61,7 +61,7 @@ def get_all_workloads() -> set[Workload]:
 def get_known_workloads(all_workloads: set[Workload]) -> set[Workload]:
     with open('data/known_workloads.txt') as f:
         known_workload_strs = {line.strip() for line in f.readlines()}
-    return {w for w in all_workloads if w.full_description in known_workload_strs}
+    return {w for w in all_workloads if w.full_description() in known_workload_strs}
 
 
 def get_new_workloads(all_workloads: set[Workload]) -> set[Workload]:
