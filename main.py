@@ -145,15 +145,17 @@ def main():
     logger.info(f"{len(static_runs)} new static run defs")
 
     # sort adapter runs by version to minimize compilations
-    adapter_runs = sorted(adapter_runs, key=lambda x: x.adapter_config.adapter_version)
+    adapter_runs = sorted(
+        adapter_runs, key=lambda x: x.adapter_config.adapter_version)
 
     adapter_run_results = set()
-    for adapter_run_def in adapter_runs:
+    amount_adapter_runs = len(static_runs)
+    for i, adapter_run_def in enumerate(adapter_runs):
         workload_description = adapter_run_def.workload.description()
         adapter_config_description = adapter_run_def.adapter_config.description(
         )
         logger.info(
-            f"adapter run: {workload_description} with {adapter_config_description}"
+            f"adapter run {i}/{amount_adapter_runs}: {workload_description} with {adapter_config_description}"
         )
         success = do_adapter_run(adapter_run_def)
         if not success:
@@ -162,11 +164,12 @@ def main():
         adapter_run_results.add(result)
 
     static_run_results = set()
-    for static_run_def in static_runs:
+    amount_static_runs = len(static_runs)
+    for i, static_run_def in enumerate(static_runs):
         workload_description = static_run_def.workload.description()
         pool_size = static_run_def.static_size
         logger.info(
-            f"static run: {workload_description} with size {pool_size}")
+            f"static run {i}/{amount_static_runs}: {workload_description} with size {pool_size}")
         success = do_static_run(static_run_def)
         if not success:
             raise Exception('adapter run fail')

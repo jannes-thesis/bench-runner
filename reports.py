@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 
 from matplotlib import pyplot
 from matplotlib.axes import Axes
@@ -13,6 +14,8 @@ from subprocess import run
 def generate_report(json_path: str):
     timestamp = json_path.split('.')[0].split('/')[-1]
     report_dir = f'data/reports/{timestamp}'
+    if os.path.exists(report_dir):
+        shutil.rmtree(report_dir)
     os.makedirs(report_dir)
     results = load_results(json_path)
     md_report_str = ''
@@ -48,7 +51,11 @@ def generate_report(json_path: str):
     with open(f'{report_dir}/report.md', 'w') as f:
         f.write(md_report_str)
     plot_results(results, report_dir)
-    run(['pandoc', f'{report_dir}/report.md', '--toc', '-t', 'html', '-o', f'{report_dir}/report.pdf'])
+    pandoc_command = (
+        f'cd {report_dir} && '
+        'pandoc report.md --toc -t html -o report.pdf; '
+        'cd -')
+    run(pandoc_command, shell=True)
 
 
 def plot_results(results: list[tuple[tuple[StaticResult], tuple[AdapterResult]]], report_dir: str):
@@ -63,8 +70,10 @@ def plot_results(results: list[tuple[tuple[StaticResult], tuple[AdapterResult]]]
         min_runtime = min(
             {res.runtime_seconds - res.std_deviation for res in static_results}.union(
                 {res.runtime_seconds for res in adapter_results}))
-        plot_static(static_results, ax1, max_runtime, min_runtime)
-        plot_adaptive(adapter_results, ax2, max_runtime, min_runtime)
+        if len(static_results) > 0:
+            plot_static(static_results, ax1, max_runtime, min_runtime)
+        if len(adapter_results) > 0:
+            plot_adaptive(adapter_results, ax2, max_runtime, min_runtime)
         workload_str = static_results[0].static_run.workload.full_description()
         fig.savefig(f'{report_figures_dir}/{workload_str}.png')
         pyplot.close(fig)
@@ -117,8 +126,8 @@ def load_results(json_path: str) -> list[tuple[tuple[StaticResult], tuple[Adapte
         r_json = json.load(f)
     all_workloads = get_all_workloads()
 
-    static_results_set = set()
-    adapter_results_set = set()
+    static_results_list = list()
+    adapter_results_list = list()
     for bench in r_json.keys():
         for disk in r_json[bench].keys():
             for wload in r_json[bench][disk].keys():
@@ -136,8 +145,19 @@ def load_results(json_path: str) -> list[tuple[tuple[StaticResult], tuple[Adapte
                         AdapterRunDefinition(AdapterConfig(res['adapter_version'], tuple(res['adapter_params'])),
                                              workload), res['avg_runtime_seconds'], res['runtime_stddev']) for res in
                         adapter_result_dicts])
-                    static_results_set.add(static_results)
-                    adapter_results_set.add(adapter_results)
-    static_results_sorted = sorted(static_results_set, key=lambda x: x[0].static_run.workload.full_description())
-    adapter_results_sorted = sorted(adapter_results_set, key=lambda x: x[0].adapter_run.workload.full_description())
+                    static_results_list.append(static_results)
+                    adapter_results_list.append(adapter_results)
+    def sort_key_static(results: tuple[StaticResult]) -> str:
+        if len(results) > 0:
+            return results[0].static_run.workload.full_description()
+        else:
+            return 'Z'
+    def sort_key_adaptive(results: tuple[AdapterResult]) -> str:
+        if len(results) > 0:
+            return results[0].adapter_run.workload.full_description()
+        else:
+            return 'Z'
+    print(len(static_results_list))
+    static_results_sorted = sorted(static_results_list, key=lambda x: sort_key_static(x))
+    adapter_results_sorted = sorted(adapter_results_list, key=lambda x: sort_key_adaptive(x))
     return list(zip(static_results_sorted, adapter_results_sorted))
