@@ -149,7 +149,7 @@ def main():
         adapter_runs, key=lambda x: x.adapter_config.adapter_version)
 
     adapter_run_results = set()
-    amount_adapter_runs = len(static_runs)
+    amount_adapter_runs = len(adapter_runs)
     for i, adapter_run_def in enumerate(adapter_runs):
         workload_description = adapter_run_def.workload.description()
         adapter_config_description = adapter_run_def.adapter_config.description(
@@ -159,7 +159,11 @@ def main():
         )
         success = do_adapter_run(adapter_run_def)
         if not success:
-            raise Exception('adapter run fail')
+            # failures are non-deterministic (probably some race condition in the C thread pool)
+            logger.error('failed run, try one more time (let\'s get lucky)')
+            success = do_adapter_run(adapter_run_def)
+            if not success:
+                raise Exception('adapter run fail')
         result = parse_result_json(adapter_run_def)
         adapter_run_results.add(result)
 
