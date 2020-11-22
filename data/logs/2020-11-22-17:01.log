@@ -1,0 +1,48 @@
+2020-11-22 17:01:47,020 - root - INFO - get new workload/adapter info
+2020-11-22 17:01:47,032 - submodules - INFO - updating submodules
+2020-11-22 17:01:48,307 - submodules - INFO - found 0 untracked adapter versions
+2020-11-22 17:01:49,570 - root - INFO - new workloads:
+2020-11-22 17:01:49,570 - root - INFO - new adapter configs:
+2020-11-22 17:01:49,570 - root - INFO - --> version: v-2, params: 1000
+2020-11-22 17:01:49,570 - root - INFO - calculate new run definitions
+2020-11-22 17:01:49,571 - root - INFO - 12 new adapter run defs
+2020-11-22 17:01:49,571 - root - INFO - 0 new static run defs
+2020-11-22 17:01:49,571 - root - INFO - adapter run 0/12: hdd-read-buffered-inc-load-1000 with version: v-2, params: 1000
+2020-11-22 17:01:49,575 - root - INFO - compile adapter version v-2
+2020-11-22 17:01:53,532 - root - INFO - recompile benchmarks
+2020-11-22 17:01:53,915 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-inc_load 1000 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:11:36,983 - root - INFO - adapter run 1/12: ssd-write-synced-inc-load-2000 with version: v-2, params: 1000
+2020-11-22 17:11:36,989 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:11:36,989 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-inc_load 2000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:18:10,706 - root - INFO - adapter run 2/12: ssd-read-buffered-inc-background-load-1000 with version: v-2, params: 1000
+2020-11-22 17:18:10,736 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:18:10,737 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-inc_background_load 1000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:28:22,360 - root - INFO - adapter run 3/12: hdd-write-synced-inc-background-load-20 with version: v-2, params: 1000
+2020-11-22 17:28:22,383 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:28:22,383 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-inc_background_load 20 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:35:23,614 - root - INFO - adapter run 4/12: hdd-write-synced-inc-load-40 with version: v-2, params: 1000
+2020-11-22 17:35:23,636 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:35:23,636 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-inc_load 40 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:43:47,751 - root - INFO - adapter run 5/12: ssd-write-synced-static-load-2000 with version: v-2, params: 1000
+2020-11-22 17:43:47,778 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:43:47,778 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-static_load 2000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:48:51,626 - root - INFO - adapter run 6/12: ssd-read-buffered-inc-load-1000 with version: v-2, params: 1000
+2020-11-22 17:48:51,653 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:48:51,654 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-inc_load 1000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 17:58:10,658 - root - INFO - adapter run 7/12: hdd-read-buffered-static-load-1000 with version: v-2, params: 1000
+2020-11-22 17:58:10,680 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 17:58:10,681 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-static_load 1000 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 18:07:56,946 - root - INFO - adapter run 8/12: ssd-read-buffered-static-load-1000 with version: v-2, params: 1000
+2020-11-22 18:07:56,970 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 18:07:56,971 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-static_load 1000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 18:17:15,838 - root - INFO - adapter run 9/12: hdd-read-buffered-inc-background-load-200 with version: v-2, params: 1000
+2020-11-22 18:17:15,859 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 18:17:15,859 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_read_buffered adapt_pool-inc_background_load 200 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 18:25:00,574 - root - INFO - adapter run 10/12: ssd-write-synced-inc-background-load-1000 with version: v-2, params: 1000
+2020-11-22 18:25:00,601 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 18:25:00,602 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-inc_background_load 1000 /ssd2/dynamic-io-pool/out adaptive 1000
+2020-11-22 18:28:35,983 - root - INFO - adapter run 11/12: hdd-write-synced-static-load-40 with version: v-2, params: 1000
+2020-11-22 18:28:36,013 - root - INFO - already on branch for v-2, no compilation needed
+2020-11-22 18:28:36,014 - root - INFO - command: helper_scripts/benchmark_runners/dynamic-io-pool.sh worker_write_synced adapt_pool-static_load 40 /hdd/dynamic-io-pool/out adaptive 1000
+2020-11-22 18:37:42,244 - root - INFO - saving results
+2020-11-22 18:37:42,250 - root - INFO - generating report

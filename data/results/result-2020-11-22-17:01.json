@@ -1,0 +1,188 @@
+{
+    "dynamic-io-pool-benchmark-suite": {
+        "hdd": {
+            "write-synced-static-load": {
+                "40": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 181.72776400357998,
+                            "runtime_stddev": 25.960545223193673
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-inc-background-load": {
+                "200": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 154.37776945762664,
+                            "runtime_stddev": 0.4624133673120018
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "write-synced-inc-load": {
+                "40": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 167.75768267270166,
+                            "runtime_stddev": 17.479019581152357
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "write-synced-inc-background-load": {
+                "20": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 139.89630424483167,
+                            "runtime_stddev": 18.416075247779418
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-inc-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 193.80328550976165,
+                            "runtime_stddev": 1.1908748260630106
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-static-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 194.69361569136166,
+                            "runtime_stddev": 3.7156456246541825
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            }
+        },
+        "ssd": {
+            "write-synced-static-load": {
+                "2000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 100.99358054785834,
+                            "runtime_stddev": 1.4976195508602212
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-inc-background-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 203.22588804348166,
+                            "runtime_stddev": 0.6742989513778266
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "write-synced-inc-load": {
+                "2000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 130.90997047071332,
+                            "runtime_stddev": 1.2020094093541538
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "write-synced-inc-background-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 71.41534354210835,
+                            "runtime_stddev": 3.7020292481514696
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-inc-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 185.70780055421665,
+                            "runtime_stddev": 2.8345026329207985
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "read-buffered-static-load": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 185.51236746262666,
+                            "runtime_stddev": 2.0657215601385936
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            }
+        }
+    }
+}

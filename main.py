@@ -186,8 +186,8 @@ def main():
     update_known_workloads(new_workloads)
     logger.info("generating report")
     generate_report(f'data/results/all_results-{timestamp}.json')
-    logger.info("commit new data")
-    commit()
+    # logger.info("commit new data")
+    # commit()
 
 
 if __name__ == "__main__":
