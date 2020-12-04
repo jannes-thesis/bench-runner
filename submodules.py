@@ -38,6 +38,10 @@ def update_submodules():
             'git', '-C', 'submodules/scaling-adapter', 'checkout', '--track',
             f'origin/{branch}'
         ])
+    # update already tracked version branches
+    for branch in adapter_versions_tracked:
+        switch_to_adapter_version_branch(branch)
+        run(['git', '-C', 'submodules/scaling-adapter', 'reset', '--hard' f'origin/{branch}'])
     switch_to_adapter_master()
     run(['git', '-C', 'submodules/dynamic-io-pool', 'pull'],
         stdout=DEVNULL,
