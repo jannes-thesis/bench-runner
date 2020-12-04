@@ -106,6 +106,12 @@ def do_static_run(run_definition: StaticRunDefinition) -> bool:
     return True
 
 
+def get_ignored_adapter_versions() -> set[str]:
+    with open('configuration/exclude_adapters.txt') as f:
+        lines = f.readlines()
+    return {line.strip() for line in lines}
+
+
 def is_root() -> bool:
     output = run(['id', '-u'], capture_output=True, text=True).stdout
     return output.strip() == '0'
@@ -134,12 +140,13 @@ def main():
                                                    new_adapter_configs)
     static_runs = get_new_static_run_definitions(new_workloads)
 
-    # filtering dummy configs
+    # filter out dummy/ignored adapter versions
+    ignored_adapter_versions = get_ignored_adapter_versions()
     adapter_runs = [
         run for run in adapter_runs
-        if run.adapter_config.adapter_version.startswith("v-")
+        if run.adapter_config.adapter_version.startswith(
+            "v-") and run.adapter_config.adapter_version not in ignored_adapter_versions
     ]
-    # delete later
 
     logger.info(f"{len(adapter_runs)} new adapter run defs")
     logger.info(f"{len(static_runs)} new static run defs")
