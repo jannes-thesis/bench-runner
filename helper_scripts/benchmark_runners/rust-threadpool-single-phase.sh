@@ -1,6 +1,6 @@
 #!/bin/bash
-worker_function=$1
-benchmark_name=$2
+benchmark_name=$1
+worker_function=$2
 num_items=$3
 output_dir=$4
 fixed_or_adaptive=$5
