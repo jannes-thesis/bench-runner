@@ -9,6 +9,10 @@ from definitions import AdapterConfig
 logger = logging.getLogger(__name__)
 
 
+def run_silent(command_list: list[str]):
+    run(command_list, stdout=DEVNULL, stderr=DEVNULL)
+
+
 def update_submodules():
     # update adapter repo
     logger.info('updating submodules')
@@ -41,11 +45,9 @@ def update_submodules():
     # update already tracked version branches
     for branch in adapter_versions_tracked:
         switch_to_adapter_version_branch(branch)
-        run(['git', '-C', 'submodules/scaling-adapter', 'reset', '--hard' f'origin/{branch}'])
+        run_silent(['git', '-C', 'submodules/scaling-adapter', 'reset', '--hard', f'origin/{branch}'])
     switch_to_adapter_master()
-    run(['git', '-C', 'submodules/dynamic-io-pool', 'pull'],
-        stdout=DEVNULL,
-        stderr=DEVNULL)
+    run_silent(['git', '-C', 'submodules/dynamic-io-pool', 'pull'])
 
 
 def get_all_adapter_configs() -> set[AdapterConfig]:
@@ -73,17 +75,13 @@ def get_all_adapter_versions() -> set[str]:
 
 
 def switch_to_adapter_master():
-    run(['git', '-C', 'submodules/scaling-adapter', 'checkout', 'master'],
-        stdout=DEVNULL,
-        stderr=DEVNULL)
+    run_silent(['git', '-C', 'submodules/scaling-adapter', 'checkout', 'master'])
 
 
 def switch_to_adapter_version_branch(version_branch: str):
-    run([
+    run_silent([
         'git', '-C', 'submodules/scaling-adapter', 'checkout', version_branch
-    ],
-        stdout=DEVNULL,
-        stderr=DEVNULL)
+    ])
 
 
 def get_current_adapter_branch() -> str:

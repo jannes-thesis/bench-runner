@@ -5,7 +5,7 @@ num_items=$3
 output_dir=$4
 fixed_or_adaptive=$5
 pool_size_or_algo_params=$6
-param_str="${fixed_or_adaptive} ${pool_size_or_algo_params} ${benchmark_name} ${worker_function} ${num_items} ${output_dir}"
+param_str="single ${fixed_or_adaptive} ${pool_size_or_algo_params} ${benchmark_name} ${worker_function} ${num_items} ${output_dir}"
 
 hyperfine --min-runs 3 \
   --style basic \

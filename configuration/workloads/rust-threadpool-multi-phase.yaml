@@ -1,0 +1,15 @@
+workloads:
+  - name: lml-rw_100kb
+    adapter_params: [ lml-rw_100kb ]
+    no_adapter_params: [ lml-rw_100kb ]
+    parameter_combos_ssd:
+      - [ 300000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+  - name: lml-rw_buf_100ms
+    adapter_params: [ lml-rw_buf_100ms ]
+    no_adapter_params: [ lml-rw_buf_100ms ]
+    parameter_combos_ssd:
+      - [ 3000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
