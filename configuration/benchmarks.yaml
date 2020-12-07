@@ -1,25 +1,25 @@
 benchmarks:
-  - name: dynamic-io-pool-benchmark-suite
-    description: benchmark executable for the C threadpool implementation
-    runner_script: dynamic-io-pool.sh
-    parameters: [ number of items ]
-    disk_params:
-      hdd: /hdd/dynamic-io-pool/out
-      ssd: /ssd2/dynamic-io-pool/out
-    workloads_definition: dynamic-io-pool.yaml
+  #  - name: dynamic-io-pool-benchmark-suite
+  #    description: benchmark executable for the C threadpool implementation
+  #    runner_script: dynamic-io-pool.sh
+  #    parameters: [ number of items ]
+  #    disk_params:
+  #      hdd: /hdd/dynamic-io-pool/out
+  #      ssd: /ssd2/dynamic-io-pool/out
+  #    workloads_definition: dynamic-io-pool.yaml
   - name: rust-threadpool-single-phase
     description: benchmark executable for the Rust threadpool implementation
     runner_script: rust-threadpool-single-phase.sh
     parameters: [ number of items ]
     disk_params:
-      hdd: /hdd/scaling-adapter/files
-      ssd: /ssd2/scaling-adapter/files
+      hdd: /hdd/adapter-benchmark/files
+      ssd: /ssd2/adapter-benchmark/files
     workloads_definition: rust-threadpool-single-phase.yaml
 #  - name: rust-threadpool-multi-phase
 #    description: benchmark executable for the Rust threadpool implementation
 #    runner_script: rust-threadpool-multi-phase.sh
 #    parameters: [ number of items ]
 #    disk_params:
-#      hdd: /hdd/scaling-adapter/files
-#      ssd: /ssd2/scaling-adapter/files
+#      hdd: /hdd/adapter-benchmark/files
+#      ssd: /ssd2/adapter-benchmark/files
 #    workloads_definition: rust-threadpool-multi-phase.yaml
