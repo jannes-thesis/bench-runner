@@ -10,23 +10,23 @@ workloads:
     adapter_params: [ every100us, read_write_100kb_sync ]
     no_adapter_params: [ every100us, read_write_100kb_sync ]
     parameter_combos_ssd:
-      - [ 100000 ]
+      - [ 200000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
   - name: rw_4kb_100us
     adapter_params: [ every100us, read_write_4kb_sync ]
     no_adapter_params: [ every100us, read_write_4kb_sync ]
     parameter_combos_ssd:
-      - [ 100000 ]
+      - [ 200000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
   - name: rw_buf_1mb_50ms
     adapter_params: [ every50ms, read_write_buf_sync_1mb ]
     no_adapter_params: [ every50ms, read_write_buf_sync_1mb ]
     parameter_combos_ssd:
       - [ 1000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
   - name: rw_buf_1mb_100ms
     adapter_params: [ every100ms, read_write_buf_sync_1mb ]
     no_adapter_params: [ every100ms, read_write_buf_sync_1mb ]
@@ -40,4 +40,4 @@ workloads:
     parameter_combos_ssd:
       - [ 1000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
