@@ -170,7 +170,8 @@ def main():
             logger.error('failed run, try one more time (let\'s get lucky)')
             success = do_adapter_run(adapter_run_def)
             if not success:
-                raise Exception('adapter run fail')
+                logger.error('ADAPTER_RUN FAIL')
+                continue
         result = parse_result_json(adapter_run_def)
         adapter_run_results.add(result)
 
@@ -183,7 +184,8 @@ def main():
             f"static run {i}/{amount_static_runs}: {workload_description} with size {pool_size}")
         success = do_static_run(static_run_def)
         if not success:
-            raise Exception('adapter run fail')
+            logger.error('STATIC RUN FAIL')
+            continue
         result = parse_result_json(static_run_def)
         static_run_results.add(result)
 

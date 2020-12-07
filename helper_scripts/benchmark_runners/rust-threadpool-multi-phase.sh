@@ -2,7 +2,11 @@
 workload=$1
 num_items=$2
 output_dir=$3
-fixed_or_adaptive=$4
+if [ "$4" = "static" ]; then
+  fixed_or_adaptive="fixed"
+else
+  fixed_or_adaptive=$4
+fi
 pool_size_or_algo_params=$5
 param_str="multi ${fixed_or_adaptive} ${pool_size_or_algo_params} ${workload} ${num_items} ${output_dir}"
 
