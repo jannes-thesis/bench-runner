@@ -5,6 +5,7 @@ from subprocess import run
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
+from checkpointing import checkpoint_results_adaptive, checkpoint_results_static
 from post_run import (
     parse_result_json,
     save_new_results,
@@ -174,6 +175,7 @@ def main():
                 continue
         result = parse_result_json(adapter_run_def)
         adapter_run_results.add(result)
+        checkpoint_results_adaptive(adapter_run_results)
 
     static_run_results = set()
     amount_static_runs = len(static_runs)
@@ -188,6 +190,7 @@ def main():
             continue
         result = parse_result_json(static_run_def)
         static_run_results.add(result)
+        checkpoint_results_static(adapter_run_results)
 
     logger.info("saving results")
     save_new_results(adapter_run_results, static_run_results, timestamp)
