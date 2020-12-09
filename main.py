@@ -5,7 +5,7 @@ from subprocess import run
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
-from checkpointing import checkpoint_results_adaptive, checkpoint_results_static
+from checkpointing import checkpoint_results_adaptive, checkpoint_results_static, checkpoint_adapter_logs
 from post_run import (
     parse_result_json,
     parse_adapter_log,
@@ -181,6 +181,7 @@ def main():
         run_log = parse_adapter_log()
         if run_log is not None:
             adapter_run_logs[adapter_run_def] = run_log
+            checkpoint_adapter_logs(adapter_run_logs)
 
     static_run_results = set()
     amount_static_runs = len(static_runs)

@@ -1,9 +1,23 @@
 workloads:
-  - name: write-synced-static-load
-    adapter_params: [ worker_write_synced, adapt_pool-static_load ]
-    no_adapter_params: [ worker_write_synced, static_pool-static_load ]
+  # - name: write-synced-static-load
+  #   adapter_params: [ worker_write_synced, adapt_pool-static_load ]
+  #   no_adapter_params: [ worker_write_synced, static_pool-static_load ]
+  #   parameter_combos_ssd:
+  #     - [ 2 ]
+  #   parameter_combos_hdd:
+  #     - [ 1 ]
+  #   static_sizes: [ 1 ]
+  # - name: rw_4kb_100us
+  #   adapter_params: [ every100us, read_write_4kb_sync ]
+  #   no_adapter_params: [ every100us, read_write_4kb_sync ]
+  #   parameter_combos_ssd:
+  #     - [ 20000 ]
+  #   parameter_combos_hdd: [ ]
+  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
+  - name: lml-rw_100kb
+    adapter_params: [ lml-rw_100kb ]
+    no_adapter_params: [ lml-rw_100kb ]
     parameter_combos_ssd:
-      - [ 2 ]
-    parameter_combos_hdd:
-      - [ 1 ]
-    static_sizes: [ 1 ]
+      - [ 10000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
