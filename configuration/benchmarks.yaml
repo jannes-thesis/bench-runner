@@ -15,11 +15,11 @@ benchmarks:
       hdd: /hdd/adapter-benchmark/files
       ssd: /ssd2/adapter-benchmark/files
     workloads_definition: rust-threadpool-single-phase.yaml
-#  - name: rust-threadpool-multi-phase
-#    description: benchmark executable for the Rust threadpool implementation
-#    runner_script: rust-threadpool-multi-phase.sh
-#    parameters: [ number of items ]
-#    disk_params:
-#      hdd: /hdd/adapter-benchmark/files
-#      ssd: /ssd2/adapter-benchmark/files
-#    workloads_definition: rust-threadpool-multi-phase.yaml
+  - name: rust-threadpool-multi-phase
+    description: benchmark executable for the Rust threadpool implementation
+    runner_script: rust-threadpool-multi-phase.sh
+    parameters: [ number of items ]
+    disk_params:
+      hdd: /hdd/adapter-benchmark/files
+      ssd: /ssd2/adapter-benchmark/files
+    workloads_definition: rust-threadpool-multi-phase.yaml
