@@ -11,3 +11,11 @@ dynamic-io-pool-benchmark-suite-ssd-read-buffered-static-load-1000
 dynamic-io-pool-benchmark-suite-ssd-write-synced-inc-background-load-1000
 dynamic-io-pool-benchmark-suite-ssd-write-synced-inc-load-2000
 dynamic-io-pool-benchmark-suite-ssd-write-synced-static-load-2000
+rust-threadpool-multi-phase-ssd-lml-rw_100kb-300000
+rust-threadpool-multi-phase-ssd-lml-rw_buf_100ms-3000
+rust-threadpool-single-phase-ssd-rw_100kb_100us-200000
+rust-threadpool-single-phase-ssd-rw_100kb_1ms-100000
+rust-threadpool-single-phase-ssd-rw_4kb_100us-200000
+rust-threadpool-single-phase-ssd-rw_buf_1mb_100ms-1000
+rust-threadpool-single-phase-ssd-rw_buf_1mb_50ms-1000
+rust-threadpool-single-phase-ssd-rw_buf_2mb_100ms-1000
