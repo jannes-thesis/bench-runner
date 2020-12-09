@@ -15,3 +15,8 @@ hyperfine --min-runs 3 \
   --prepare 'sudo /bin/clear_page_cache.sh' \
   "submodules/scaling-adapter/target/release/threadpool ${param_str}" \
   --export-json "data/results/tmp_result.json"
+
+if [ "$fixed_or_adaptive" = "adaptive" ]; then
+  sudo /bin/clear_page_cache.sh
+  RUST_LOG=info "submodules/scaling-adapter/target/release/threadpool ${param_str}" 2> data/results/tmp_result.log
+fi

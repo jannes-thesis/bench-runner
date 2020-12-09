@@ -4,7 +4,8 @@ from datetime import datetime
 from subprocess import run, DEVNULL
 from typing import Union
 
-from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterConfig, Workload
+from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, AdapterConfig, Workload
+from adapter_log_parser import parse_result
 
 
 def parse_result_json(run_definition: Union[AdapterRunDefinition, StaticRunDefinition]) -> \
@@ -20,6 +21,16 @@ def parse_result_json(run_definition: Union[AdapterRunDefinition, StaticRunDefin
     else:
         return StaticResult(run_definition, avg_runtime_seconds,
                             runtime_stddev)
+
+
+def parse_adapter_log() -> Union[AdapterRunLog, None]:
+    log_path = 'data/results/tmp_result.log'
+    if os.path.exists(log_path):
+        result = parse_result(log_path)
+        os.remove(log_path)
+        return AdapterRunLog(result)
+    else:
+        return None
 
 
 def merge_results(results_a: dict, results_b: dict):
@@ -100,7 +111,8 @@ def save_new_results(adapter_results: set[AdapterResult],
                     res.adapter_run.workload.workload_parameters_str(
                     )]['with_adapter']
         target_list.append(result_entry)
-    static_results = sorted(static_results, key=lambda x: x.static_run.static_size)
+    static_results = sorted(static_results,
+                            key=lambda x: x.static_run.static_size)
     for res in static_results:
         result_entry = {
             'pool_size': res.static_run.static_size,

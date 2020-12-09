@@ -8,6 +8,7 @@ from definitions import AdapterRunDefinition, StaticRunDefinition
 from checkpointing import checkpoint_results_adaptive, checkpoint_results_static
 from post_run import (
     parse_result_json,
+    parse_adapter_log,
     save_new_results,
     update_known_adapter_configs,
     update_known_workloads,
@@ -157,6 +158,7 @@ def main():
         adapter_runs, key=lambda x: x.adapter_config.adapter_version)
 
     adapter_run_results = set()
+    adapter_run_logs = {}
     amount_adapter_runs = len(adapter_runs)
     for i, adapter_run_def in enumerate(adapter_runs):
         workload_description = adapter_run_def.workload.description()
@@ -176,6 +178,9 @@ def main():
         result = parse_result_json(adapter_run_def)
         adapter_run_results.add(result)
         checkpoint_results_adaptive(adapter_run_results)
+        run_log = parse_adapter_log()
+        if run_log is not None:
+            adapter_run_logs[adapter_run_def] = run_log
 
     static_run_results = set()
     amount_static_runs = len(static_runs)

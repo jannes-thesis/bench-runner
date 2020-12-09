@@ -83,6 +83,12 @@ class AdapterResult:
 
 
 @dataclass(frozen=True)
+class AdapterRunLog:
+    # metric -> timeseries (list of <timestamp, value> pairs) 
+    log: dict[str, list[tuple]]
+
+
+@dataclass(frozen=True)
 class StaticResult:
     static_run: StaticRunDefinition
     runtime_seconds: float
