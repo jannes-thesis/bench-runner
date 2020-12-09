@@ -190,7 +190,7 @@ def main():
             continue
         result = parse_result_json(static_run_def)
         static_run_results.add(result)
-        checkpoint_results_static(adapter_run_results)
+        checkpoint_results_static(static_run_results)
 
     logger.info("saving results")
     save_new_results(adapter_run_results, static_run_results, timestamp)

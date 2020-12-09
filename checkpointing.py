@@ -31,6 +31,7 @@ def checkpoint_results_static(static_results: set[StaticResult]):
                         'without_adapter': []
                     }
 
+    static_results = sorted(static_results, key=lambda x: x.static_run.static_size)
     for res in static_results:
         result_entry = {
             'pool_size': res.static_run.static_size,
