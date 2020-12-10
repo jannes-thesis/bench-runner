@@ -1,0 +1,222 @@
+{
+    "rust-threadpool-multi-phase": {
+        "hdd": {
+            "lml-rw_buf_100ms": {},
+            "lml-rw_100kb": {}
+        },
+        "ssd": {
+            "lml-rw_buf_100ms": {
+                "3000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 317.8593012262733,
+                            "runtime_stddev": 12.458803054881827
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 323.1172885611667,
+                            "runtime_stddev": 6.3137452216650685
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "lml-rw_100kb": {
+                "300000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 299.1525661899067,
+                            "runtime_stddev": 12.477952837583135
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 266.50762590864497,
+                            "runtime_stddev": 4.2402587234494495
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            }
+        }
+    },
+    "rust-threadpool-single-phase": {
+        "hdd": {
+            "rw_100kb_100us": {},
+            "rw_buf_1mb_100ms": {},
+            "rw_buf_1mb_50ms": {},
+            "rw_4kb_100us": {},
+            "rw_buf_2mb_100ms": {},
+            "rw_100kb_1ms": {}
+        },
+        "ssd": {
+            "rw_100kb_100us": {
+                "200000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 252.89931039926333,
+                            "runtime_stddev": 30.94600054668783
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 216.39976037875,
+                            "runtime_stddev": 30.38754332906029
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_1mb_100ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 102.87648103733333,
+                            "runtime_stddev": 2.308865742887765
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 108.22873441689835,
+                            "runtime_stddev": 7.199598744051343
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_1mb_50ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 54.87881420015166,
+                            "runtime_stddev": 4.872843908896968
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 56.306822835995,
+                            "runtime_stddev": 7.938190814947108
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_4kb_100us": {
+                "200000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 100.63876080217834,
+                            "runtime_stddev": 21.365360908584602
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 87.45803430306667,
+                            "runtime_stddev": 13.300297464615225
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_2mb_100ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 132.90081898744666,
+                            "runtime_stddev": 39.325555999969275
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 107.56270069695165,
+                            "runtime_stddev": 1.7470954473581015
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_100kb_1ms": {
+                "100000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 117.39134675089501,
+                            "runtime_stddev": 9.08057777486886
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 142.99125733464666,
+                            "runtime_stddev": 28.879080355034525
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            }
+        }
+    }
+}

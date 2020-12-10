@@ -4,5 +4,19 @@
         "param_values": [
             "1000"
         ]
+    },
+    {
+        "version": "v-2",
+        "param_values": [
+            "1000",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-2",
+        "param_values": [
+            "1000",
+            "0.9"
+        ]
     }
 ]
