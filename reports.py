@@ -213,7 +213,7 @@ def plot_adapter_timeseries(name: str, ax: Axes,
                             m2s: list[tuple[int, float]]):
     ax_q = ax.twinx()
     ax_m1 = ax.twinx()
-    ax_m2 = ax.twinx()
+    # ax_m2 = ax.twinx()
 
     ax_m1.spines["right"].set_position(("axes", 1.1))
     make_patch_spines_invisible(ax_m1)
@@ -235,11 +235,10 @@ def plot_adapter_timeseries(name: str, ax: Axes,
     ax_q.yaxis.label.set_color(p2.get_color())
     ax_m1.yaxis.label.set_color(p3.get_color())
 
-    tkw = dict(size=4, width=1.5)
-    ax.tick_params(axis='y', colors=p1.get_color(), **tkw)
-    ax_q.tick_params(axis='y', colors=p2.get_color(), **tkw)
-    ax_m1.tick_params(axis='y', colors=p3.get_color(), **tkw)
-    ax.tick_params(axis='x', **tkw)
+    ax.tick_params(axis='y', colors=p1.get_color())
+    ax_q.tick_params(axis='y', colors=p2.get_color())
+    ax_m1.tick_params(axis='y', colors=p3.get_color())
+    ax.tick_params(axis='x')
 
     lines = [p1, p2, p3]
     ax.legend(lines, [l.get_label() for l in lines])
