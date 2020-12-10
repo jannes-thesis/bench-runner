@@ -23,7 +23,7 @@ from pre_run import (
     get_new_adapter_run_definitions,
     get_new_static_run_definitions,
 )
-from reports import generate_report
+from reports import generate_report, generate_adapter_logs_report
 
 timestamp = datetime.today().strftime("%Y-%m-%d-%H:%M")
 log_filename = f"data/logs/{timestamp}.log"
@@ -204,9 +204,9 @@ def main():
     update_known_workloads(new_workloads)
     logger.info("generating report")
     generate_report(f'data/results/all_results-{timestamp}.json')
+    generate_adapter_logs_report('data/latest-checkpoint-adapter_logs.json', f'data/reports/all_results-{timestamp}')
     # logger.info("commit new data")
     # commit()
 
-
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()

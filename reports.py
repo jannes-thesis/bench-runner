@@ -67,15 +67,15 @@ def plot_results(results: list[tuple[tuple[StaticResult],
     for (static_results, adapter_results) in results:
         fig, (ax1, ax2) = pyplot.subplots(nrows=1, ncols=2, figsize=(20, 10))
         max_runtime = max({
-            res.runtime_seconds + res.std_deviation
-            for res in static_results
-        }.union({res.runtime_seconds
-                 for res in adapter_results}))
+                              res.runtime_seconds + res.std_deviation
+                              for res in static_results
+                          }.union({res.runtime_seconds
+                                   for res in adapter_results}))
         min_runtime = min({
-            res.runtime_seconds - res.std_deviation
-            for res in static_results
-        }.union({res.runtime_seconds
-                 for res in adapter_results}))
+                              res.runtime_seconds - res.std_deviation
+                              for res in static_results
+                          }.union({res.runtime_seconds
+                                   for res in adapter_results}))
         if len(static_results) > 0:
             plot_static(static_results, ax1, max_runtime, min_runtime)
         if len(adapter_results) > 0:
@@ -150,8 +150,8 @@ def load_results(
                     workload_matches = [
                         w for w in all_workloads
                         if w.benchmark_suite.name == bench and w.disk == disk
-                        and w.name == wload
-                        and w.workload_parameters_str() == w_params
+                           and w.name == wload
+                           and w.workload_parameters_str() == w_params
                     ]
                     # if workload from result json is ignored/commented out, skip it
                     if len(workload_matches) == 0:
@@ -196,3 +196,87 @@ def load_results(
     adapter_results_sorted = sorted(adapter_results_list,
                                     key=lambda x: sort_key_adaptive(x))
     return list(zip(static_results_sorted, adapter_results_sorted))
+
+
+def make_patch_spines_invisible(ax: Axes):
+    ax.set_frame_on(True)
+    ax.patch.set_visible(False)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+
+
+# https://matplotlib.org/3.1.1/gallery/ticks_and_spines/multiple_yaxis_with_spines.html
+def plot_adapter_timeseries(name: str, ax: Axes,
+                            psizes: list[tuple[int, int]],
+                            qsizes: list[tuple[int, int]],
+                            m1s: list[tuple[int, float]],
+                            m2s: list[tuple[int, float]]):
+    ax_q = ax.twinx()
+    ax_m1 = ax.twinx()
+    ax_m2 = ax.twinx()
+
+    ax_m1.spines["right"].set_position(("axes", 1.1))
+    make_patch_spines_invisible(ax_m1)
+    ax_m1.spines["right"].set_visible(True)
+
+    ts1, psizes = list(zip(*psizes))
+    ts2, qsizes = list(zip(*qsizes))
+    ts3, m1s = list(zip(*m1s))
+    ts4, m2s = list(zip(*m2s))
+    p1, = ax.plot(ts1, psizes, "b-", label="pool size")
+    p2, = ax_q.plot(ts2, qsizes, "r-", label="queue size")
+    p3, = ax_m1.plot(ts3, m1s, "g-", label="disk throughput")
+
+    ax.set_xlabel("time in millis")
+    ax.set_ylabel("pool size")
+    ax_q.set_ylabel("queue size")
+    ax_m1.set_ylabel("disk throughput bytes/ms")
+    ax.yaxis.label.set_color(p1.get_color())
+    ax_q.yaxis.label.set_color(p2.get_color())
+    ax_m1.yaxis.label.set_color(p3.get_color())
+
+    tkw = dict(size=4, width=1.5)
+    ax.tick_params(axis='y', colors=p1.get_color(), **tkw)
+    ax_q.tick_params(axis='y', colors=p2.get_color(), **tkw)
+    ax_m1.tick_params(axis='y', colors=p3.get_color(), **tkw)
+    ax.tick_params(axis='x', **tkw)
+
+    lines = [p1, p2, p3]
+    ax.legend(lines, [l.get_label() for l in lines])
+
+
+def generate_adapter_logs_report(json_path: str, report_dir: str):
+    report_figures_dir = f'{report_dir}/figures'
+    with open(json_path) as f:
+        logs_json = json.load(f)
+    md_str = ''
+    for b in logs_json.keys():
+        md_str += f'# {b}\n'
+        for d in logs_json[b].keys():
+            md_str += f'## {d}\n'
+            for w in logs_json[b][d].keys():
+                for p in logs_json[b][d][w].keys():
+                    md_str += f'### {w}-{p}\n'
+                    for a in logs_json[b][d][w][p].keys():
+                        md_str += f'#### {a}\n'
+                        adapter_entry = logs_json[b][d][w][p][a]
+                        psizes = adapter_entry['pool_size']
+                        qsizes = adapter_entry['queue_size']
+                        m1s = adapter_entry['metric_one']
+                        m2s = adapter_entry['metric_two']
+                        fig, ax = pyplot.subplots(nrows=1, ncols=1, figsize=(20, 10))
+                        fig.subplots_adjust(right=0.75)
+                        plot_adapter_timeseries(a, ax, psizes, qsizes, m1s, m2s)
+                        fig_id = f'{b}-{d}-{w}-{p}-{a}'
+                        fig_filename = f'{report_figures_dir}/{fig_id}.png'
+                        if os.path.exists(fig_filename):
+                            os.remove(fig_filename)
+                        fig.savefig(fig_filename)
+                        pyplot.close(fig)
+                        md_str += f'![{fig_id} image](figures/{fig_id}.png){{ width=100% }}\n\n'
+    with open(f'{report_dir}/report-adapter.md', 'w') as f:
+        f.write(md_str)
+    pandoc_command = (f'cd {report_dir} && '
+                      'pandoc report-adapter.md --toc -t html -o report-adapter.pdf; '
+                      'cd -')
+    run(pandoc_command, shell=True)

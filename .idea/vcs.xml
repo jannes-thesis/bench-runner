@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/dynamic-io-pool" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/rocks-io-benchmark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/scaling-adapter" vcs="Git" />
   </component>
 </project>
