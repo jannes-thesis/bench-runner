@@ -260,6 +260,7 @@ def generate_adapter_logs_report(json_path: str, report_dir: str):
                         md_str += f'#### {a}\n'
                         adapter_entry = logs_json[b][d][w][p][a]
                         psizes = adapter_entry['pool_size']
+                        avg_psize = sum(psizes) / len(psizes)
                         qsizes = adapter_entry['queue_size']
                         m1s = adapter_entry['metric_one']
                         m2s = adapter_entry['metric_two']
@@ -272,7 +273,8 @@ def generate_adapter_logs_report(json_path: str, report_dir: str):
                             os.remove(fig_filename)
                         fig.savefig(fig_filename)
                         pyplot.close(fig)
-                        md_str += f'![{fig_id} image](figures/{fig_id}.png){{ width=100% }}\n\n'
+                        md_str += f'![{fig_id} image](figures/{fig_id}.png){{ width=100% }}\n'
+                        md_str += f'avg pool size: {avg_psize}\n\n'
     with open(f'{report_dir}/report-adapter.md', 'w') as f:
         f.write(md_str)
     pandoc_command = (f'cd {report_dir} && '

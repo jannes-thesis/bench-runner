@@ -2,6 +2,7 @@ import dataclasses
 import logging
 from datetime import datetime
 from subprocess import run
+import shutil
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
@@ -205,6 +206,7 @@ def main():
     logger.info("generating report")
     generate_report(f'data/results/all_results-{timestamp}.json')
     generate_adapter_logs_report('data/latest-checkpoint-adapter_logs.json', f'data/reports/all_results-{timestamp}')
+    shutil.move('data/latest-checkpoint-adapter_logs.json', f'data/results/adapter-log-{timestamp}')
     # logger.info("commit new data")
     # commit()
 
