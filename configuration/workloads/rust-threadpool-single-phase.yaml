@@ -5,7 +5,7 @@ workloads:
     parameter_combos_ssd:
       - [ 100000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
   - name: rw_100kb_100us
     adapter_params: [ every100us, read_write_100kb_sync ]
     no_adapter_params: [ every100us, read_write_100kb_sync ]
@@ -33,7 +33,7 @@ workloads:
     parameter_combos_ssd:
       - [ 1000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
   - name: rw_buf_2mb_100ms
     adapter_params: [ every100ms, read_write_buf_sync_2mb ]
     no_adapter_params: [ every100ms, read_write_buf_sync_2mb ]
