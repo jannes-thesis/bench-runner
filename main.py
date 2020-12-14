@@ -205,10 +205,13 @@ def main():
     update_known_workloads(new_workloads)
     logger.info("generating report")
     generate_report(f'data/results/all_results-{timestamp}.json')
-    generate_adapter_logs_report('data/latest-checkpoint-adapter_logs.json', f'data/reports/all_results-{timestamp}')
-    shutil.move('data/latest-checkpoint-adapter_logs.json', f'data/results/adapter-log-{timestamp}')
+    generate_adapter_logs_report(
+        'data/latest-checkpoint-adapter_logs.json', f'data/reports/all_results-{timestamp}')
+    shutil.move('data/latest-checkpoint-adapter_logs.json',
+                f'data/results/adapter-log-{timestamp}')
     # logger.info("commit new data")
     # commit()
 
-    if __name__ == "__main__":
-        main()
+
+if __name__ == "__main__":
+    main()
