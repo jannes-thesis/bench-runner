@@ -210,17 +210,14 @@ def make_patch_spines_invisible(ax: Axes):
 
 
 # https://matplotlib.org/3.1.1/gallery/ticks_and_spines/multiple_yaxis_with_spines.html
-def plot_adapter_timeseries(name: str, ax1: Axes, ax2: Axes,
+def plot_adapter_timeseries(name: str, axq: Axes, axm1: Axes, axm2: Axes,
                             psizes: list[tuple[int, int]],
                             qsizes: list[tuple[int, int]],
                             m1s: list[tuple[int, float]],
                             m2s: list[tuple[int, float]]):
-    ax_q = ax1.twinx()
-    ax_m1 = ax2.twinx()
-    ax_m2 = ax2.twinx()
-    ax_m2.spines["right"].set_position(("axes", 1.1))
-    make_patch_spines_invisible(ax_m2)
-    ax_m2.spines["right"].set_visible(True)
+    ax_q = axq.twinx()
+    ax_m1 = axm1.twinx()
+    ax_m2 = axm2.twinx()
 
     ts1, psizes = list(zip(*psizes))
     ts2, qsizes = list(zip(*qsizes))
@@ -228,40 +225,52 @@ def plot_adapter_timeseries(name: str, ax1: Axes, ax2: Axes,
     ts4, m2s = list(zip(*m2s))
 
     # Plot 1
-    p1a, = ax1.plot(ts1, psizes, "b-", label="pool size")
+    p1a, = axq.plot(ts1, psizes, "b-", label="pool size")
     p1b, = ax_q.plot(ts2, qsizes, "r-", label="queue size")
 
-    ax1.set_xlabel("time in millis")
-    ax1.set_ylabel("pool size")
+    axq.set_xlabel("time in millis")
+    axq.set_ylabel("pool size")
     ax_q.set_ylabel("queue size")
-    ax1.yaxis.label.set_color(p1a.get_color())
+    axq.yaxis.label.set_color(p1a.get_color())
     ax_q.yaxis.label.set_color(p1b.get_color())
 
-    ax1.tick_params(axis='y', colors=p1a.get_color())
+    axq.tick_params(axis='y', colors=p1a.get_color())
     ax_q.tick_params(axis='y', colors=p1b.get_color())
-    ax1.tick_params(axis='x')
+    axq.tick_params(axis='x')
     lines = [p1a, p1b]
-    ax1.legend(lines, [l.get_label() for l in lines])
+    axq.legend(lines, [l.get_label() for l in lines])
 
     # Plot 2
-    p2a, = ax2.plot(ts1, psizes, "b-", label="pool size")
-    p2b, = ax_m1.plot(ts3, m1s, "g-", label="disk throughput")
-    p2c, = ax_m2.plot(ts4, m2s, "r-", label="secondary")
+    p2a, = axm1.plot(ts1, psizes, "b-", label="pool size")
+    p2b, = ax_m1.plot(ts3, m1s, "r-", label="disk throughput")
 
-    ax2.set_xlabel("time in millis")
-    ax2.set_ylabel("pool size")
+    axm1.set_xlabel("time in millis")
+    axm1.set_ylabel("pool size")
     ax_m1.set_ylabel("disk throughput bytes/ms")
-    ax_m2.set_ylabel("secondary")
-    ax2.yaxis.label.set_color(p2a.get_color())
+    axm1.yaxis.label.set_color(p2a.get_color())
     ax_m1.yaxis.label.set_color(p2b.get_color())
-    ax_m2.yaxis.label.set_color(p2c.get_color())
 
-    ax2.tick_params(axis='y', colors=p2a.get_color())
+    axm1.tick_params(axis='y', colors=p2a.get_color())
     ax_m1.tick_params(axis='y', colors=p2b.get_color())
-    ax_m2.tick_params(axis='y', colors=p2c.get_color())
-    ax2.tick_params(axis='x')
-    lines = [p2a, p2b, p2c]
-    ax1.legend(lines, [l.get_label() for l in lines])
+    axm1.tick_params(axis='x')
+    lines = [p2a, p2b]
+    axm1.legend(lines, [l.get_label() for l in lines])
+
+    # Plot 3
+    p3a, = axm2.plot(ts1, psizes, "b-", label="pool size")
+    p3b, = ax_m2.plot(ts4, m2s, "r-", label="metric two")
+
+    axm2.set_xlabel("time in millis")
+    axm2.set_ylabel("pool size")
+    ax_m2.set_ylabel("metric two")
+    axm2.yaxis.label.set_color(p3a.get_color())
+    ax_m2.yaxis.label.set_color(p3b.get_color())
+
+    axm2.tick_params(axis='y', colors=p3a.get_color())
+    ax_m2.tick_params(axis='y', colors=p3b.get_color())
+    axm2.tick_params(axis='x')
+    lines = [p3a, p3b]
+    axm2.legend(lines, [l.get_label() for l in lines])
 
 
 def generate_adapter_logs_report(json_path: str, report_dir: str):
@@ -284,9 +293,9 @@ def generate_adapter_logs_report(json_path: str, report_dir: str):
                         qsizes = adapter_entry['queue_size']
                         m1s = adapter_entry['metric_one']
                         m2s = adapter_entry['metric_two']
-                        fig, (ax1, ax2) = pyplot.subplots(nrows=2, ncols=1, figsize=(20, 20))
+                        fig, (ax1, ax2, ax3) = pyplot.subplots(nrows=3, ncols=1, figsize=(20, 30))
                         fig.subplots_adjust(right=0.75)
-                        plot_adapter_timeseries(a, ax1, ax2, psizes, qsizes, m1s, m2s)
+                        plot_adapter_timeseries(a, ax1, ax2, ax3, psizes, qsizes, m1s, m2s)
                         fig_id = f'{b}-{d}-{w}-{p}-{a}'
                         fig_filename = f'{report_figures_dir}/{fig_id}.png'
                         if os.path.exists(fig_filename):
