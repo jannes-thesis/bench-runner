@@ -9,22 +9,31 @@
                 "3000": {
                     "with_adapter": [
                         {
-                            "adapter_version": "v-2",
+                            "adapter_version": "v-3",
                             "adapter_params": [
                                 "1000",
                                 "0.9"
                             ],
-                            "avg_runtime_seconds": 317.8593012262733,
-                            "runtime_stddev": 12.458803054881827
+                            "avg_runtime_seconds": 387.8267124609233,
+                            "runtime_stddev": 14.368164121750528
                         },
                         {
-                            "adapter_version": "v-2",
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 331.0139189105267,
+                            "runtime_stddev": 28.205116608973
+                        },
+                        {
+                            "adapter_version": "v-3",
                             "adapter_params": [
                                 "1000",
                                 "0.95"
                             ],
-                            "avg_runtime_seconds": 323.1172885611667,
-                            "runtime_stddev": 6.3137452216650685
+                            "avg_runtime_seconds": 323.75450667491003,
+                            "runtime_stddev": 8.509810971803061
                         }
                     ],
                     "without_adapter": []
@@ -34,22 +43,31 @@
                 "300000": {
                     "with_adapter": [
                         {
-                            "adapter_version": "v-2",
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 322.9540169591883,
+                            "runtime_stddev": 36.74962382120303
+                        },
+                        {
+                            "adapter_version": "v-3",
                             "adapter_params": [
                                 "1000",
                                 "0.95"
                             ],
-                            "avg_runtime_seconds": 299.1525661899067,
-                            "runtime_stddev": 12.477952837583135
+                            "avg_runtime_seconds": 298.41712055215504,
+                            "runtime_stddev": 15.939707045295092
                         },
                         {
-                            "adapter_version": "v-2",
+                            "adapter_version": "v-3",
                             "adapter_params": [
                                 "1000",
                                 "0.9"
                             ],
-                            "avg_runtime_seconds": 266.50762590864497,
-                            "runtime_stddev": 4.2402587234494495
+                            "avg_runtime_seconds": 332.12505834171003,
+                            "runtime_stddev": 18.90888331942659
                         }
                     ],
                     "without_adapter": []
@@ -59,139 +77,14 @@
     },
     "rust-threadpool-single-phase": {
         "hdd": {
+            "rw_100kb_1ms": {},
             "rw_100kb_100us": {},
-            "rw_buf_1mb_100ms": {},
-            "rw_buf_1mb_50ms": {},
-            "rw_4kb_100us": {},
             "rw_buf_2mb_100ms": {},
-            "rw_100kb_1ms": {}
+            "rw_4kb_100us": {},
+            "rw_buf_1mb_50ms": {},
+            "rw_buf_1mb_100ms": {}
         },
         "ssd": {
-            "rw_100kb_100us": {
-                "200000": {
-                    "with_adapter": [
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.95"
-                            ],
-                            "avg_runtime_seconds": 252.89931039926333,
-                            "runtime_stddev": 30.94600054668783
-                        },
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.9"
-                            ],
-                            "avg_runtime_seconds": 216.39976037875,
-                            "runtime_stddev": 30.38754332906029
-                        }
-                    ],
-                    "without_adapter": []
-                }
-            },
-            "rw_buf_1mb_100ms": {
-                "1000": {
-                    "with_adapter": [
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.95"
-                            ],
-                            "avg_runtime_seconds": 102.87648103733333,
-                            "runtime_stddev": 2.308865742887765
-                        },
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.9"
-                            ],
-                            "avg_runtime_seconds": 108.22873441689835,
-                            "runtime_stddev": 7.199598744051343
-                        }
-                    ],
-                    "without_adapter": []
-                }
-            },
-            "rw_buf_1mb_50ms": {
-                "1000": {
-                    "with_adapter": [
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.9"
-                            ],
-                            "avg_runtime_seconds": 54.87881420015166,
-                            "runtime_stddev": 4.872843908896968
-                        },
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.95"
-                            ],
-                            "avg_runtime_seconds": 56.306822835995,
-                            "runtime_stddev": 7.938190814947108
-                        }
-                    ],
-                    "without_adapter": []
-                }
-            },
-            "rw_4kb_100us": {
-                "200000": {
-                    "with_adapter": [
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.9"
-                            ],
-                            "avg_runtime_seconds": 100.63876080217834,
-                            "runtime_stddev": 21.365360908584602
-                        },
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.95"
-                            ],
-                            "avg_runtime_seconds": 87.45803430306667,
-                            "runtime_stddev": 13.300297464615225
-                        }
-                    ],
-                    "without_adapter": []
-                }
-            },
-            "rw_buf_2mb_100ms": {
-                "1000": {
-                    "with_adapter": [
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.9"
-                            ],
-                            "avg_runtime_seconds": 132.90081898744666,
-                            "runtime_stddev": 39.325555999969275
-                        },
-                        {
-                            "adapter_version": "v-2",
-                            "adapter_params": [
-                                "1000",
-                                "0.95"
-                            ],
-                            "avg_runtime_seconds": 107.56270069695165,
-                            "runtime_stddev": 1.7470954473581015
-                        }
-                    ],
-                    "without_adapter": []
-                }
-            },
             "rw_100kb_1ms": {
                 "100000": {
                     "with_adapter": [
@@ -201,8 +94,26 @@
                                 "1000",
                                 "0.95"
                             ],
-                            "avg_runtime_seconds": 117.39134675089501,
-                            "runtime_stddev": 9.08057777486886
+                            "avg_runtime_seconds": 124.12339810872668,
+                            "runtime_stddev": 9.6199808684896
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 157.09492302433165,
+                            "runtime_stddev": 70.0439383865322
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 135.29918651957666,
+                            "runtime_stddev": 16.298418034247597
                         },
                         {
                             "adapter_version": "v-2",
@@ -210,8 +121,205 @@
                                 "1000",
                                 "0.9"
                             ],
-                            "avg_runtime_seconds": 142.99125733464666,
-                            "runtime_stddev": 28.879080355034525
+                            "avg_runtime_seconds": 133.48864550903667,
+                            "runtime_stddev": 21.080788749471864
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 447.5209182189133,
+                            "runtime_stddev": 234.14477744960428
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_100kb_100us": {
+                "200000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 287.17408972773836,
+                            "runtime_stddev": 16.691864013992976
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 233.7060247943667,
+                            "runtime_stddev": 35.05554559327869
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 286.13575790515165,
+                            "runtime_stddev": 12.100920291794939
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_2mb_100ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 139.86627944636498,
+                            "runtime_stddev": 19.38962899166702
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 117.59716275555333,
+                            "runtime_stddev": 10.82453345093061
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 117.03270999600166,
+                            "runtime_stddev": 10.22345105503154
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_4kb_100us": {
+                "200000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 71.67892969198168,
+                            "runtime_stddev": 5.990101765766267
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 113.66819547317668,
+                            "runtime_stddev": 30.86610910678438
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 103.39777560738499,
+                            "runtime_stddev": 19.168083494659893
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_1mb_50ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 71.12947343750334,
+                            "runtime_stddev": 14.470434547867882
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 51.74204946535834,
+                            "runtime_stddev": 0.009865109470122426
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 68.15342130945001,
+                            "runtime_stddev": 11.63765395590348
+                        }
+                    ],
+                    "without_adapter": []
+                }
+            },
+            "rw_buf_1mb_100ms": {
+                "1000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 105.21285514431501,
+                            "runtime_stddev": 3.206339076593149
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 103.14446303004333,
+                            "runtime_stddev": 2.8497245304753682
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 101.49901542646334,
+                            "runtime_stddev": 0.0441882471361064
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 101.51980021127501,
+                            "runtime_stddev": 0.02201557607654118
+                        },
+                        {
+                            "adapter_version": "v-3",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 102.01276155757834,
+                            "runtime_stddev": 0.824526941242085
                         }
                     ],
                     "without_adapter": []

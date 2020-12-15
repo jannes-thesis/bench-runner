@@ -88,7 +88,9 @@ def plot_results(results: list[tuple[tuple[StaticResult],
 def plot_static(results: list[StaticResult], ax: Axes, ylim_top: float,
                 ylim_bottom: float):
     assert len({res.static_run.workload for res in results}) == 1
-    assert len({res.static_run.static_size for res in results}) == len(results)
+    if not len({res.static_run.static_size for res in results}) == len(results):
+        print([(res.static_run.static_size, res.static_run.workload.description()) for res in results])
+        assert False
     xs = []
     ys = []
     stddvs = []
@@ -108,11 +110,13 @@ def plot_static(results: list[StaticResult], ax: Axes, ylim_top: float,
 def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float,
                   ylim_bottom: float):
     assert len({res.adapter_run.workload for res in results}) == 1
-    assert len({res.adapter_run.adapter_config
-                for res in results}) == len(results)
+    if not len({res.adapter_run.adapter_config for res in results}) == len(results):
+        print([res.adapter_run.adapter_config for res in results])
+        assert False
     xs = []
     ys = []
     stddvs = []
+    results = sorted(results, key=lambda x: x.adapter_run.adapter_config.short_description())
     for res in results:
         xs.append(res.adapter_run.adapter_config.short_description())
         ys.append(res.runtime_seconds)
@@ -260,7 +264,7 @@ def generate_adapter_logs_report(json_path: str, report_dir: str):
                         md_str += f'#### {a}\n'
                         adapter_entry = logs_json[b][d][w][p][a]
                         psizes = adapter_entry['pool_size']
-                        avg_psize = sum(psizes) / len(psizes)
+                        avg_psize = sum([tpl[1] for tpl in psizes]) / len(psizes)
                         qsizes = adapter_entry['queue_size']
                         m1s = adapter_entry['metric_one']
                         m2s = adapter_entry['metric_two']
