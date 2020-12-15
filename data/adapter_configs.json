@@ -1,43 +1,8 @@
 [
-    {
-        "version": "v-1",
-        "param_values": [
-            "1000"
-        ]
-    },
-    {
-        "version": "v-2",
-        "param_values": [
-            "1000",
-            "0.95"
-        ]
-    },
-    {
-        "version": "v-2",
-        "param_values": [
-            "1000",
-            "0.9"
-        ]
-    },
-    {
-        "version": "v-3",
-        "param_values": [
-            "1000",
-            "0.95"
-        ]
-    },
-    {
-        "version": "v-3",
-        "param_values": [
-            "1000",
-            "0.9"
-        ]
-    },
-    {
-        "version": "v-3",
-        "param_values": [
-            "2000",
-            "0.95"
-        ]
-    }
+  {
+    "version": "v-1",
+    "param_values": [
+      "1000"
+    ]
+  }
 ]
