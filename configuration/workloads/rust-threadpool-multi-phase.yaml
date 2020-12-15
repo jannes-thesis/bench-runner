@@ -13,3 +13,10 @@ workloads:
       - [ 3000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+  - name: rw_buf_1mb_100ms_bgload_25-75
+    adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
+    no_adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
+    parameter_combos_ssd:
+      - [ 800 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
