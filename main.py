@@ -6,7 +6,7 @@ import shutil
 
 import submodules
 from definitions import AdapterRunDefinition, StaticRunDefinition
-from checkpointing import checkpoint_results_adaptive, checkpoint_results_static, checkpoint_adapter_logs
+from checkpointing import checkpoint_results_adaptive, checkpoint_results_static, checkpoint_adapter_logs, is_checkpointed
 from post_run import (
     parse_result_json,
     parse_adapter_log,
@@ -151,8 +151,15 @@ def main():
             "v-") and run.adapter_config.adapter_version not in ignored_adapter_versions
     ]
 
-    logger.info(f"{len(adapter_runs)} new adapter run defs")
-    logger.info(f"{len(static_runs)} new static run defs")
+    n_adapter_runs = len(adapter_runs)
+    n_static_runs = len(static_runs)
+    # filter already checkpointed results
+    adapter_runs = [run for run in adapter_runs if not is_checkpointed(run)]
+    static_runs = [run for run in static_runs if not is_checkpointed(run)]
+    n_adapter_checkpointed = n_adapter_runs - len(adapter_runs) 
+    n_static_checkpointed = n_static_runs - len(static_runs) 
+    logger.info(f"adapter run defs: {n_adapter_runs} new - {n_adapter_checkpointed} checkpointed")
+    logger.info(f"static run defs: {n_static_runs} new - {n_static_checkpointed} checkpointed")
 
     # sort adapter runs by version to minimize compilations
     adapter_runs = sorted(

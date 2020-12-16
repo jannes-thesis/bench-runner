@@ -1,6 +1,40 @@
 import json
+from typing import Union
 
 from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, AdapterConfig, Workload
+
+
+def is_checkpointed(
+        run_def: Union[StaticRunDefinition, AdapterRunDefinition]) -> bool:
+    if type(run_def) is StaticRunDefinition:
+
+        def is_present(workload_entry: dict) -> bool:
+            return len(workload_entry['without_adapter']) != 0
+
+        with open(f'data/latest-checkpoint-static.json') as f:
+            checkpoints = json.load(f)
+    elif type(run_def) is AdapterRunDefinition:
+
+        def is_present(workload_entry: dict) -> bool:
+            matches = [
+                entry for entry in workload_entry['with_adapter']
+                if entry['adapter_version'] == run_def.adapter_config.
+                adapter_version and tuple(entry['adapter_params']) ==
+                run_def.adapter_config.adapter_parameters
+            ]
+            return len(matches) > 0
+
+        with open(f'data/latest-checkpoint-adaptive.json') as f:
+            checkpoints = json.load(f)
+    else:
+        raise Exception('wrong type for run def')
+    workload = run_def.workload
+    try:
+        entry = checkpoints[workload.benchmark_suite.name][workload.disk][
+            workload.name][workload.workload_parameters_str()]
+        return is_present(entry)
+    except KeyError:
+        return False
 
 
 def checkpoint_results_static(static_results: set[StaticResult]):
