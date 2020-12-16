@@ -1,4 +1,6 @@
 import json
+import os
+import shutil
 from typing import Union
 
 from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, \
@@ -82,8 +84,10 @@ def checkpoint_results_static(static_results: set[StaticResult]):
             )]['without_adapter']
         target_list.append(result_entry)
 
-    with open(f'data/latest-checkpoint-static.json', 'w') as f:
+    with open('data/latest-checkpoint-static-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
+    os.remove('data/latest-checkpoint-static.json')
+    shutil.move('data/latest-checkpoint-static-2.json', 'data/latest-checkpoint-static.json')
 
 
 def checkpoint_results_adaptive(adapter_results: set[AdapterResult]):
@@ -132,8 +136,10 @@ def checkpoint_results_adaptive(adapter_results: set[AdapterResult]):
             )]['with_adapter']
         target_list.append(result_entry)
 
-    with open(f'data/latest-checkpoint-adaptive.json', 'w') as f:
+    with open('data/latest-checkpoint-adaptive-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
+    os.remove('data/latest-checkpoint-adaptive.json')
+    shutil.move('data/latest-checkpoint-adaptive-2.json', 'data/latest-checkpoint-adaptive.json')
 
 
 def checkpoint_adapter_logs(logs_map: dict[AdapterRunDefinition,
@@ -169,5 +175,7 @@ def checkpoint_adapter_logs(logs_map: dict[AdapterRunDefinition,
             run.workload.name][run.workload.workload_parameters_str()][
             run.adapter_config.short_description()] = logs
 
-    with open(f'data/latest-checkpoint-adapter_logs.json', 'w') as f:
+    with open('data/latest-checkpoint-adapter_logs-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
+    os.remove('data/latest-checkpoint-adapter_logs.json.json')
+    shutil.move('data/latest-checkpoint-adapter_logs-2.json', 'data/latest-checkpoint-adapter_logs.json')
