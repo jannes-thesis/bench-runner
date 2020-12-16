@@ -14,6 +14,8 @@ def is_checkpointed(
         def is_present(workload_entry: dict) -> bool:
             return len(workload_entry['without_adapter']) != 0
 
+        if not os.path.exists('data/latest-checkpoint-static.json'):
+            return False
         with open(f'data/latest-checkpoint-static.json') as f:
             checkpoints = json.load(f)
     elif type(run_def) is AdapterRunDefinition:
@@ -27,6 +29,8 @@ def is_checkpointed(
             ]
             return len(matches) > 0
 
+        if not os.path.exists('data/latest-checkpoint-adaptive.json'):
+            return False
         with open(f'data/latest-checkpoint-adaptive.json') as f:
             checkpoints = json.load(f)
     else:
