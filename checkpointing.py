@@ -90,7 +90,9 @@ def checkpoint_results_static(static_results: set[StaticResult]):
 
     with open('data/latest-checkpoint-static-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
-    os.remove('data/latest-checkpoint-static.json')
+
+    if os.path.exists('data/latest-checkpoint-static.json'):
+        os.remove('data/latest-checkpoint-static.json')
     shutil.move('data/latest-checkpoint-static-2.json', 'data/latest-checkpoint-static.json')
 
 
@@ -142,7 +144,8 @@ def checkpoint_results_adaptive(adapter_results: set[AdapterResult]):
 
     with open('data/latest-checkpoint-adaptive-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
-    os.remove('data/latest-checkpoint-adaptive.json')
+    if os.path.exists('data/latest-checkpoint-adaptive.json'):
+        os.remove('data/latest-checkpoint-adaptive.json')
     shutil.move('data/latest-checkpoint-adaptive-2.json', 'data/latest-checkpoint-adaptive.json')
 
 
@@ -181,5 +184,6 @@ def checkpoint_adapter_logs(logs_map: dict[AdapterRunDefinition,
 
     with open('data/latest-checkpoint-adapter_logs-2.json', 'w') as f:
         json.dump(results_dict, f, indent=4)
-    os.remove('data/latest-checkpoint-adapter_logs.json.json')
+    if os.path.exists('data/latest-checkpoint-adapter_logs.json.json'):
+        os.remove('data/latest-checkpoint-adapter_logs.json.json')
     shutil.move('data/latest-checkpoint-adapter_logs-2.json', 'data/latest-checkpoint-adapter_logs.json')
