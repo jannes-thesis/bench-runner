@@ -1,7 +1,8 @@
 import json
 from typing import Union
 
-from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, AdapterConfig, Workload
+from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, \
+    AdapterConfig, Workload
 
 
 def is_checkpointed(
@@ -19,8 +20,8 @@ def is_checkpointed(
             matches = [
                 entry for entry in workload_entry['with_adapter']
                 if entry['adapter_version'] == run_def.adapter_config.
-                adapter_version and tuple(entry['adapter_params']) ==
-                run_def.adapter_config.adapter_parameters
+                    adapter_version and tuple(entry['adapter_params']) ==
+                   run_def.adapter_config.adapter_parameters
             ]
             return len(matches) > 0
 
@@ -62,9 +63,9 @@ def checkpoint_results_static(static_results: set[StaticResult]):
                                                 if w.disk == disk}:
                 results_dict[
                     benchmark.name][disk][workload_name][params_str] = {
-                        'with_adapter': [],
-                        'without_adapter': []
-                    }
+                    'with_adapter': [],
+                    'without_adapter': []
+                }
 
     static_results = sorted(static_results,
                             key=lambda x: x.static_run.static_size)
@@ -76,9 +77,9 @@ def checkpoint_results_static(static_results: set[StaticResult]):
         }
         target_list = results_dict[
             res.static_run.workload.benchmark_suite.name][
-                res.static_run.workload.disk][res.static_run.workload.name][
-                    res.static_run.workload.workload_parameters_str(
-                    )]['without_adapter']
+            res.static_run.workload.disk][res.static_run.workload.name][
+            res.static_run.workload.workload_parameters_str(
+            )]['without_adapter']
         target_list.append(result_entry)
 
     with open(f'data/latest-checkpoint-static.json', 'w') as f:
@@ -110,23 +111,25 @@ def checkpoint_results_adaptive(adapter_results: set[AdapterResult]):
                                                 if w.disk == disk}:
                 results_dict[
                     benchmark.name][disk][workload_name][params_str] = {
-                        'with_adapter': [],
-                        'without_adapter': []
-                    }
+                    'with_adapter': [],
+                    'without_adapter': []
+                }
 
     for res in adapter_results:
         result_entry = {
             'adapter_version': res.adapter_run.adapter_config.adapter_version,
             'adapter_params':
-            res.adapter_run.adapter_config.adapter_parameters,
+                res.adapter_run.adapter_config.adapter_parameters,
             'avg_runtime_seconds': res.runtime_seconds,
-            'runtime_stddev': res.std_deviation
+            'runtime_stddev': res.std_deviation,
+            'avg_pool_size': res.avg_pool_size,
+            'total_thread_creates': res.total_thread_creates
         }
         target_list = results_dict[
             res.adapter_run.workload.benchmark_suite.name][
-                res.adapter_run.workload.disk][res.adapter_run.workload.name][
-                    res.adapter_run.workload.workload_parameters_str(
-                    )]['with_adapter']
+            res.adapter_run.workload.disk][res.adapter_run.workload.name][
+            res.adapter_run.workload.workload_parameters_str(
+            )]['with_adapter']
         target_list.append(result_entry)
 
     with open(f'data/latest-checkpoint-adaptive.json', 'w') as f:
@@ -164,7 +167,7 @@ def checkpoint_adapter_logs(logs_map: dict[AdapterRunDefinition,
         logs = logs_map[run].log
         results_dict[run.workload.benchmark_suite.name][run.workload.disk][
             run.workload.name][run.workload.workload_parameters_str()][
-                run.adapter_config.short_description()] = logs
+            run.adapter_config.short_description()] = logs
 
     with open(f'data/latest-checkpoint-adapter_logs.json', 'w') as f:
         json.dump(results_dict, f, indent=4)

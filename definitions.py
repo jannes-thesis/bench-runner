@@ -80,6 +80,8 @@ class AdapterResult:
     adapter_run: AdapterRunDefinition
     runtime_seconds: float
     std_deviation: float
+    avg_pool_size: float
+    total_thread_creates: int
 
 
 @dataclass(frozen=True)

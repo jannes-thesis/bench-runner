@@ -113,21 +113,31 @@ def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float,
     if not len({res.adapter_run.adapter_config for res in results}) == len(results):
         print([res.adapter_run.adapter_config for res in results])
         assert False
+
     xs = []
     ys = []
+    y2s = []
     stddvs = []
     results = sorted(results, key=lambda x: x.adapter_run.adapter_config.short_description())
     for res in results:
         xs.append(res.adapter_run.adapter_config.short_description())
         ys.append(res.runtime_seconds)
+        y2s.append(res.avg_pool_size)
         stddvs.append(res.std_deviation)
 
-    ax.errorbar(xs, ys, yerr=stddvs, color='tab:blue', capsize=3)
+    p1 = ax.errorbar(xs, ys, yerr=stddvs, color='tab:blue', capsize=3, label='runtime')
     ax.tick_params(axis='y', labelcolor='tab:blue')
     ax.set_xlabel('adapter config')
     ax.set_ylabel('runtime in seconds')
     ax.set_ylim(top=ylim_top, bottom=ylim_bottom)
     ax.grid(color='grey', linestyle='-', linewidth=0.25, alpha=0.5)
+
+    ax2 = ax.twinx()
+    p2 = ax2.plot(xs, y2s, 'r-', label='avg pool size')
+    ax2.set_ylabel('avg pool size')
+
+    lines = [p1, p2]
+    ax.legend(lines, [l.get_label() for l in lines])
 
 
 def load_results(
@@ -177,7 +187,7 @@ def load_results(
                                 AdapterConfig(res['adapter_version'],
                                               tuple(res['adapter_params'])),
                                 workload), res['avg_runtime_seconds'],
-                            res['runtime_stddev'])
+                            res['runtime_stddev'], res['avg_pool_size'], res['total_thread_creates'])
                         for res in adapter_result_dicts
                     ])
                     static_results_list.append(static_results)

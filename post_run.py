@@ -4,7 +4,8 @@ from datetime import datetime
 from subprocess import run, DEVNULL
 from typing import Union
 
-from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, AdapterConfig, Workload
+from definitions import AdapterRunDefinition, StaticRunDefinition, StaticResult, AdapterResult, AdapterRunLog, \
+    AdapterConfig, Workload
 from adapter_log_parser import parse_result
 
 
@@ -17,7 +18,7 @@ def parse_result_json(run_definition: Union[AdapterRunDefinition, StaticRunDefin
     os.remove('data/results/tmp_result.json')
     if type(run_definition) == AdapterRunDefinition:
         return AdapterResult(run_definition, avg_runtime_seconds,
-                             runtime_stddev)
+                             runtime_stddev, 0, 0)
     else:
         return StaticResult(run_definition, avg_runtime_seconds,
                             runtime_stddev)
@@ -39,7 +40,7 @@ def merge_results(results_a: dict, results_b: dict):
         for disk in ['hdd', 'ssd']:
             for workload_name in results_a[benchmark][disk].keys():
                 for params_str in results_a[benchmark][disk][
-                        workload_name].keys():
+                    workload_name].keys():
                     adapter_results = results_a[benchmark][disk][
                         workload_name][params_str]['with_adapter']
                     static_results = results_a[benchmark][disk][workload_name][
@@ -51,12 +52,12 @@ def merge_results(results_a: dict, results_b: dict):
                     if workload_name not in results_b[benchmark][disk]:
                         results_b[benchmark][disk][workload_name] = {}
                     if params_str not in results_b[benchmark][disk][
-                            workload_name]:
+                        workload_name]:
                         results_b[benchmark][disk][workload_name][
                             params_str] = {
-                                'with_adapter': adapter_results,
-                                'without_adapter': static_results
-                            }
+                            'with_adapter': adapter_results,
+                            'without_adapter': static_results
+                        }
                     else:
                         results_b[benchmark][disk][workload_name][params_str][
                             'with_adapter'].extend(adapter_results)
@@ -93,23 +94,23 @@ def save_new_results(adapter_results: set[AdapterResult],
                                                 if w.disk == disk}:
                 results_dict[
                     benchmark.name][disk][workload_name][params_str] = {
-                        'with_adapter': [],
-                        'without_adapter': []
-                    }
+                    'with_adapter': [],
+                    'without_adapter': []
+                }
 
     for res in adapter_results:
         result_entry = {
             'adapter_version': res.adapter_run.adapter_config.adapter_version,
             'adapter_params':
-            res.adapter_run.adapter_config.adapter_parameters,
+                res.adapter_run.adapter_config.adapter_parameters,
             'avg_runtime_seconds': res.runtime_seconds,
             'runtime_stddev': res.std_deviation
         }
         target_list = results_dict[
             res.adapter_run.workload.benchmark_suite.name][
-                res.adapter_run.workload.disk][res.adapter_run.workload.name][
-                    res.adapter_run.workload.workload_parameters_str(
-                    )]['with_adapter']
+            res.adapter_run.workload.disk][res.adapter_run.workload.name][
+            res.adapter_run.workload.workload_parameters_str(
+            )]['with_adapter']
         target_list.append(result_entry)
     static_results = sorted(static_results,
                             key=lambda x: x.static_run.static_size)
@@ -121,9 +122,9 @@ def save_new_results(adapter_results: set[AdapterResult],
         }
         target_list = results_dict[
             res.static_run.workload.benchmark_suite.name][
-                res.static_run.workload.disk][res.static_run.workload.name][
-                    res.static_run.workload.workload_parameters_str(
-                    )]['without_adapter']
+            res.static_run.workload.disk][res.static_run.workload.name][
+            res.static_run.workload.workload_parameters_str(
+            )]['without_adapter']
         target_list.append(result_entry)
 
     with open(f'data/results/result-{timestamp}.json', 'w') as f:

@@ -8,6 +8,7 @@ QUEUE_SIZE_MARKER = '_I_QSIZE:'
 M1_MARKER = '_I_M1_VAL:'
 M2_MARKER = '_I_M2_VAL:'
 
+
 def get_log_line_time(line: str) -> datetime:
     line = line.split(' ')[0][1:]
     date_str, time_str = line.split('T')
@@ -39,18 +40,33 @@ def convert_queue_size_line(line: str, start_time: datetime) -> tuple[int, int]:
     return timestamp, queue_size
 
 
-def convert_metric_one_line(line: str, start_time: datetime) -> tuple[int, int]:
+def convert_metric_one_line(line: str, start_time: datetime) -> tuple[int, float]:
     """ return timestamp, metric one value pair"""
     timestamp = get_log_line_timestamp_millis(line, start_time)
     metric_one = float(line.split(M1_MARKER)[1])
     return timestamp, metric_one
 
 
-def convert_metric_two_line(line: str, start_time: datetime) -> tuple[int, int]:
+def convert_metric_two_line(line: str, start_time: datetime) -> tuple[int, float]:
     """ return timestamp, metric two value pair"""
     timestamp = get_log_line_timestamp_millis(line, start_time)
     metric_two = float(line.split(M2_MARKER)[1])
     return timestamp, metric_two
+
+
+def log_to_avg_pool_size(log: dict[str, list[tuple]]) -> float:
+    pool_sizes = [tpl[1] for tpl in log['pool_size']]
+    return sum(pool_sizes) / len(pool_sizes)
+
+
+def log_to_total_thread_creates(log: dict[str, list[tuple]]) -> int:
+    pool_sizes = [tpl[1] for tpl in log['pool_size']]
+    last = 0
+    total = 0
+    for size in pool_sizes:
+        total += max(0, size - last)
+        last = size
+    return total
 
 
 def parse_result(log_path: str) -> dict[str, list[tuple]]:

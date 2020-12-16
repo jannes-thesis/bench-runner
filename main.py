@@ -5,8 +5,10 @@ from subprocess import run
 import shutil
 
 import submodules
-from definitions import AdapterRunDefinition, StaticRunDefinition
-from checkpointing import checkpoint_results_adaptive, checkpoint_results_static, checkpoint_adapter_logs, is_checkpointed
+from adapter_log_parser import log_to_avg_pool_size, log_to_total_thread_creates
+from definitions import AdapterRunDefinition, StaticRunDefinition, AdapterResult
+from checkpointing import checkpoint_results_adaptive, checkpoint_results_static, checkpoint_adapter_logs, \
+    is_checkpointed
 from post_run import (
     parse_result_json,
     parse_adapter_log,
@@ -156,14 +158,15 @@ def main():
     # filter already checkpointed results
     adapter_runs = [run for run in adapter_runs if not is_checkpointed(run)]
     static_runs = [run for run in static_runs if not is_checkpointed(run)]
-    n_adapter_checkpointed = n_adapter_runs - len(adapter_runs) 
-    n_static_checkpointed = n_static_runs - len(static_runs) 
+    n_adapter_checkpointed = n_adapter_runs - len(adapter_runs)
+    n_static_checkpointed = n_static_runs - len(static_runs)
     logger.info(f"adapter run defs: {n_adapter_runs} new - {n_adapter_checkpointed} checkpointed")
     logger.info(f"static run defs: {n_static_runs} new - {n_static_checkpointed} checkpointed")
 
     # sort adapter runs by version to minimize compilations
     adapter_runs = sorted(
         adapter_runs, key=lambda x: x.adapter_config.adapter_version)
+    n_failed_runs = 0
 
     adapter_run_results = set()
     adapter_run_logs = {}
@@ -182,14 +185,20 @@ def main():
             success = do_adapter_run(adapter_run_def)
             if not success:
                 logger.error('ADAPTER_RUN FAIL')
+                n_failed_runs += 1
                 continue
+        # parse log & result
         result = parse_result_json(adapter_run_def)
-        adapter_run_results.add(result)
-        checkpoint_results_adaptive(adapter_run_results)
         run_log = parse_adapter_log()
         if run_log is not None:
             adapter_run_logs[adapter_run_def] = run_log
             checkpoint_adapter_logs(adapter_run_logs)
+            avg_pool_size = log_to_avg_pool_size(run_log.log)
+            total_thread_creates = log_to_total_thread_creates(run_log.log)
+            result = AdapterResult(result.adapter_run, result.runtime_seconds,
+                                   result.std_deviation, avg_pool_size, total_thread_creates)
+        adapter_run_results.add(result)
+        checkpoint_results_adaptive(adapter_run_results)
 
     static_run_results = set()
     amount_static_runs = len(static_runs)
@@ -201,11 +210,14 @@ def main():
         success = do_static_run(static_run_def)
         if not success:
             logger.error('STATIC RUN FAIL')
+            n_failed_runs += 1
             continue
         result = parse_result_json(static_run_def)
         static_run_results.add(result)
         checkpoint_results_static(static_run_results)
 
+    if n_failed_runs > 0:
+        logger.error(f'{n_failed_runs} runs failed, check the log!')
     logger.info("saving results")
     save_new_results(adapter_run_results, static_run_results, timestamp)
     update_known_adapter_configs(new_adapter_configs)
