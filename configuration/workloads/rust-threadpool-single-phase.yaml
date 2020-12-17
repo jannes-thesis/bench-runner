@@ -41,3 +41,17 @@ workloads:
       - [ 1000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32 ]
+  - name: rw_2mb_100us
+    adapter_params: [ every100us, read_write_2mb_sync ]
+    no_adapter_params: [ every100us, read_write_2mb_sync ]
+    parameter_combos_ssd:
+      - [ 10000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64 ]
+  - name: rw_nosync_2mb_100us
+    adapter_params: [ every100us, read_write_2mb_nosync ]
+    no_adapter_params: [ every100us, read_write_2mb_nosync ]
+    parameter_combos_ssd:
+      - [ 10000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64 ]
