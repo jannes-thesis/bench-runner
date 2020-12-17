@@ -156,6 +156,7 @@ def main():
     n_adapter_runs = len(adapter_runs)
     n_static_runs = len(static_runs)
     # filter already checkpointed results
+    # TODO: actually load the results, otherwise they won't be saved
     adapter_runs = [run for run in adapter_runs if not is_checkpointed(run)]
     static_runs = [run for run in static_runs if not is_checkpointed(run)]
     n_adapter_checkpointed = n_adapter_runs - len(adapter_runs)
@@ -227,7 +228,7 @@ def main():
     generate_adapter_logs_report(
         'data/latest-checkpoint-adapter_logs.json', f'data/reports/all_results-{timestamp}')
     shutil.move('data/latest-checkpoint-adapter_logs.json',
-                f'data/results/adapter-log-{timestamp}')
+                f'data/results/result-{timestamp}-alogs.json')
     # logger.info("commit new data")
     # commit()
 

@@ -104,7 +104,9 @@ def save_new_results(adapter_results: set[AdapterResult],
             'adapter_params':
                 res.adapter_run.adapter_config.adapter_parameters,
             'avg_runtime_seconds': res.runtime_seconds,
-            'runtime_stddev': res.std_deviation
+            'runtime_stddev': res.std_deviation,
+            'avg_pool_size': res.avg_pool_size,
+            'total_thread_creates': res.total_thread_creates
         }
         target_list = results_dict[
             res.adapter_run.workload.benchmark_suite.name][

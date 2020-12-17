@@ -63,9 +63,20 @@ def plot_results(results: list[tuple[tuple[StaticResult],
                                      tuple[AdapterResult]]], report_dir: str):
     print(f'plotting {len(results)} pairs')
     report_figures_dir = f'{report_dir}/figures'
-    os.makedirs(report_figures_dir)
+    if not os.path.exists(report_figures_dir):
+        os.makedirs(report_figures_dir)
     for (static_results, adapter_results) in results:
-        fig, (ax1, ax2) = pyplot.subplots(nrows=1, ncols=2, figsize=(20, 10))
+        if len(static_results) > 0:
+            workload_str = static_results[0].static_run.workload.full_description()
+        elif len(adapter_results) > 0:
+            workload_str = adapter_results[0].adapter_run.workload.full_description()
+        else:
+            continue 
+        fig_filename = f'{report_figures_dir}/{workload_str}.png'
+        if os.path.exists(fig_filename):
+            os.remove(fig_filename)
+
+        fig, (ax1, ax2) = pyplot.subplots(nrows=2, ncols=1, figsize=(20, 20))
         max_runtime = max({
                               res.runtime_seconds + res.std_deviation
                               for res in static_results
@@ -80,8 +91,7 @@ def plot_results(results: list[tuple[tuple[StaticResult],
             plot_static(static_results, ax1, max_runtime, min_runtime)
         if len(adapter_results) > 0:
             plot_adaptive(adapter_results, ax2, max_runtime, min_runtime)
-        workload_str = static_results[0].static_run.workload.full_description()
-        fig.savefig(f'{report_figures_dir}/{workload_str}.png')
+        fig.savefig(fig_filename)
         pyplot.close(fig)
 
 
@@ -136,8 +146,8 @@ def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float,
     p2 = ax2.plot(xs, y2s, 'r-', label='avg pool size')
     ax2.set_ylabel('avg pool size')
 
-    lines = [p1, p2]
-    ax.legend(lines, [l.get_label() for l in lines])
+    # lines = [p1, p2]
+    # ax.legend(lines, [l.get_label() for l in lines])
 
 
 def load_results(
