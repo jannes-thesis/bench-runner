@@ -1,0 +1,145 @@
+2020-12-16 11:21:29,275 - root - INFO - get new workload/adapter info
+2020-12-16 11:21:29,292 - submodules - INFO - updating submodules
+2020-12-16 11:21:30,823 - submodules - INFO - found 0 untracked adapter versions
+2020-12-16 11:21:32,424 - root - INFO - new workloads:
+2020-12-16 11:21:32,424 - root - INFO - --> ssd-rw_buf_1mb_100ms_bgload_25-75-800
+2020-12-16 11:21:32,424 - root - INFO - new adapter configs:
+2020-12-16 11:21:32,424 - root - INFO - --> version: v-3, params: 2000,0.9
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-3, params: 2000,0.95
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-3, params: 1000,0.9
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-2, params: 2000,0.9
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-2, params: 2000,0.95
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-3, params: 1000,0.95
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-2, params: 1000,0.9
+2020-12-16 11:21:32,425 - root - INFO - --> version: v-2, params: 1000,0.95
+2020-12-16 11:21:32,425 - root - INFO - calculate new run definitions
+2020-12-16 11:21:32,434 - root - INFO - adapter run defs: 72 new - 30 checkpointed
+2020-12-16 11:21:32,434 - root - INFO - static run defs: 14 new - 0 checkpointed
+2020-12-16 11:21:32,434 - root - INFO - adapter run 0/42: ssd-rw_buf_1mb_50ms-1000 with version: v-2, params: 1000,0.95
+2020-12-16 11:21:32,438 - root - INFO - compile adapter version v-2
+2020-12-16 11:21:37,248 - root - INFO - recompile benchmarks
+2020-12-16 11:21:37,602 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every50ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 11:25:25,065 - root - INFO - adapter run 1/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 1000,0.9
+2020-12-16 11:25:25,117 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-16 11:25:25,118 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 11:31:33,727 - root - INFO - adapter run 2/42: ssd-rw_buf_1mb_100ms-1000 with version: v-2, params: 2000,0.9
+2020-12-16 11:31:33,778 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-16 11:31:33,779 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 11:38:22,324 - root - INFO - adapter run 3/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 2000,0.95
+2020-12-16 11:38:22,372 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-16 11:38:22,373 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 11:44:30,237 - root - INFO - adapter run 4/42: ssd-lml-rw_buf_100ms-3000 with version: v-2, params: 2000,0.9
+2020-12-16 11:44:30,284 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-16 11:44:30,285 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_buf_100ms 3000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 12:05:38,501 - root - INFO - adapter run 5/42: ssd-lml-rw_100kb-300000 with version: v-2, params: 1000,0.95
+2020-12-16 12:05:38,550 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-16 12:05:38,551 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_100kb 300000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 12:23:49,942 - root - INFO - adapter run 6/42: ssd-rw_4kb_100us-200000 with version: v-3, params: 2000,0.9
+2020-12-16 12:23:49,990 - root - INFO - compile adapter version v-3
+2020-12-16 12:23:56,009 - root - INFO - recompile benchmarks
+2020-12-16 12:23:56,397 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_4kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 12:32:08,061 - root - INFO - adapter run 7/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 1000,0.9
+2020-12-16 12:32:08,104 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 12:32:08,104 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 12:38:13,375 - root - INFO - adapter run 8/42: ssd-rw_buf_2mb_100ms-1000 with version: v-3, params: 1000,0.95
+2020-12-16 12:38:13,426 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 12:38:13,427 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_2mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 12:45:19,272 - root - INFO - adapter run 9/42: ssd-rw_100kb_1ms-100000 with version: v-3, params: 2000,0.95
+2020-12-16 12:45:19,322 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 12:45:19,323 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every1ms read_write_100kb_sync 100000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 12:55:26,285 - root - INFO - adapter run 10/42: ssd-rw_100kb_100us-200000 with version: v-3, params: 2000,0.9
+2020-12-16 12:55:26,339 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 12:55:26,340 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_100kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 13:17:54,992 - root - INFO - adapter run 11/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 2000,0.95
+2020-12-16 13:17:55,038 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 13:17:55,039 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 13:23:47,474 - root - INFO - adapter run 12/42: ssd-rw_100kb_1ms-100000 with version: v-3, params: 1000,0.95
+2020-12-16 13:23:47,524 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 13:23:47,525 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every1ms read_write_100kb_sync 100000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 13:32:07,293 - root - INFO - adapter run 13/42: ssd-rw_buf_1mb_50ms-1000 with version: v-3, params: 1000,0.9
+2020-12-16 13:32:07,344 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 13:32:07,345 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every50ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 13:36:26,056 - root - INFO - adapter run 14/42: ssd-rw_buf_1mb_100ms-1000 with version: v-3, params: 1000,0.9
+2020-12-16 13:36:26,112 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 13:36:26,112 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 13:43:30,981 - root - INFO - adapter run 15/42: ssd-lml-rw_100kb-300000 with version: v-3, params: 2000,0.9
+2020-12-16 13:43:31,034 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 13:43:31,035 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_100kb 300000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 14:07:12,844 - root - INFO - adapter run 16/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 1000,0.95
+2020-12-16 14:07:12,895 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:07:12,896 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 14:12:43,619 - root - INFO - adapter run 17/42: ssd-rw_buf_1mb_100ms-1000 with version: v-3, params: 2000,0.95
+2020-12-16 14:12:43,674 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:12:43,675 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 14:19:41,899 - root - INFO - adapter run 18/42: ssd-rw_buf_1mb_50ms-1000 with version: v-3, params: 2000,0.95
+2020-12-16 14:19:41,955 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:19:41,956 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every50ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 14:24:25,843 - root - INFO - adapter run 19/42: ssd-lml-rw_buf_100ms-3000 with version: v-3, params: 1000,0.9
+2020-12-16 14:24:25,891 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:24:25,892 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_buf_100ms 3000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 14:49:26,016 - root - INFO - adapter run 20/42: ssd-rw_buf_2mb_100ms-1000 with version: v-3, params: 2000,0.9
+2020-12-16 14:49:26,023 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:49:26,024 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_2mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 14:58:29,062 - root - INFO - adapter run 21/42: ssd-rw_buf_1mb_50ms-1000 with version: v-3, params: 1000,0.95
+2020-12-16 14:58:29,114 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 14:58:29,115 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every50ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 15:02:19,128 - root - INFO - adapter run 22/42: ssd-rw_buf_1mb_100ms-1000 with version: v-3, params: 1000,0.95
+2020-12-16 15:02:19,179 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:02:19,180 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 15:09:08,507 - root - INFO - adapter run 23/42: ssd-rw_4kb_100us-200000 with version: v-3, params: 1000,0.9
+2020-12-16 15:09:08,561 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:09:08,562 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_4kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 15:15:40,480 - root - INFO - adapter run 24/42: ssd-lml-rw_buf_100ms-3000 with version: v-3, params: 2000,0.95
+2020-12-16 15:15:40,533 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:15:40,534 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_buf_100ms 3000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 15:36:33,303 - root - INFO - adapter run 25/42: ssd-rw_100kb_1ms-100000 with version: v-3, params: 2000,0.9
+2020-12-16 15:36:33,359 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:36:33,360 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every1ms read_write_100kb_sync 100000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 15:48:24,064 - root - INFO - adapter run 26/42: ssd-rw_4kb_100us-200000 with version: v-3, params: 2000,0.95
+2020-12-16 15:48:24,112 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:48:24,113 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_4kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 15:56:07,124 - root - INFO - adapter run 27/42: ssd-lml-rw_buf_100ms-3000 with version: v-3, params: 1000,0.95
+2020-12-16 15:56:07,172 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 15:56:07,173 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_buf_100ms 3000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 16:18:42,417 - root - INFO - adapter run 28/42: ssd-rw_100kb_100us-200000 with version: v-3, params: 1000,0.9
+2020-12-16 16:18:42,468 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 16:18:42,469 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_100kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 16:39:15,990 - root - INFO - adapter run 29/42: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 2000,0.9
+2020-12-16 16:39:16,041 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 16:39:16,042 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 16:46:42,602 - root - INFO - adapter run 30/42: ssd-rw_100kb_100us-200000 with version: v-3, params: 2000,0.95
+2020-12-16 16:46:42,654 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 16:46:42,655 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_100kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 17:05:08,260 - root - INFO - adapter run 31/42: ssd-lml-rw_100kb-300000 with version: v-3, params: 1000,0.9
+2020-12-16 17:05:08,320 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:05:08,321 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_100kb 300000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 17:25:45,163 - root - INFO - adapter run 32/42: ssd-rw_4kb_100us-200000 with version: v-3, params: 1000,0.95
+2020-12-16 17:25:45,220 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:25:45,221 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_4kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 17:30:44,718 - root - INFO - adapter run 33/42: ssd-rw_buf_1mb_100ms-1000 with version: v-3, params: 2000,0.9
+2020-12-16 17:30:44,773 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:30:44,774 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 17:37:44,056 - root - INFO - adapter run 34/42: ssd-rw_buf_1mb_50ms-1000 with version: v-3, params: 2000,0.9
+2020-12-16 17:37:44,110 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:37:44,111 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every50ms read_write_buf_sync_1mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 17:43:16,830 - root - INFO - adapter run 35/42: ssd-rw_100kb_100us-200000 with version: v-3, params: 1000,0.95
+2020-12-16 17:43:16,885 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:43:16,886 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_100kb_sync 200000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-16 17:59:08,539 - root - INFO - adapter run 36/42: ssd-lml-rw_100kb-300000 with version: v-3, params: 2000,0.95
+2020-12-16 17:59:08,590 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 17:59:08,591 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_100kb 300000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 18:20:03,414 - root - INFO - adapter run 37/42: ssd-rw_100kb_1ms-100000 with version: v-3, params: 1000,0.9
+2020-12-16 18:20:03,463 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 18:20:03,464 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every1ms read_write_100kb_sync 100000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 18:29:03,082 - root - INFO - adapter run 38/42: ssd-rw_buf_2mb_100ms-1000 with version: v-3, params: 1000,0.9
+2020-12-16 18:29:03,136 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 18:29:03,137 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_2mb 1000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-16 18:36:43,448 - root - INFO - adapter run 39/42: ssd-rw_buf_2mb_100ms-1000 with version: v-3, params: 2000,0.95
+2020-12-16 18:36:43,501 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 18:36:43,502 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100ms read_write_buf_sync_2mb 1000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-16 18:43:45,879 - root - INFO - adapter run 40/42: ssd-lml-rw_buf_100ms-3000 with version: v-3, params: 2000,0.9
+2020-12-16 18:43:45,929 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 18:43:45,930 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_buf_100ms 3000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-16 19:09:09,187 - root - INFO - adapter run 41/42: ssd-lml-rw_100kb-300000 with version: v-3, params: 1000,0.95
+2020-12-16 19:09:09,228 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-16 19:09:09,228 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh lml-rw_100kb 300000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
