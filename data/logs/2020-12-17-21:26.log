@@ -1,0 +1,187 @@
+2020-12-17 21:26:00,997 - root - INFO - get new workload/adapter info
+2020-12-17 21:26:01,017 - submodules - INFO - updating submodules
+2020-12-17 21:26:02,752 - submodules - INFO - found 0 untracked adapter versions
+2020-12-17 21:26:04,296 - root - INFO - new workloads:
+2020-12-17 21:26:04,296 - root - INFO - --> ssd-rw_2mb_100us-10000
+2020-12-17 21:26:04,296 - root - INFO - --> ssd-rw_buf_1mb_100ms_bgload_25-75-800
+2020-12-17 21:26:04,296 - root - INFO - --> ssd-rw_nosync_2mb_100us-10000
+2020-12-17 21:26:04,296 - root - INFO - new adapter configs:
+2020-12-17 21:26:04,296 - root - INFO - calculate new run definitions
+2020-12-17 21:26:04,302 - root - INFO - adapter run defs: 24 new - 0 checkpointed
+2020-12-17 21:26:04,302 - root - INFO - static run defs: 50 new - 0 checkpointed
+2020-12-17 21:26:04,302 - root - INFO - adapter run 0/24: ssd-rw_nosync_2mb_100us-10000 with version: v-2, params: 2000,0.9
+2020-12-17 21:26:04,306 - root - INFO - compile adapter version v-2
+2020-12-17 21:26:09,898 - root - INFO - recompile benchmarks
+2020-12-17 21:26:10,276 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 21:29:48,196 - root - INFO - adapter run 1/24: ssd-rw_nosync_2mb_100us-10000 with version: v-2, params: 1000,0.95
+2020-12-17 21:29:48,252 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 21:29:48,253 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 21:33:03,547 - root - INFO - adapter run 2/24: ssd-rw_2mb_100us-10000 with version: v-2, params: 2000,0.9
+2020-12-17 21:33:03,598 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 21:33:03,599 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 21:42:00,007 - root - INFO - adapter run 3/24: ssd-rw_nosync_2mb_100us-10000 with version: v-2, params: 2000,0.95
+2020-12-17 21:42:00,063 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 21:42:00,064 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 21:45:27,623 - root - INFO - adapter run 4/24: ssd-rw_2mb_100us-10000 with version: v-2, params: 1000,0.95
+2020-12-17 21:45:27,676 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 21:45:27,677 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 21:54:24,349 - root - INFO - adapter run 5/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 2000,0.9
+2020-12-17 21:54:24,403 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 21:54:24,404 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 22:00:02,774 - root - INFO - adapter run 6/24: ssd-rw_nosync_2mb_100us-10000 with version: v-2, params: 1000,0.9
+2020-12-17 22:00:02,825 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:00:02,826 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 22:03:17,642 - root - INFO - adapter run 7/24: ssd-rw_2mb_100us-10000 with version: v-2, params: 2000,0.95
+2020-12-17 22:03:17,695 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:03:17,696 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 22:12:47,668 - root - INFO - adapter run 8/24: ssd-rw_2mb_100us-10000 with version: v-2, params: 1000,0.9
+2020-12-17 22:12:47,721 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:12:47,722 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 22:22:15,119 - root - INFO - adapter run 9/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 1000,0.95
+2020-12-17 22:22:15,172 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:22:15,173 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 22:27:45,590 - root - INFO - adapter run 10/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 2000,0.95
+2020-12-17 22:27:45,642 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:27:45,643 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 22:33:34,588 - root - INFO - adapter run 11/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-2, params: 1000,0.9
+2020-12-17 22:33:34,634 - root - INFO - already on branch for v-2, no compilation needed
+2020-12-17 22:33:34,635 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 22:39:38,717 - root - INFO - adapter run 12/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 2000,0.95
+2020-12-17 22:39:38,769 - root - INFO - compile adapter version v-3
+2020-12-17 22:39:44,789 - root - INFO - recompile benchmarks
+2020-12-17 22:39:45,181 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 22:45:31,131 - root - INFO - adapter run 13/24: ssd-rw_2mb_100us-10000 with version: v-3, params: 1000,0.95
+2020-12-17 22:45:31,179 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 22:45:31,180 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 22:55:22,376 - root - INFO - adapter run 14/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 1000,0.95
+2020-12-17 22:55:22,424 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 22:55:22,425 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 23:01:02,917 - root - INFO - adapter run 15/24: ssd-rw_nosync_2mb_100us-10000 with version: v-3, params: 1000,0.9
+2020-12-17 23:01:02,955 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:01:02,955 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 23:04:24,202 - root - INFO - adapter run 16/24: ssd-rw_2mb_100us-10000 with version: v-3, params: 1000,0.9
+2020-12-17 23:04:24,248 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:04:24,249 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 23:13:48,404 - root - INFO - adapter run 17/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 1000,0.9
+2020-12-17 23:13:48,453 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:13:48,454 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 1000,0.9
+2020-12-17 23:19:50,292 - root - INFO - adapter run 18/24: ssd-rw_nosync_2mb_100us-10000 with version: v-3, params: 2000,0.9
+2020-12-17 23:19:50,338 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:19:50,338 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 23:23:31,327 - root - INFO - adapter run 19/24: ssd-rw_nosync_2mb_100us-10000 with version: v-3, params: 2000,0.95
+2020-12-17 23:23:31,376 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:23:31,377 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 23:27:06,566 - root - INFO - adapter run 20/24: ssd-rw_2mb_100us-10000 with version: v-3, params: 2000,0.9
+2020-12-17 23:27:06,618 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:27:06,619 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 23:37:24,481 - root - INFO - adapter run 21/24: ssd-rw_2mb_100us-10000 with version: v-3, params: 2000,0.95
+2020-12-17 23:37:24,529 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:37:24,530 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2020-12-17 23:47:37,814 - root - INFO - adapter run 22/24: ssd-rw_nosync_2mb_100us-10000 with version: v-3, params: 1000,0.95
+2020-12-17 23:47:37,862 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:47:37,863 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2020-12-17 23:50:59,376 - root - INFO - adapter run 23/24: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with version: v-3, params: 2000,0.9
+2020-12-17 23:50:59,430 - root - INFO - already on branch for v-3, no compilation needed
+2020-12-17 23:50:59,431 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files adaptive 2000,0.9
+2020-12-17 23:57:36,169 - root - INFO - static run 0/50: ssd-rw_2mb_100us-10000 with size 1
+2020-12-17 23:57:36,170 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 1
+2020-12-18 00:08:51,630 - root - INFO - static run 1/50: ssd-rw_2mb_100us-10000 with size 2
+2020-12-18 00:08:51,632 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 2
+2020-12-18 00:17:37,347 - root - INFO - static run 2/50: ssd-rw_2mb_100us-10000 with size 4
+2020-12-18 00:17:37,349 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 4
+2020-12-18 00:25:01,843 - root - INFO - static run 3/50: ssd-rw_2mb_100us-10000 with size 6
+2020-12-18 00:25:01,844 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 6
+2020-12-18 00:32:11,259 - root - INFO - static run 4/50: ssd-rw_2mb_100us-10000 with size 8
+2020-12-18 00:32:11,261 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 8
+2020-12-18 00:39:34,594 - root - INFO - static run 5/50: ssd-rw_2mb_100us-10000 with size 10
+2020-12-18 00:39:34,595 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 10
+2020-12-18 00:47:05,339 - root - INFO - static run 6/50: ssd-rw_2mb_100us-10000 with size 12
+2020-12-18 00:47:05,341 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 12
+2020-12-18 00:54:14,831 - root - INFO - static run 7/50: ssd-rw_2mb_100us-10000 with size 14
+2020-12-18 00:54:14,833 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 14
+2020-12-18 01:01:25,280 - root - INFO - static run 8/50: ssd-rw_2mb_100us-10000 with size 16
+2020-12-18 01:01:25,282 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 16
+2020-12-18 01:08:21,701 - root - INFO - static run 9/50: ssd-rw_2mb_100us-10000 with size 20
+2020-12-18 01:08:21,703 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 20
+2020-12-18 01:15:40,959 - root - INFO - static run 10/50: ssd-rw_2mb_100us-10000 with size 24
+2020-12-18 01:15:40,961 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 24
+2020-12-18 01:22:47,859 - root - INFO - static run 11/50: ssd-rw_2mb_100us-10000 with size 28
+2020-12-18 01:22:47,861 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 28
+2020-12-18 01:29:51,104 - root - INFO - static run 12/50: ssd-rw_2mb_100us-10000 with size 32
+2020-12-18 01:29:51,106 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 32
+2020-12-18 01:36:48,947 - root - INFO - static run 13/50: ssd-rw_2mb_100us-10000 with size 36
+2020-12-18 01:36:48,949 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 36
+2020-12-18 01:46:48,445 - root - INFO - static run 14/50: ssd-rw_2mb_100us-10000 with size 40
+2020-12-18 01:46:48,447 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 40
+2020-12-18 01:55:36,213 - root - INFO - static run 15/50: ssd-rw_2mb_100us-10000 with size 48
+2020-12-18 01:55:36,215 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 48
+2020-12-18 02:02:50,674 - root - INFO - static run 16/50: ssd-rw_2mb_100us-10000 with size 56
+2020-12-18 02:02:50,676 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 56
+2020-12-18 02:16:14,379 - root - INFO - static run 17/50: ssd-rw_2mb_100us-10000 with size 64
+2020-12-18 02:16:14,381 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_sync 10000 /ssd2/adapter-benchmark/files static 64
+2020-12-18 02:31:34,780 - root - INFO - static run 18/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 1
+2020-12-18 02:31:34,781 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 1
+2020-12-18 02:47:19,562 - root - INFO - static run 19/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 2
+2020-12-18 02:47:19,564 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 2
+2020-12-18 02:58:57,475 - root - INFO - static run 20/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 4
+2020-12-18 02:58:57,477 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 4
+2020-12-18 03:06:34,256 - root - INFO - static run 21/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 6
+2020-12-18 03:06:34,258 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 6
+2020-12-18 03:13:08,920 - root - INFO - static run 22/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 8
+2020-12-18 03:13:08,921 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 8
+2020-12-18 03:18:59,391 - root - INFO - static run 23/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 10
+2020-12-18 03:18:59,393 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 10
+2020-12-18 03:23:52,623 - root - INFO - static run 24/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 12
+2020-12-18 03:23:52,624 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 12
+2020-12-18 03:28:26,620 - root - INFO - static run 25/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 14
+2020-12-18 03:28:26,622 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 14
+2020-12-18 03:33:04,159 - root - INFO - static run 26/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 16
+2020-12-18 03:33:04,160 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 16
+2020-12-18 03:37:15,318 - root - INFO - static run 27/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 18
+2020-12-18 03:37:15,320 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 18
+2020-12-18 03:41:30,857 - root - INFO - static run 28/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 20
+2020-12-18 03:41:30,859 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 20
+2020-12-18 03:45:39,085 - root - INFO - static run 29/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 24
+2020-12-18 03:45:39,087 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 24
+2020-12-18 03:49:44,888 - root - INFO - static run 30/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 28
+2020-12-18 03:49:44,890 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 28
+2020-12-18 03:53:48,102 - root - INFO - static run 31/50: ssd-rw_buf_1mb_100ms_bgload_25-75-800 with size 32
+2020-12-18 03:53:48,104 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_buf_1mb_100ms_bgload_25-75 800 /ssd2/adapter-benchmark/files static 32
+2020-12-18 03:57:53,479 - root - INFO - static run 32/50: ssd-rw_nosync_2mb_100us-10000 with size 1
+2020-12-18 03:57:53,480 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 1
+2020-12-18 04:03:41,832 - root - INFO - static run 33/50: ssd-rw_nosync_2mb_100us-10000 with size 2
+2020-12-18 04:03:41,834 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 2
+2020-12-18 04:07:36,401 - root - INFO - static run 34/50: ssd-rw_nosync_2mb_100us-10000 with size 4
+2020-12-18 04:07:36,403 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 4
+2020-12-18 04:11:02,565 - root - INFO - static run 35/50: ssd-rw_nosync_2mb_100us-10000 with size 6
+2020-12-18 04:11:02,567 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 6
+2020-12-18 04:13:16,907 - root - INFO - static run 36/50: ssd-rw_nosync_2mb_100us-10000 with size 8
+2020-12-18 04:13:16,908 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 8
+2020-12-18 04:15:29,738 - root - INFO - static run 37/50: ssd-rw_nosync_2mb_100us-10000 with size 10
+2020-12-18 04:15:29,740 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 10
+2020-12-18 04:17:42,407 - root - INFO - static run 38/50: ssd-rw_nosync_2mb_100us-10000 with size 12
+2020-12-18 04:17:42,408 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 12
+2020-12-18 04:19:54,254 - root - INFO - static run 39/50: ssd-rw_nosync_2mb_100us-10000 with size 14
+2020-12-18 04:19:54,256 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 14
+2020-12-18 04:22:07,477 - root - INFO - static run 40/50: ssd-rw_nosync_2mb_100us-10000 with size 16
+2020-12-18 04:22:07,479 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 16
+2020-12-18 04:24:20,012 - root - INFO - static run 41/50: ssd-rw_nosync_2mb_100us-10000 with size 20
+2020-12-18 04:24:20,013 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 20
+2020-12-18 04:26:32,463 - root - INFO - static run 42/50: ssd-rw_nosync_2mb_100us-10000 with size 24
+2020-12-18 04:26:32,464 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 24
+2020-12-18 04:28:45,819 - root - INFO - static run 43/50: ssd-rw_nosync_2mb_100us-10000 with size 28
+2020-12-18 04:28:45,821 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 28
+2020-12-18 04:31:00,045 - root - INFO - static run 44/50: ssd-rw_nosync_2mb_100us-10000 with size 32
+2020-12-18 04:31:00,046 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 32
+2020-12-18 04:33:14,125 - root - INFO - static run 45/50: ssd-rw_nosync_2mb_100us-10000 with size 36
+2020-12-18 04:33:14,127 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 36
+2020-12-18 04:35:28,594 - root - INFO - static run 46/50: ssd-rw_nosync_2mb_100us-10000 with size 40
+2020-12-18 04:35:28,595 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 40
+2020-12-18 04:37:43,182 - root - INFO - static run 47/50: ssd-rw_nosync_2mb_100us-10000 with size 48
+2020-12-18 04:37:43,183 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 48
+2020-12-18 04:39:58,018 - root - INFO - static run 48/50: ssd-rw_nosync_2mb_100us-10000 with size 56
+2020-12-18 04:39:58,019 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 56
+2020-12-18 04:42:12,401 - root - INFO - static run 49/50: ssd-rw_nosync_2mb_100us-10000 with size 64
+2020-12-18 04:42:12,403 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh every100us read_write_2mb_nosync 10000 /ssd2/adapter-benchmark/files static 64
+2020-12-18 04:44:27,680 - root - INFO - saving results
+2020-12-18 04:44:27,722 - root - INFO - generating report
