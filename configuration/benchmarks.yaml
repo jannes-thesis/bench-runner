@@ -23,3 +23,19 @@ benchmarks:
       hdd: /hdd/adapter-benchmark/files
       ssd: /ssd2/adapter-benchmark/files
     workloads_definition: rust-threadpool-multi-phase.yaml
+  - name: node-io-benchmark
+    description: benchmark executable for node
+    runner_script: node-io-benchmark.sh
+    parameters: [ number of items ]
+    disk_params:
+      hdd: /hdd/adapter-benchmark/files
+      ssd: /ssd2/adapter-benchmark/files
+    workloads_definition: node-io-benchmark.yaml
+  - name: rocks-io-benchmark
+    description: benchmark executable for rocks
+    runner_script: rocks-io-benchmark.sh
+    parameters: [ number of items ]
+    disk_params:
+      hdd: /hdd/adapter-benchmark/files
+      ssd: /ssd2/adapter-benchmark/files
+    workloads_definition: rocks-io-benchmark.yaml

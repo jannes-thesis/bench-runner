@@ -48,6 +48,8 @@ def update_submodules():
         run_silent(['git', '-C', 'submodules/scaling-adapter', 'reset', '--hard', f'origin/{branch}'])
     switch_to_adapter_master()
     run_silent(['git', '-C', 'submodules/dynamic-io-pool', 'pull'])
+    run_silent(['git', '-C', 'submodules/node-io-benchmark', 'pull'])
+    run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'pull'])
 
 
 def get_all_adapter_configs() -> set[AdapterConfig]:
@@ -125,6 +127,12 @@ def compile_adapter(version: str):
     shutil.copyfile(
         'submodules/scaling-adapter/target/release/libscaling_adapter_clib.a',
         'submodules/dynamic-io-pool/adapter.a')
+    shutil.copyfile(
+        'submodules/scaling-adapter/target/release/libscaling_adapter_clib.a',
+        'submodules/rocks-io-benchmark/rocksdb-6.7.3/adapter.a')
+    shutil.copyfile(
+        'submodules/scaling-adapter/target/release/libscaling_adapter_clib.a',
+        'submodules/node-io-benchmark/node-14.15.1/deps/uv/libadapter.a')
 
 
 def compile_benchmarks():
@@ -132,4 +140,14 @@ def compile_benchmarks():
         'cd submodules/dynamic-io-pool && '
         'cmake --build build --config Debug --target all; '
         'cd -')
+    run(command, shell=True)
+    command = (
+        'cd submodules/node-io-benchmark && '
+        'bash make_node.sh; '
+        'cd ../..')
+    run(command, shell=True)
+    command = (
+        'cd submodules/rocks-io-benchmark && '
+        'bash make_rocks.sh; '
+        'cd ../..')
     run(command, shell=True)
