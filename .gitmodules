@@ -7,3 +7,6 @@
 [submodule "submodules/node-io-benchmark"]
 	path = submodules/node-io-benchmark
 	url = git@github.com:jannes/node-io-benchmark.git
+[submodule "submodules/rock-io-benchmark"]
+	path = submodules/rock-io-benchmark
+	url = git@github.com:jannes/rocks-io-benchmark.git
