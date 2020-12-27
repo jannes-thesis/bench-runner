@@ -10,15 +10,24 @@ logger = logging.getLogger(__name__)
 
 
 def run_silent(command_list: list[str]):
-    run(command_list, stdout=DEVNULL, stderr=DEVNULL)
+    if run(command_list, stdout=DEVNULL, stderr=DEVNULL).returncode != 0:
+        raise Exception(f'command failed: {command_list}')
+
+
+def run_silent_extra_shell(command: str):
+    if run(command, shell=True, stdout=DEVNULL, stderr=DEVNULL).returncode != 0:
+        raise Exception(f'command failed: {command}')
+
+
+def run_chatty(command_list: list[str]):
+    if run(command_list).returncode != 0:
+        raise Exception(f'command failed: {command_list}')
 
 
 def update_submodules():
     # update adapter repo
     logger.info('updating submodules')
-    run(['git', '-C', 'submodules/scaling-adapter', 'pull'],
-        stdout=DEVNULL,
-        stderr=DEVNULL)
+    run_silent(['git', '-C', 'submodules/scaling-adapter', 'pull'])
     adapter_remote_branches_output = run(
         ['git', '-C', 'submodules/scaling-adapter', 'branch', '-r'],
         capture_output=True,
@@ -38,7 +47,7 @@ def update_submodules():
     logger.info(
         f'found {len(adapter_versions_untracked)} untracked adapter versions')
     for branch in adapter_versions_untracked:
-        run([
+        run_silent([
             'git', '-C', 'submodules/scaling-adapter', 'checkout', '--track',
             f'origin/{branch}'
         ])
@@ -115,12 +124,12 @@ def get_version_configs(version_branch: str) -> set[AdapterConfig]:
 
 def compile_adapter(version: str):
     switch_to_adapter_version_branch(version)
-    run([
+    run_silent([
         'cargo', 'build',
         '--manifest-path=submodules/scaling-adapter/Cargo.toml', '--release'
-    ],
-        stdout=DEVNULL,
-        stderr=DEVNULL)
+    ])
+    if version == 'master':
+        return
     shutil.copyfile(
         'submodules/scaling-adapter/scaling-adapter-clib/bindings.h',
         'submodules/dynamic-io-pool/adapter.h')
@@ -135,19 +144,27 @@ def compile_adapter(version: str):
         'submodules/node-io-benchmark/node-14.15.1/deps/uv/libadapter.a')
 
 
-def compile_benchmarks():
+def compile_benchmarks(adaptive: bool):
+    if adaptive:
+        run_silent(['git', '-C', 'submodules/node-io-benchmark', 'checkout', 'adaptive'])
+        run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'adaptive'])
+    else:
+        run_silent(['git', '-C', 'submodules/node-io-benchmark', 'checkout', 'master'])
+        run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'master'])
     command = (
         'cd submodules/dynamic-io-pool && '
         'cmake --build build --config Debug --target all; '
-        'cd -')
-    run(command, shell=True)
+        'cd ../..')
+    run_silent_extra_shell(command)
     command = (
         'cd submodules/node-io-benchmark && '
         'bash make_node.sh; '
         'cd ../..')
-    run(command, shell=True)
+    run_silent_extra_shell(command)
     command = (
         'cd submodules/rocks-io-benchmark && '
         'bash make_rocks.sh; '
         'cd ../..')
-    run(command, shell=True)
+    run_silent_extra_shell(command)
+    run_silent(['git', '-C', 'submodules/node-io-benchmark', 'checkout', 'master'])
+    run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'master'])

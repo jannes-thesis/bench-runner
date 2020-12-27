@@ -1,1 +1,17 @@
-workloads: []
+workloads: 
+  - name: test
+    adapter_params: [ bulkload ]
+    no_adapter_params: [ bulkload ]
+    parameter_combos_ssd:
+      - [ 4000000 ]
+    parameter_combos_hdd:
+      - [ ]
+    static_sizes: [ 1, 4 ]
+  # - name: bulkload
+  #   adapter_params: [ bulkload ]
+  #   no_adapter_params: [ bulkload ]
+  #   parameter_combos_ssd:
+  #     - [ 40000000 ]
+  #   parameter_combos_hdd:
+  #     - [ ]
+  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16 ]

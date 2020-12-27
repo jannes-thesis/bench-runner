@@ -52,11 +52,17 @@ def prepare_adapter_run(run_definition: AdapterRunDefinition):
         submodules.compile_adapter(
             run_definition.adapter_config.adapter_version)
         logger.info(f"recompile benchmarks")
-        submodules.compile_benchmarks()
+        submodules.compile_benchmarks(adaptive=True)
     else:
         logger.info(
             f'already on branch for {run_definition.adapter_config.adapter_version}, no compilation needed'
         )
+
+
+def prepare_static_runs():
+    """ compile all submodules master branches """
+    submodules.compile_adapter('master')
+    submodules.compile_benchmarks(adaptive=False)
 
 
 def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
@@ -169,6 +175,7 @@ def main():
         adapter_runs, key=lambda x: x.adapter_config.adapter_version)
     n_failed_runs = 0
 
+    # ---- ADAPTER RUNS ----
     adapter_run_results = set()
     adapter_run_logs = {}
     amount_adapter_runs = len(adapter_runs)
@@ -181,13 +188,9 @@ def main():
         )
         success = do_adapter_run(adapter_run_def)
         if not success:
-            # failures are non-deterministic (probably some race condition in the C thread pool)
-            logger.error('failed run, try one more time (let\'s get lucky)')
-            success = do_adapter_run(adapter_run_def)
-            if not success:
-                logger.error('ADAPTER_RUN FAIL')
-                n_failed_runs += 1
-                continue
+            logger.error('ADAPTER_RUN FAIL')
+            n_failed_runs += 1
+            continue
         # parse log & result
         result = parse_result_json(adapter_run_def)
         run_log = parse_adapter_log()
@@ -201,8 +204,10 @@ def main():
         adapter_run_results.add(result)
         checkpoint_results_adaptive(adapter_run_results)
 
+    # ---- STATIC RUNS ----
     static_run_results = set()
     amount_static_runs = len(static_runs)
+    prepare_static_runs()
     for i, static_run_def in enumerate(static_runs):
         workload_description = static_run_def.workload.description()
         pool_size = static_run_def.static_size
