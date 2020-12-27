@@ -4,9 +4,6 @@
 [submodule "submodules/dynamic-io-pool"]
 	path = submodules/dynamic-io-pool
 	url = git@github.com:jannes/dynamic_io_tpool.git
-[submodule "submodules/rocks-io-benchmark"]
-	path = submodules/rocks-io-benchmark
-	url = git@github.com:jannes/rocks-io-benchmark.git
 [submodule "submodules/node-io-benchmark"]
 	path = submodules/node-io-benchmark
 	url = git@github.com:jannes/node-io-benchmark.git
