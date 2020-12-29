@@ -17,7 +17,7 @@ hyperfine --min-runs 3 \
   "${cmd}" \
   --export-json "data/results/tmp_result.json"
 
-if [ "$4" = "adaptive" ]; then
+if [ "$4" = "static" ]; then
   sudo /bin/clear_page_cache
   $cmd 2> data/results/tmp_result.log
 fi
