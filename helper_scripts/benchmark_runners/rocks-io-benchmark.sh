@@ -23,7 +23,7 @@ hyperfine --min-runs 3 \
   --cleanup "rm -rf ${output_dir}/benchmark-data" \
   --export-json "../../../data/results/tmp_result.json"
 
-if [ "$4" = "static" ]; then
+if [ "$4" = "adaptive" ]; then
   sudo /bin/clear_page_cache
   export RUST_LOG=info
   $run_script $param_str 2> ../../../data/results/tmp_result.log
