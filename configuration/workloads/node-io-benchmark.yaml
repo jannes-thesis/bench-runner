@@ -1,1 +1,9 @@
-workloads: []
+workloads: 
+  - name: test
+    adapter_params: [ rw_sync_10mb.mjs ]
+    no_adapter_params: [ rw_sync_10mb.mjs ]
+    parameter_combos_ssd:
+      - [ 1000 ]
+    parameter_combos_hdd:
+      - [ ]
+    static_sizes: [ 1, 4 

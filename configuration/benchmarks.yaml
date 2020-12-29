@@ -28,14 +28,14 @@ benchmarks:
     runner_script: node-io-benchmark.sh
     parameters: [ number of items ]
     disk_params:
-      hdd: /hdd/adapter-benchmark/files
-      ssd: /ssd2/adapter-benchmark/files
+      hdd: /hdd/deno-io-benchmark/files
+      ssd: /ssd2/deno-io-benchmark/files
     workloads_definition: node-io-benchmark.yaml
   - name: rocks-io-benchmark
     description: benchmark executable for rocks
     runner_script: rocks-io-benchmark.sh
     parameters: [ number of items ]
     disk_params:
-      hdd: /hdd/adapter-benchmark/files
-      ssd: /ssd2/adapter-benchmark/files
+      hdd: /hdd/rocks-io-benchmark
+      ssd: /ssd2/rocks-io-benchmark
     workloads_definition: rocks-io-benchmark.yaml
