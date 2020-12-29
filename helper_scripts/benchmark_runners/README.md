@@ -1,6 +1,8 @@
 This directory contains wrapper scripts to run different benchmarks
 testing the scaling adapter as a component in some threadpool.
 
+! scripts should be run from top level dir, as some paths used are relative !
+
 # Script argument structure
 
 ## first arguments
