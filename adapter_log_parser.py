@@ -56,6 +56,8 @@ def convert_metric_two_line(line: str, start_time: datetime) -> tuple[int, float
 
 def log_to_avg_pool_size(log: dict[str, list[tuple]]) -> float:
     pool_sizes = [tpl[1] for tpl in log['pool_size']]
+    if len(pool_sizes) == 0:
+        return 0.0
     return sum(pool_sizes) / len(pool_sizes)
 
 

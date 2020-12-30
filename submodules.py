@@ -27,7 +27,9 @@ def run_chatty(command_list: list[str]):
 def update_submodules():
     # update adapter repo
     logger.info('updating submodules')
-    run_silent(['git', '-C', 'submodules/scaling-adapter', 'pull'])
+    switch_to_adapter_master()
+    run_silent(['git', '-C', 'submodules/scaling-adapter', 'fetch', '--all'])
+    run_silent(['git', '-C', 'submodules/scaling-adapter', 'pull', 'origin', 'master'])
     adapter_remote_branches_output = run(
         ['git', '-C', 'submodules/scaling-adapter', 'branch', '-r'],
         capture_output=True,
@@ -56,9 +58,11 @@ def update_submodules():
         switch_to_adapter_version_branch(branch)
         run_silent(['git', '-C', 'submodules/scaling-adapter', 'reset', '--hard', f'origin/{branch}'])
     switch_to_adapter_master()
-    run_silent(['git', '-C', 'submodules/dynamic-io-pool', 'pull'])
-    run_silent(['git', '-C', 'submodules/node-io-benchmark', 'pull'])
-    run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'pull'])
+    run_silent(['git', '-C', 'submodules/dynamic-io-pool', 'pull', 'origin', 'master'])
+    # run_silent(['git', '-C', 'submodules/node-io-benchmark', 'fetch', 'origin', 'master:master'])
+    # run_silent(['git', '-C', 'submodules/node-io-benchmark', 'fetch', 'origin', 'adaptive:adaptive'])
+    # run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'fetch', 'origin', 'master:master'])
+    # run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'fetch', 'origin', 'adaptive:adaptive'])
 
 
 def get_all_adapter_configs() -> set[AdapterConfig]:

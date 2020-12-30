@@ -26,7 +26,7 @@ hyperfine --min-runs 3 \
 if [ "$4" = "adaptive" ]; then
   sudo /bin/clear_page_cache
   export RUST_LOG=info
-  $run_script $param_str 2> ../../../data/results/tmp_result.log
+  bash $run_script $param_str 2>&1 > ../../../data/results/tmp_result.log
 fi
 rm -rf "${output_dir}/benchmark-data"
 cd ../../..

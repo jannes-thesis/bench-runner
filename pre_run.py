@@ -18,7 +18,6 @@ def get_known_adapter_configs() -> set[AdapterConfig]:
 
 
 def get_new_adapter_configs(known_configs: set[AdapterConfig]) -> set[AdapterConfig]:
-    submodules.update_submodules()
     adapter_configs = submodules.get_all_adapter_configs()
     return adapter_configs.difference(known_configs)
 

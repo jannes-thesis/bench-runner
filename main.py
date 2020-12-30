@@ -134,6 +134,8 @@ def main():
     new_workloads = get_new_workloads(all_workloads)
     known_workloads = get_known_workloads(all_workloads)
     known_adapter_configs = get_known_adapter_configs()
+    # TODO: update node/rocks repos as well
+    submodules.update_submodules()
     new_adapter_configs = get_new_adapter_configs(known_adapter_configs)
 
     logger.info("new workloads:")
