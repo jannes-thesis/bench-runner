@@ -96,7 +96,93 @@
                             "total_thread_creates": 18
                         }
                     ],
-                    "without_adapter": []
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 104.31565820469332,
+                            "runtime_stddev": 0.4125246442614836
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 73.86320918411,
+                            "runtime_stddev": 0.9800304088276586
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 54.901920880791664,
+                            "runtime_stddev": 0.29712984585045626
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 54.34367401174,
+                            "runtime_stddev": 0.11849209365358962
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 53.75124576301666,
+                            "runtime_stddev": 0.2032989732313869
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 53.596932880645,
+                            "runtime_stddev": 0.04604109753771978
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 53.372779255275,
+                            "runtime_stddev": 0.09669416716791888
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 53.25708617830333,
+                            "runtime_stddev": 0.12587700928693143
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 53.41682805831999,
+                            "runtime_stddev": 0.12209638498155552
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 53.509162529875006,
+                            "runtime_stddev": 0.30260589126409726
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 53.093258754938326,
+                            "runtime_stddev": 0.014735873452684319
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 52.77739467300833,
+                            "runtime_stddev": 0.1639478649291208
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 52.50437246846167,
+                            "runtime_stddev": 0.1534020222055837
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 52.286104153109996,
+                            "runtime_stddev": 0.06241141863871996
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 51.73964425385333,
+                            "runtime_stddev": 0.30579549915172266
+                        },
+                        {
+                            "pool_size": 44,
+                            "avg_runtime_seconds": 51.355662101149996,
+                            "runtime_stddev": 0.12153804198189005
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 50.87763155709666,
+                            "runtime_stddev": 0.14010264921702748
+                        }
+                    ]
                 }
             }
         }

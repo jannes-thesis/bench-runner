@@ -1,0 +1,71 @@
+2021-01-02 12:39:14,457 - root - INFO - get new workload/adapter info
+2021-01-02 12:39:14,495 - submodules - INFO - updating submodules
+2021-01-02 12:39:18,046 - submodules - INFO - found 0 untracked adapter versions
+2021-01-02 12:39:20,357 - root - INFO - new workloads:
+2021-01-02 12:39:20,358 - root - INFO - --> ssd-rw_sync_10mb-node-1000
+2021-01-02 12:39:20,358 - root - INFO - new adapter configs:
+2021-01-02 12:39:20,358 - root - INFO - calculate new run definitions
+2021-01-02 12:39:20,360 - root - INFO - adapter run defs: 8 new - 0 checkpointed
+2021-01-02 12:39:20,360 - root - INFO - static run defs: 17 new - 0 checkpointed
+2021-01-02 12:39:20,360 - root - INFO - adapter run 0/8: ssd-rw_sync_10mb-node-1000 with version: v-2, params: 2000,0.95
+2021-01-02 12:39:20,363 - root - INFO - compile adapter version v-2
+2021-01-02 12:39:26,957 - root - INFO - recompile benchmarks
+2021-01-02 12:40:03,165 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 2000,0.95
+2021-01-02 12:44:05,408 - root - INFO - adapter run 1/8: ssd-rw_sync_10mb-node-1000 with version: v-2, params: 1000,0.95
+2021-01-02 12:44:05,462 - root - INFO - already on branch for v-2, no compilation needed
+2021-01-02 12:44:05,463 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95
+2021-01-02 12:48:01,056 - root - INFO - adapter run 2/8: ssd-rw_sync_10mb-node-1000 with version: v-2, params: 1000,0.9
+2021-01-02 12:48:01,106 - root - INFO - already on branch for v-2, no compilation needed
+2021-01-02 12:48:01,107 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 1000,0.9
+2021-01-02 12:51:56,196 - root - INFO - adapter run 3/8: ssd-rw_sync_10mb-node-1000 with version: v-2, params: 2000,0.9
+2021-01-02 12:51:56,242 - root - INFO - already on branch for v-2, no compilation needed
+2021-01-02 12:51:56,243 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 2000,0.9
+2021-01-02 12:55:57,845 - root - INFO - adapter run 4/8: ssd-rw_sync_10mb-node-1000 with version: v-3, params: 2000,0.95
+2021-01-02 12:55:57,888 - root - INFO - compile adapter version v-3
+2021-01-02 12:56:04,932 - root - INFO - recompile benchmarks
+2021-01-02 12:56:41,544 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 2000,0.95
+2021-01-02 13:00:46,078 - root - INFO - adapter run 5/8: ssd-rw_sync_10mb-node-1000 with version: v-3, params: 1000,0.9
+2021-01-02 13:00:46,133 - root - INFO - already on branch for v-3, no compilation needed
+2021-01-02 13:00:46,133 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 1000,0.9
+2021-01-02 13:04:42,627 - root - INFO - adapter run 6/8: ssd-rw_sync_10mb-node-1000 with version: v-3, params: 1000,0.95
+2021-01-02 13:04:42,672 - root - INFO - already on branch for v-3, no compilation needed
+2021-01-02 13:04:42,673 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95
+2021-01-02 13:08:42,761 - root - INFO - adapter run 7/8: ssd-rw_sync_10mb-node-1000 with version: v-3, params: 2000,0.9
+2021-01-02 13:08:42,810 - root - INFO - already on branch for v-3, no compilation needed
+2021-01-02 13:08:42,811 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files adaptive 2000,0.9
+2021-01-02 13:13:19,096 - root - INFO - static run 0/17: ssd-rw_sync_10mb-node-1000 with size 1
+2021-01-02 13:13:19,096 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 1
+2021-01-02 13:18:35,798 - root - INFO - static run 1/17: ssd-rw_sync_10mb-node-1000 with size 2
+2021-01-02 13:18:35,799 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 2
+2021-01-02 13:22:20,193 - root - INFO - static run 2/17: ssd-rw_sync_10mb-node-1000 with size 4
+2021-01-02 13:22:20,193 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 4
+2021-01-02 13:25:07,413 - root - INFO - static run 3/17: ssd-rw_sync_10mb-node-1000 with size 6
+2021-01-02 13:25:07,413 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 6
+2021-01-02 13:27:52,959 - root - INFO - static run 4/17: ssd-rw_sync_10mb-node-1000 with size 8
+2021-01-02 13:27:52,959 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 8
+2021-01-02 13:30:36,624 - root - INFO - static run 5/17: ssd-rw_sync_10mb-node-1000 with size 10
+2021-01-02 13:30:36,624 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 10
+2021-01-02 13:33:19,923 - root - INFO - static run 6/17: ssd-rw_sync_10mb-node-1000 with size 12
+2021-01-02 13:33:19,924 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 12
+2021-01-02 13:36:02,551 - root - INFO - static run 7/17: ssd-rw_sync_10mb-node-1000 with size 14
+2021-01-02 13:36:02,552 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 14
+2021-01-02 13:38:44,805 - root - INFO - static run 8/17: ssd-rw_sync_10mb-node-1000 with size 16
+2021-01-02 13:38:44,805 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 16
+2021-01-02 13:41:27,614 - root - INFO - static run 9/17: ssd-rw_sync_10mb-node-1000 with size 20
+2021-01-02 13:41:27,614 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 20
+2021-01-02 13:44:10,641 - root - INFO - static run 10/17: ssd-rw_sync_10mb-node-1000 with size 24
+2021-01-02 13:44:10,641 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 24
+2021-01-02 13:46:52,453 - root - INFO - static run 11/17: ssd-rw_sync_10mb-node-1000 with size 28
+2021-01-02 13:46:52,453 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 28
+2021-01-02 13:49:33,557 - root - INFO - static run 12/17: ssd-rw_sync_10mb-node-1000 with size 32
+2021-01-02 13:49:33,558 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 32
+2021-01-02 13:52:13,670 - root - INFO - static run 13/17: ssd-rw_sync_10mb-node-1000 with size 36
+2021-01-02 13:52:13,670 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 36
+2021-01-02 13:54:52,993 - root - INFO - static run 14/17: ssd-rw_sync_10mb-node-1000 with size 40
+2021-01-02 13:54:52,994 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 40
+2021-01-02 13:57:30,781 - root - INFO - static run 15/17: ssd-rw_sync_10mb-node-1000 with size 44
+2021-01-02 13:57:30,782 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 44
+2021-01-02 14:00:07,512 - root - INFO - static run 16/17: ssd-rw_sync_10mb-node-1000 with size 48
+2021-01-02 14:00:07,512 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 1000 /ssd2/deno-io-benchmark/files static 48
+2021-01-02 14:02:42,729 - root - INFO - saving results
+2021-01-02 14:02:42,742 - root - INFO - generating report
