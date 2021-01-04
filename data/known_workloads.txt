@@ -12,6 +12,8 @@ dynamic-io-pool-benchmark-suite-ssd-write-synced-inc-background-load-1000
 dynamic-io-pool-benchmark-suite-ssd-write-synced-inc-load-2000
 dynamic-io-pool-benchmark-suite-ssd-write-synced-static-load-2000
 node-io-benchmark-ssd-rw_sync_10mb-node-1000
+rocks-io-benchmark-ssd-bulkload-50000000
+rocks-io-benchmark-ssd-fillseq-50000000
 rust-threadpool-multi-phase-ssd-lml-rw_100kb-300000
 rust-threadpool-multi-phase-ssd-lml-rw_buf_100ms-3000
 rust-threadpool-multi-phase-ssd-rw_buf_1mb_100ms_bgload_25-75-800
