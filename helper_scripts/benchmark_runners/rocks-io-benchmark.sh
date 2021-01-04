@@ -16,12 +16,22 @@ cd submodules/rocks-io-benchmark/benchmarking
 rm db_bench
 ln "../${executable}" db_bench
 
-hyperfine --min-runs 3 \
-  --style basic \
-  --prepare 'sudo /bin/clear_page_cache' \
-  "bash ${run_script} ${param_str}" \
-  --cleanup "rm -rf ${output_dir}/benchmark-data" \
-  --export-json "../../../data/results/tmp_result.json"
+if [ $workload = "readrandomwriterandom" ]; then
+  rm -rf "${output_dir}/benchmark-data"
+  cp -r "${output_dir}/updaterandom/benchmark-data" "${output_dir}"
+  hyperfine --min-runs 3 \
+    --style basic \
+    --prepare 'sudo /bin/clear_page_cache' \
+    "bash ${run_script} ${param_str}" \
+    --export-json "../../../data/results/tmp_result.json"
+else
+  hyperfine --min-runs 3 \
+    --style basic \
+    --prepare 'sudo /bin/clear_page_cache' \
+    "bash ${run_script} ${param_str}" \
+    --cleanup "rm -rf ${output_dir}/benchmark-data" \
+    --export-json "../../../data/results/tmp_result.json"
+fi
 
 if [ "$4" = "adaptive" ]; then
   sudo /bin/clear_page_cache
