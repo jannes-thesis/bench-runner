@@ -16,7 +16,7 @@ cd submodules/rocks-io-benchmark/benchmarking
 rm db_bench
 ln "../${executable}" db_bench
 
-if [ $workload = "readrandomwriterandom" ]; then
+if [ "$workload_name" = "readrandomwriterandom" ]; then
   rm -rf "${output_dir}/benchmark-data"
   cp -r "${output_dir}/updaterandom/benchmark-data" "${output_dir}"
   hyperfine --min-runs 3 \
