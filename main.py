@@ -195,7 +195,10 @@ def main():
             continue
         # parse log & result
         result = parse_result_json(adapter_run_def)
-        run_log = parse_adapter_log()
+        if adapter_run_def.workload == 'watermark':
+            run_log = None
+        else:
+            run_log = parse_adapter_log()
         if run_log is not None:
             adapter_run_logs[adapter_run_def] = run_log
             checkpoint_adapter_logs(adapter_run_logs)
