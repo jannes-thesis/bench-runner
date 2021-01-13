@@ -10,13 +10,13 @@ workloads:
     adapter_params: [ oneshot, read_write_2mb_sync ]
     no_adapter_params: [ oneshot, read_write_2mb_sync ]
     parameter_combos_ssd:
-      - [ 30000 ]
+      - [ 20000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
   - name: rw_buf_2mb_oneshot
     adapter_params: [ oneshot, read_write_buf_sync_2mb ]
     no_adapter_params: [ oneshot, read_write_buf_sync_2mb ]
     parameter_combos_ssd:
       - [ 2000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
