@@ -76,12 +76,16 @@ def do_adapter_run(run_definition: AdapterRunDefinition) -> bool:
         run_definition.workload.benchmark_suite
     )[f'disk_param_{run_definition.workload.disk}']
     adapter_algorithm_args_string = run_definition.adapter_config.adapter_params_str()
+    if run_definition.adapter_config.adapter_version == 'v-watermark':
+        pool_type = 'watermark'
+    else:
+        pool_type = 'adaptive'
     command_with_args = [
         runner_script,
         *first_args,
         *workload_args,
         disk_arg,
-        'adaptive',
+        pool_type,
         adapter_algorithm_args_string
     ]
     command_str = ' '.join(command_with_args)
@@ -195,7 +199,7 @@ def main():
             continue
         # parse log & result
         result = parse_result_json(adapter_run_def)
-        if adapter_run_def.workload == 'watermark':
+        if adapter_run_def.adapter_config.adapter_version == 'v-watermark':
             run_log = None
         else:
             run_log = parse_adapter_log()
