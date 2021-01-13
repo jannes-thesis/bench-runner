@@ -1,0 +1,39 @@
+2021-01-13 17:16:17,779 - root - INFO - get new workload/adapter info
+2021-01-13 17:16:17,785 - submodules - INFO - updating submodules
+2021-01-13 17:16:20,522 - submodules - INFO - found 1 untracked adapter versions
+2021-01-13 17:16:23,960 - root - INFO - new workloads:
+2021-01-13 17:16:23,960 - root - INFO - new adapter configs:
+2021-01-13 17:16:23,960 - root - INFO - --> version: v-watermark, params: 1,64,500
+2021-01-13 17:16:23,960 - root - INFO - --> version: v-watermark, params: 1,32,500
+2021-01-13 17:16:23,960 - root - INFO - --> version: v-watermark, params: 1,64,1000
+2021-01-13 17:16:23,961 - root - INFO - --> version: v-watermark, params: 1,32,1000
+2021-01-13 17:16:23,961 - root - INFO - calculate new run definitions
+2021-01-13 17:16:23,962 - root - INFO - adapter run defs: 8 new - 0 checkpointed
+2021-01-13 17:16:23,962 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-01-13 17:16:23,962 - root - INFO - adapter run 0/8: ssd-rw_2mb_oneshot-20000 with version: v-watermark, params: 1,64,1000
+2021-01-13 17:16:23,966 - root - INFO - compile adapter version v-watermark
+2021-01-13 17:16:31,118 - root - INFO - recompile benchmarks
+2021-01-13 17:17:06,815 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files watermark 1,64,1000
+2021-01-13 17:48:28,140 - root - INFO - adapter run 1/8: ssd-rw_2mb_oneshot-20000 with version: v-watermark, params: 1,64,500
+2021-01-13 17:48:28,173 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 17:48:28,174 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files watermark 1,64,500
+2021-01-13 18:19:08,215 - root - INFO - adapter run 2/8: ssd-rw_buf_2mb_oneshot-2000 with version: v-watermark, params: 1,32,500
+2021-01-13 18:19:08,246 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 18:19:08,247 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files watermark 1,32,500
+2021-01-13 18:33:07,557 - root - INFO - adapter run 3/8: ssd-rw_buf_2mb_oneshot-2000 with version: v-watermark, params: 1,32,1000
+2021-01-13 18:33:07,593 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 18:33:07,594 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files watermark 1,32,1000
+2021-01-13 18:47:06,993 - root - INFO - adapter run 4/8: ssd-rw_2mb_oneshot-20000 with version: v-watermark, params: 1,32,500
+2021-01-13 18:47:07,027 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 18:47:07,028 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files watermark 1,32,500
+2021-01-13 19:05:50,524 - root - INFO - adapter run 5/8: ssd-rw_buf_2mb_oneshot-2000 with version: v-watermark, params: 1,64,500
+2021-01-13 19:05:50,562 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 19:05:50,563 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files watermark 1,64,500
+2021-01-13 19:14:10,635 - root - INFO - adapter run 6/8: ssd-rw_2mb_oneshot-20000 with version: v-watermark, params: 1,32,1000
+2021-01-13 19:14:10,670 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 19:14:10,671 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files watermark 1,32,1000
+2021-01-13 19:32:47,563 - root - INFO - adapter run 7/8: ssd-rw_buf_2mb_oneshot-2000 with version: v-watermark, params: 1,64,1000
+2021-01-13 19:32:47,601 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-13 19:32:47,602 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files watermark 1,64,1000
+2021-01-13 19:41:28,797 - root - INFO - saving results
+2021-01-13 19:41:28,802 - root - INFO - generating report

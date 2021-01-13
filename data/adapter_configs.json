@@ -172,5 +172,37 @@
             "1000",
             "0.95"
         ]
+    },
+    {
+        "version": "v-watermark",
+        "param_values": [
+            "1",
+            "64",
+            "500"
+        ]
+    },
+    {
+        "version": "v-watermark",
+        "param_values": [
+            "1",
+            "32",
+            "500"
+        ]
+    },
+    {
+        "version": "v-watermark",
+        "param_values": [
+            "1",
+            "64",
+            "1000"
+        ]
+    },
+    {
+        "version": "v-watermark",
+        "param_values": [
+            "1",
+            "32",
+            "1000"
+        ]
     }
 ]
