@@ -20,3 +20,10 @@ workloads:
       - [ 2000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
+  - name: read_2mb_oneshot
+    adapter_params: [ oneshot, read_2mb ]
+    no_adapter_params: [ oneshot, read_2mb ]
+    parameter_combos_ssd:
+      - [ 30000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
