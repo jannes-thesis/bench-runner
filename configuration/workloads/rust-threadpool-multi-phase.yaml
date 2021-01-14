@@ -1,22 +1,29 @@
 workloads:
-  - name: lml-rw_100kb
-    adapter_params: [ lml-rw_100kb ]
-    no_adapter_params: [ lml-rw_100kb ]
+  - name: r_rw_r_2mb_oneshot
+    adapter_params: [ r_rw_r_2mb ]
+    no_adapter_params: [ r_rw_r_2mb ]
     parameter_combos_ssd:
-      - [ 300000 ]
+      - [ 30000 ]
     parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
-  - name: lml-rw_buf_100ms
-    adapter_params: [ lml-rw_buf_100ms ]
-    no_adapter_params: [ lml-rw_buf_100ms ]
-    parameter_combos_ssd:
-      - [ 3000 ]
-    parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
-  - name: rw_buf_1mb_100ms_bgload_25-75
-    adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
-    no_adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
-    parameter_combos_ssd:
-      - [ 800 ]
-    parameter_combos_hdd: [ ]
-    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48 ]
+  # - name: lml-rw_100kb
+  #   adapter_params: [ lml-rw_100kb ]
+  #   no_adapter_params: [ lml-rw_100kb ]
+  #   parameter_combos_ssd:
+  #     - [ 300000 ]
+  #   parameter_combos_hdd: [ ]
+  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+  # - name: lml-rw_buf_100ms
+  #   adapter_params: [ lml-rw_buf_100ms ]
+  #   no_adapter_params: [ lml-rw_buf_100ms ]
+  #   parameter_combos_ssd:
+  #     - [ 3000 ]
+  #   parameter_combos_hdd: [ ]
+  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]
+  # - name: rw_buf_1mb_100ms_bgload_25-75
+  #   adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
+  #   no_adapter_params: [ rw_buf_1mb_100ms_bgload_25-75 ]
+  #   parameter_combos_ssd:
+  #     - [ 800 ]
+  #   parameter_combos_hdd: [ ]
+  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32 ]

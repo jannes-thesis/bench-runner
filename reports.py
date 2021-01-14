@@ -91,6 +91,7 @@ def plot_results(results: list[tuple[tuple[StaticResult],
             plot_static(static_results, ax1, max_runtime, min_runtime)
         if len(adapter_results) > 0:
             plot_adaptive(adapter_results, ax2, max_runtime, min_runtime)
+        fig.tight_layout()
         fig.savefig(fig_filename)
         pyplot.close(fig)
 
@@ -141,6 +142,7 @@ def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float,
     ax.set_ylabel('runtime in seconds')
     ax.set_ylim(top=ylim_top, bottom=ylim_bottom)
     ax.grid(color='grey', linestyle='-', linewidth=0.25, alpha=0.5)
+    ax.set_xticklabels(xs, rotation=45, ha='right')
 
     ax2 = ax.twinx()
     p2 = ax2.plot(xs, y2s, 'r-', label='avg pool size')
