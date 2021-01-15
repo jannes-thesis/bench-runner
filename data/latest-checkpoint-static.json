@@ -1,92 +1,92 @@
 {
-    "rust-threadpool-single-phase": {
+    "rust-threadpool-multi-phase": {
         "hdd": {
-            "read_2mb_oneshot": {}
+            "r_rw_r_2mb_oneshot": {}
         },
         "ssd": {
-            "read_2mb_oneshot": {
+            "r_rw_r_2mb_oneshot": {
                 "30000": {
                     "with_adapter": [],
                     "without_adapter": [
                         {
                             "pool_size": 1,
-                            "avg_runtime_seconds": 479.606860934865,
-                            "runtime_stddev": 347.1897202151058
+                            "avg_runtime_seconds": 570.6607206181967,
+                            "runtime_stddev": 198.3179423486203
                         },
                         {
                             "pool_size": 2,
-                            "avg_runtime_seconds": 222.70588373181332,
-                            "runtime_stddev": 148.8528016681305
+                            "avg_runtime_seconds": 372.45683285650165,
+                            "runtime_stddev": 52.728586263650016
                         },
                         {
                             "pool_size": 4,
-                            "avg_runtime_seconds": 128.16665659622834,
-                            "runtime_stddev": 0.4730645279440595
+                            "avg_runtime_seconds": 292.7434479285283,
+                            "runtime_stddev": 12.761796921481213
                         },
                         {
                             "pool_size": 6,
-                            "avg_runtime_seconds": 126.76218635809833,
-                            "runtime_stddev": 0.15953314664788043
+                            "avg_runtime_seconds": 308.1119638109317,
+                            "runtime_stddev": 8.49163119737273
                         },
                         {
                             "pool_size": 8,
-                            "avg_runtime_seconds": 128.26959233584665,
-                            "runtime_stddev": 0.10919676577181225
+                            "avg_runtime_seconds": 301.07623167707663,
+                            "runtime_stddev": 19.36354781591051
                         },
                         {
                             "pool_size": 10,
-                            "avg_runtime_seconds": 126.95016850049501,
-                            "runtime_stddev": 0.09666702935996088
+                            "avg_runtime_seconds": 301.9842211841533,
+                            "runtime_stddev": 16.763699526912347
                         },
                         {
                             "pool_size": 12,
-                            "avg_runtime_seconds": 126.21554273112167,
-                            "runtime_stddev": 0.16874477196036122
+                            "avg_runtime_seconds": 293.410642041235,
+                            "runtime_stddev": 5.8829800819922795
                         },
                         {
                             "pool_size": 14,
-                            "avg_runtime_seconds": 126.24756205937332,
-                            "runtime_stddev": 0.13589866453523836
+                            "avg_runtime_seconds": 289.76244636747833,
+                            "runtime_stddev": 2.6677102759336497
                         },
                         {
                             "pool_size": 16,
-                            "avg_runtime_seconds": 128.661548939175,
-                            "runtime_stddev": 0.02764961353114344
+                            "avg_runtime_seconds": 293.05690147446666,
+                            "runtime_stddev": 12.414400287068224
                         },
                         {
                             "pool_size": 20,
-                            "avg_runtime_seconds": 127.083764192265,
-                            "runtime_stddev": 0.14961664602204383
+                            "avg_runtime_seconds": 293.884050093385,
+                            "runtime_stddev": 11.632077562338603
                         },
                         {
                             "pool_size": 24,
-                            "avg_runtime_seconds": 127.68176547258999,
-                            "runtime_stddev": 0.12189844109322796
+                            "avg_runtime_seconds": 296.78801120231503,
+                            "runtime_stddev": 9.278633929861972
                         },
                         {
                             "pool_size": 28,
-                            "avg_runtime_seconds": 128.06420826099165,
-                            "runtime_stddev": 0.05611422565844858
+                            "avg_runtime_seconds": 278.1540916435517,
+                            "runtime_stddev": 9.583976788270073
                         },
                         {
                             "pool_size": 32,
-                            "avg_runtime_seconds": 130.8641482800433,
-                            "runtime_stddev": 0.12163314809083847
+                            "avg_runtime_seconds": 287.7403321957617,
+                            "runtime_stddev": 13.398904743322225
                         },
                         {
                             "pool_size": 36,
-                            "avg_runtime_seconds": 128.49610021826834,
-                            "runtime_stddev": 0.12955733086175783
+                            "avg_runtime_seconds": 381.3524780708167,
+                            "runtime_stddev": 33.25703891031641
                         },
                         {
                             "pool_size": 40,
-                            "avg_runtime_seconds": 128.60274720755334,
-                            "runtime_stddev": 0.03620658989782117
+                            "avg_runtime_seconds": 396.32533457920164,
+                            "runtime_stddev": 5.431016227002022
                         },
                         {
                             "pool_size": 48,
-                            "avg_runtime_seconds": 128.59082147187334,
-                            "runtime_stddev": 0.13421326451333448
+                            "avg_runtime_seconds": 410.6924613513833,
+                            "runtime_stddev": 15.313905010703735
                         }
                     ]
                 }

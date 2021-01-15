@@ -1,0 +1,57 @@
+2021-01-14 17:55:51,409 - root - INFO - get new workload/adapter info
+2021-01-14 17:55:51,420 - submodules - INFO - updating submodules
+2021-01-14 17:55:54,220 - submodules - INFO - found 0 untracked adapter versions
+2021-01-14 17:55:57,425 - root - INFO - new workloads:
+2021-01-14 17:55:57,425 - root - INFO - --> ssd-r_rw_r_2mb_oneshot-30000
+2021-01-14 17:55:57,425 - root - INFO - new adapter configs:
+2021-01-14 17:55:57,426 - root - INFO - calculate new run definitions
+2021-01-14 17:55:57,429 - root - INFO - adapter run defs: 20 new - 16 checkpointed
+2021-01-14 17:55:57,429 - root - INFO - static run defs: 16 new - 0 checkpointed
+2021-01-14 17:55:57,429 - root - INFO - adapter run 0/4: ssd-r_rw_r_2mb_oneshot-30000 with version: v-watermark, params: 1,64,500
+2021-01-14 17:55:57,433 - root - INFO - compile adapter version v-watermark
+2021-01-14 17:56:03,654 - root - INFO - recompile benchmarks
+2021-01-14 17:56:39,389 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files watermark 1,64,500
+2021-01-14 18:15:49,411 - root - INFO - adapter run 1/4: ssd-r_rw_r_2mb_oneshot-30000 with version: v-watermark, params: 1,32,1000
+2021-01-14 18:15:49,451 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-14 18:15:49,452 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files watermark 1,32,1000
+2021-01-14 18:30:57,238 - root - INFO - adapter run 2/4: ssd-r_rw_r_2mb_oneshot-30000 with version: v-watermark, params: 1,64,1000
+2021-01-14 18:30:57,277 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-14 18:30:57,278 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files watermark 1,64,1000
+2021-01-14 18:50:59,128 - root - INFO - adapter run 3/4: ssd-r_rw_r_2mb_oneshot-30000 with version: v-watermark, params: 1,32,500
+2021-01-14 18:50:59,167 - root - INFO - already on branch for v-watermark, no compilation needed
+2021-01-14 18:50:59,168 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files watermark 1,32,500
+2021-01-14 19:07:23,251 - root - INFO - static run 0/16: ssd-r_rw_r_2mb_oneshot-30000 with size 1
+2021-01-14 19:07:23,251 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 1
+2021-01-14 19:35:59,155 - root - INFO - static run 1/16: ssd-r_rw_r_2mb_oneshot-30000 with size 2
+2021-01-14 19:35:59,156 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 2
+2021-01-14 19:54:39,980 - root - INFO - static run 2/16: ssd-r_rw_r_2mb_oneshot-30000 with size 4
+2021-01-14 19:54:39,981 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 4
+2021-01-14 20:09:21,690 - root - INFO - static run 3/16: ssd-r_rw_r_2mb_oneshot-30000 with size 6
+2021-01-14 20:09:21,691 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 6
+2021-01-14 20:24:49,512 - root - INFO - static run 4/16: ssd-r_rw_r_2mb_oneshot-30000 with size 8
+2021-01-14 20:24:49,513 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 8
+2021-01-14 20:39:56,237 - root - INFO - static run 5/16: ssd-r_rw_r_2mb_oneshot-30000 with size 10
+2021-01-14 20:39:56,238 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 10
+2021-01-14 20:55:05,679 - root - INFO - static run 6/16: ssd-r_rw_r_2mb_oneshot-30000 with size 12
+2021-01-14 20:55:05,680 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 12
+2021-01-14 21:09:49,419 - root - INFO - static run 7/16: ssd-r_rw_r_2mb_oneshot-30000 with size 14
+2021-01-14 21:09:49,420 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 14
+2021-01-14 21:24:22,196 - root - INFO - static run 8/16: ssd-r_rw_r_2mb_oneshot-30000 with size 16
+2021-01-14 21:24:22,197 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 16
+2021-01-14 21:39:04,873 - root - INFO - static run 9/16: ssd-r_rw_r_2mb_oneshot-30000 with size 20
+2021-01-14 21:39:04,874 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 20
+2021-01-14 21:53:50,017 - root - INFO - static run 10/16: ssd-r_rw_r_2mb_oneshot-30000 with size 24
+2021-01-14 21:53:50,018 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 24
+2021-01-14 22:08:43,874 - root - INFO - static run 11/16: ssd-r_rw_r_2mb_oneshot-30000 with size 28
+2021-01-14 22:08:43,875 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 28
+2021-01-14 22:22:41,817 - root - INFO - static run 12/16: ssd-r_rw_r_2mb_oneshot-30000 with size 32
+2021-01-14 22:22:41,819 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 32
+2021-01-14 22:37:08,536 - root - INFO - static run 13/16: ssd-r_rw_r_2mb_oneshot-30000 with size 36
+2021-01-14 22:37:08,537 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 36
+2021-01-14 22:56:16,214 - root - INFO - static run 14/16: ssd-r_rw_r_2mb_oneshot-30000 with size 40
+2021-01-14 22:56:16,215 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 40
+2021-01-14 23:16:08,446 - root - INFO - static run 15/16: ssd-r_rw_r_2mb_oneshot-30000 with size 48
+2021-01-14 23:16:08,447 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh r_rw_r_2mb 30000 /ssd2/adapter-benchmark/files static 48
+2021-01-14 23:36:44,002 - root - INFO - saving results
+2021-01-14 23:36:44,024 - root - INFO - DONT FORGET TO MANUALLY UPDATE NEW RESULT JSONS
+2021-01-14 23:36:44,025 - root - INFO - AND THEN GEN REPORTS + DO LAST MAIN STEPS

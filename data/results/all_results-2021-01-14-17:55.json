@@ -1,0 +1,1258 @@
+{
+    "rust-threadpool-single-phase": {
+        "ssd": {
+            "rw_2mb_oneshot": {
+                "20000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 357.9054589917234,
+                            "runtime_stddev": 29.156351013692284,
+                            "avg_pool_size": 31.303846153846155,
+                            "total_thread_creates": 116
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 352.73794191460667,
+                            "runtime_stddev": 32.23602686364354,
+                            "avg_pool_size": 23.120689655172413,
+                            "total_thread_creates": 69
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 351.3578131213101,
+                            "runtime_stddev": 27.61885876520625,
+                            "avg_pool_size": 7.696261682242991,
+                            "total_thread_creates": 83
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 367.28495797250497,
+                            "runtime_stddev": 52.705962585185716,
+                            "avg_pool_size": 12.864864864864865,
+                            "total_thread_creates": 41
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 337.4579885420417,
+                            "runtime_stddev": 14.585983908745796,
+                            "avg_pool_size": 6.896797153024911,
+                            "total_thread_creates": 106
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 331.4446039325433,
+                            "runtime_stddev": 24.142044886359002,
+                            "avg_pool_size": 14.665116279069768,
+                            "total_thread_creates": 105
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 360.744559405335,
+                            "runtime_stddev": 42.07581699715598,
+                            "avg_pool_size": 14.669683257918551,
+                            "total_thread_creates": 90
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 350.4361930689033,
+                            "runtime_stddev": 39.52852326683208,
+                            "avg_pool_size": 10.638743455497382,
+                            "total_thread_creates": 79
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 357.27845059801666,
+                            "runtime_stddev": 1.4882082983206528,
+                            "avg_pool_size": 13.901639344262295,
+                            "total_thread_creates": 112
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 360.7560513276583,
+                            "runtime_stddev": 20.851777867705643,
+                            "avg_pool_size": 14.25925925925926,
+                            "total_thread_creates": 91
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 336.1574532143466,
+                            "runtime_stddev": 27.17990297805709,
+                            "avg_pool_size": 14.126760563380282,
+                            "total_thread_creates": 87
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 366.97939391941503,
+                            "runtime_stddev": 27.165518005119683,
+                            "avg_pool_size": 16.956375838926174,
+                            "total_thread_creates": 119
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 355.233392453495,
+                            "runtime_stddev": 41.19363161752265,
+                            "avg_pool_size": 20.064308681672024,
+                            "total_thread_creates": 115
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 324.73657902581834,
+                            "runtime_stddev": 47.89466871520016,
+                            "avg_pool_size": 16.550295857988164,
+                            "total_thread_creates": 122
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 331.554434208225,
+                            "runtime_stddev": 49.47934094153827,
+                            "avg_pool_size": 14.248175182481752,
+                            "total_thread_creates": 113
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 344.10954212560665,
+                            "runtime_stddev": 47.853745419599555,
+                            "avg_pool_size": 16.08433734939759,
+                            "total_thread_creates": 51
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 371.1705094043916,
+                            "runtime_stddev": 22.22903772634474,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 373.3072230682667,
+                            "runtime_stddev": 20.760445305721486,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 625.6670669071733,
+                            "runtime_stddev": 53.6769184978765,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 612.1296241434983,
+                            "runtime_stddev": 17.100205529007592,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        }
+                    ],
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 516.5724121040199,
+                            "runtime_stddev": 48.17677610389151
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 410.49000976008165,
+                            "runtime_stddev": 25.02606340986355
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 371.4111174304583,
+                            "runtime_stddev": 54.35058175019251
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 361.63674437819327,
+                            "runtime_stddev": 18.043507676481646
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 343.9553138732417,
+                            "runtime_stddev": 40.52410430907346
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 360.28917159114667,
+                            "runtime_stddev": 17.22225733228772
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 344.57910682233165,
+                            "runtime_stddev": 6.262817921159448
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 348.60858421718166,
+                            "runtime_stddev": 24.184659945416715
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 330.81034146583664,
+                            "runtime_stddev": 29.760969630853253
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 358.06976437148506,
+                            "runtime_stddev": 10.63782435454451
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 345.94356978288334,
+                            "runtime_stddev": 11.52836245194779
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 338.25102721311004,
+                            "runtime_stddev": 43.53521635399187
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 327.83959262528,
+                            "runtime_stddev": 24.00937417230165
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 509.4261390355,
+                            "runtime_stddev": 42.588496092196095
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 647.25888053542,
+                            "runtime_stddev": 44.05817302755703
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 636.3913944092784,
+                            "runtime_stddev": 59.58120343437762
+                        }
+                    ]
+                }
+            },
+            "rw_buf_2mb_oneshot": {
+                "2000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 228.88623064663832,
+                            "runtime_stddev": 18.60595824093493,
+                            "avg_pool_size": 29.102564102564102,
+                            "total_thread_creates": 47
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 215.97963915582167,
+                            "runtime_stddev": 12.827527368394342,
+                            "avg_pool_size": 23.083333333333332,
+                            "total_thread_creates": 43
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 200.42035312265332,
+                            "runtime_stddev": 30.105591108265116,
+                            "avg_pool_size": 31.34285714285714,
+                            "total_thread_creates": 48
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 247.84584822725165,
+                            "runtime_stddev": 23.632058328110986,
+                            "avg_pool_size": 12.093023255813954,
+                            "total_thread_creates": 51
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 250.11605191542665,
+                            "runtime_stddev": 21.967452874882717,
+                            "avg_pool_size": 20.40740740740741,
+                            "total_thread_creates": 43
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 194.70103695233,
+                            "runtime_stddev": 25.35755004363144,
+                            "avg_pool_size": 31.36842105263158,
+                            "total_thread_creates": 49
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 238.02146716490998,
+                            "runtime_stddev": 29.97901697277423,
+                            "avg_pool_size": 27.05128205128205,
+                            "total_thread_creates": 45
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 222.66379537175501,
+                            "runtime_stddev": 21.074087967576364,
+                            "avg_pool_size": 21.9375,
+                            "total_thread_creates": 45
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 230.81943782900166,
+                            "runtime_stddev": 34.85671561925618,
+                            "avg_pool_size": 11.227722772277227,
+                            "total_thread_creates": 56
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 273.9740680719017,
+                            "runtime_stddev": 100.36613822482087,
+                            "avg_pool_size": 17.55,
+                            "total_thread_creates": 45
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 225.13513681181166,
+                            "runtime_stddev": 20.538415314986445,
+                            "avg_pool_size": 28.96875,
+                            "total_thread_creates": 45
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 246.64650887232665,
+                            "runtime_stddev": 63.6990898370341,
+                            "avg_pool_size": 32.21212121212121,
+                            "total_thread_creates": 48
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 300.00417509396334,
+                            "runtime_stddev": 93.06384481213138,
+                            "avg_pool_size": 24.13157894736842,
+                            "total_thread_creates": 41
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 210.14369673682666,
+                            "runtime_stddev": 18.65331606016781,
+                            "avg_pool_size": 23.434782608695652,
+                            "total_thread_creates": 47
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 211.21148263916834,
+                            "runtime_stddev": 35.88737397608656,
+                            "avg_pool_size": 26.585365853658537,
+                            "total_thread_creates": 43
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 244.75688298203832,
+                            "runtime_stddev": 30.76332128925836,
+                            "avg_pool_size": 12.383720930232558,
+                            "total_thread_creates": 50
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 278.7396392217783,
+                            "runtime_stddev": 14.169038603500512,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 163.44102900412668,
+                            "runtime_stddev": 14.919515965970598,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 165.65977993857834,
+                            "runtime_stddev": 12.01662060452566,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 278.86492036816827,
+                            "runtime_stddev": 15.382423751357035,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        }
+                    ],
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 1384.073350859915,
+                            "runtime_stddev": 49.449081125924806
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 1038.2651407233886,
+                            "runtime_stddev": 12.261803437354994
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 649.37658942078,
+                            "runtime_stddev": 9.518334680314188
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 553.9311649021416,
+                            "runtime_stddev": 15.345413280402804
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 463.39170980454657,
+                            "runtime_stddev": 22.6663733752776
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 434.83774829968837,
+                            "runtime_stddev": 5.511537066395021
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 388.9923015957167,
+                            "runtime_stddev": 22.65769037502743
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 356.38979918904494,
+                            "runtime_stddev": 15.596731742902257
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 350.0004785547516,
+                            "runtime_stddev": 10.329149525517838
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 282.61817919603664,
+                            "runtime_stddev": 15.613105322755045
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 259.45808381802664,
+                            "runtime_stddev": 9.652469625310529
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 234.97038284332334,
+                            "runtime_stddev": 9.999491429855256
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 208.17943291377665,
+                            "runtime_stddev": 19.670724733349914
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 204.803707607535,
+                            "runtime_stddev": 17.053035285033875
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 201.50962947210667,
+                            "runtime_stddev": 21.917029859735113
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 192.08323398132998,
+                            "runtime_stddev": 0.9668611547273991
+                        }
+                    ]
+                }
+            },
+            "read_2mb_oneshot": {
+                "30000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 134.47459407483166,
+                            "runtime_stddev": 8.05001536305431,
+                            "avg_pool_size": 4.064516129032258,
+                            "total_thread_creates": 37
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 150.4542467813717,
+                            "runtime_stddev": 6.829576488007336,
+                            "avg_pool_size": 5.065934065934066,
+                            "total_thread_creates": 59
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 147.58485002792668,
+                            "runtime_stddev": 6.608697012798229,
+                            "avg_pool_size": 6.21969696969697,
+                            "total_thread_creates": 53
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 137.85792194571667,
+                            "runtime_stddev": 2.2853690523205814,
+                            "avg_pool_size": 5.952941176470588,
+                            "total_thread_creates": 36
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 144.56701099833,
+                            "runtime_stddev": 12.128584468366581,
+                            "avg_pool_size": 4.637426900584796,
+                            "total_thread_creates": 52
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 131.67280102773168,
+                            "runtime_stddev": 0.15160907465954904,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 135.12446071167497,
+                            "runtime_stddev": 0.2612056987100685,
+                            "avg_pool_size": 10.393939393939394,
+                            "total_thread_creates": 25
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 156.08368815921003,
+                            "runtime_stddev": 8.747595469623658,
+                            "avg_pool_size": 4.598639455782313,
+                            "total_thread_creates": 58
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 131.63204645333664,
+                            "runtime_stddev": 0.0445847088755165,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 140.72261103911,
+                            "runtime_stddev": 8.828165782872796,
+                            "avg_pool_size": 4.502923976608187,
+                            "total_thread_creates": 55
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 152.88513979525666,
+                            "runtime_stddev": 4.182596155264884,
+                            "avg_pool_size": 4.931034482758621,
+                            "total_thread_creates": 57
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 141.30762792278168,
+                            "runtime_stddev": 13.370378008396749,
+                            "avg_pool_size": 6.902439024390244,
+                            "total_thread_creates": 35
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 150.60081807859333,
+                            "runtime_stddev": 15.443476216343752,
+                            "avg_pool_size": 3.962962962962963,
+                            "total_thread_creates": 70
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 144.73354673893337,
+                            "runtime_stddev": 7.953313012763351,
+                            "avg_pool_size": 3.595890410958904,
+                            "total_thread_creates": 55
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 130.09571881427,
+                            "runtime_stddev": 0.08962714827153892,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 134.06111962248167,
+                            "runtime_stddev": 7.042995895004539,
+                            "avg_pool_size": 6.951807228915663,
+                            "total_thread_creates": 35
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 132.59914155621664,
+                            "runtime_stddev": 1.496210467386929,
+                            "avg_pool_size": 11.171875,
+                            "total_thread_creates": 41
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 136.08908157846167,
+                            "runtime_stddev": 8.258954608537469,
+                            "avg_pool_size": 11.723076923076922,
+                            "total_thread_creates": 40
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 130.24510239627332,
+                            "runtime_stddev": 0.07963206419933291,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 134.85535454864336,
+                            "runtime_stddev": 0.1758631821179866,
+                            "avg_pool_size": 10.529411764705882,
+                            "total_thread_creates": 25
+                        }
+                    ],
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 479.606860934865,
+                            "runtime_stddev": 347.1897202151058
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 222.70588373181332,
+                            "runtime_stddev": 148.8528016681305
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 128.16665659622834,
+                            "runtime_stddev": 0.4730645279440595
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 126.76218635809833,
+                            "runtime_stddev": 0.15953314664788043
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 128.26959233584665,
+                            "runtime_stddev": 0.10919676577181225
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 126.95016850049501,
+                            "runtime_stddev": 0.09666702935996088
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 126.21554273112167,
+                            "runtime_stddev": 0.16874477196036122
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 126.24756205937332,
+                            "runtime_stddev": 0.13589866453523836
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 128.661548939175,
+                            "runtime_stddev": 0.02764961353114344
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 127.083764192265,
+                            "runtime_stddev": 0.14961664602204383
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 127.68176547258999,
+                            "runtime_stddev": 0.12189844109322796
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 128.06420826099165,
+                            "runtime_stddev": 0.05611422565844858
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 130.8641482800433,
+                            "runtime_stddev": 0.12163314809083847
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 128.49610021826834,
+                            "runtime_stddev": 0.12955733086175783
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 128.60274720755334,
+                            "runtime_stddev": 0.03620658989782117
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 128.59082147187334,
+                            "runtime_stddev": 0.13421326451333448
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "rust-threadpool-multi-phase": {
+        "ssd": {
+            "r_rw_r_2mb_oneshot": {
+                "30000": {
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 284.20608359796165,
+                            "runtime_stddev": 39.013284745002906,
+                            "avg_pool_size": 15.24223602484472,
+                            "total_thread_creates": 71
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 285.9676986252533,
+                            "runtime_stddev": 38.82153790894173,
+                            "avg_pool_size": 15.06936416184971,
+                            "total_thread_creates": 81
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 304.94486184697666,
+                            "runtime_stddev": 32.44988464537903,
+                            "avg_pool_size": 12.870588235294118,
+                            "total_thread_creates": 96
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 291.132778484065,
+                            "runtime_stddev": 37.98490187135377,
+                            "avg_pool_size": 14.542222222222222,
+                            "total_thread_creates": 94
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 310.7321258020467,
+                            "runtime_stddev": 23.11910614616322,
+                            "avg_pool_size": 10.737068965517242,
+                            "total_thread_creates": 98
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 331.70581399035,
+                            "runtime_stddev": 28.895524827739386,
+                            "avg_pool_size": 15.238805970149254,
+                            "total_thread_creates": 78
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 292.3857463757717,
+                            "runtime_stddev": 31.569018397212282,
+                            "avg_pool_size": 10.342679127725857,
+                            "total_thread_creates": 105
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 295.35453882639996,
+                            "runtime_stddev": 24.200993234082237,
+                            "avg_pool_size": 24.880434782608695,
+                            "total_thread_creates": 111
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 297.58898569482835,
+                            "runtime_stddev": 13.175558263525518,
+                            "avg_pool_size": 10.390243902439025,
+                            "total_thread_creates": 45
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 298.1244388986533,
+                            "runtime_stddev": 14.311284776141504,
+                            "avg_pool_size": 13.5016077170418,
+                            "total_thread_creates": 115
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 307.5942950813667,
+                            "runtime_stddev": 29.093508539759867,
+                            "avg_pool_size": 11.360655737704919,
+                            "total_thread_creates": 97
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 295.49366887547995,
+                            "runtime_stddev": 37.93539686770074,
+                            "avg_pool_size": 21.88372093023256,
+                            "total_thread_creates": 88
+                        },
+                        {
+                            "adapter_version": "v-2",
+                            "adapter_params": [
+                                "2000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 313.4245205324467,
+                            "runtime_stddev": 30.04105387576496,
+                            "avg_pool_size": 21.129032258064516,
+                            "total_thread_creates": 56
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 299.0904477217767,
+                            "runtime_stddev": 8.179314244712385,
+                            "avg_pool_size": 12.382716049382717,
+                            "total_thread_creates": 70
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 295.7177799291633,
+                            "runtime_stddev": 11.37837081026238,
+                            "avg_pool_size": 15.182222222222222,
+                            "total_thread_creates": 98
+                        },
+                        {
+                            "adapter_version": "v-4b",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 302.1189273351,
+                            "runtime_stddev": 16.301995925065967,
+                            "avg_pool_size": 12.120218579234972,
+                            "total_thread_creates": 71
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 301.4388821663067,
+                            "runtime_stddev": 19.60960154827057,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 382.19012116258,
+                            "runtime_stddev": 49.8726459684729,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 399.46896116928997,
+                            "runtime_stddev": 21.703517870860885,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "32",
+                                "500"
+                            ],
+                            "avg_runtime_seconds": 317.56488100943665,
+                            "runtime_stddev": 9.459010251815918,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        }
+                    ],
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 570.6607206181967,
+                            "runtime_stddev": 198.3179423486203
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 372.45683285650165,
+                            "runtime_stddev": 52.728586263650016
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 292.7434479285283,
+                            "runtime_stddev": 12.761796921481213
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 308.1119638109317,
+                            "runtime_stddev": 8.49163119737273
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 301.07623167707663,
+                            "runtime_stddev": 19.36354781591051
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 301.9842211841533,
+                            "runtime_stddev": 16.763699526912347
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 293.410642041235,
+                            "runtime_stddev": 5.8829800819922795
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 289.76244636747833,
+                            "runtime_stddev": 2.6677102759336497
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 293.05690147446666,
+                            "runtime_stddev": 12.414400287068224
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 293.884050093385,
+                            "runtime_stddev": 11.632077562338603
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 296.78801120231503,
+                            "runtime_stddev": 9.278633929861972
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 278.1540916435517,
+                            "runtime_stddev": 9.583976788270073
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 287.7403321957617,
+                            "runtime_stddev": 13.398904743322225
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 381.3524780708167,
+                            "runtime_stddev": 33.25703891031641
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 396.32533457920164,
+                            "runtime_stddev": 5.431016227002022
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 410.6924613513833,
+                            "runtime_stddev": 15.313905010703735
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

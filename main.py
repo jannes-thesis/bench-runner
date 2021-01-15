@@ -237,6 +237,8 @@ def main():
     save_new_results(adapter_run_results, static_run_results, timestamp)
     update_known_adapter_configs(new_adapter_configs)
     update_known_workloads(new_workloads)
+    # logger.info('DONT FORGET TO MANUALLY UPDATE NEW RESULT JSONS')
+    # logger.info('AND THEN GEN REPORTS + DO LAST MAIN STEPS')
     logger.info("generating report")
     generate_report(f'data/results/all_results-{timestamp}.json')
     generate_adapter_logs_report(
