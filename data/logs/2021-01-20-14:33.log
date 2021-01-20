@@ -1,0 +1,16 @@
+2021-01-20 14:33:41,038 - root - INFO - get new workload/adapter info
+2021-01-20 14:33:41,058 - submodules - INFO - updating submodules
+2021-01-20 14:33:44,816 - submodules - INFO - found 0 untracked adapter versions
+2021-01-20 14:33:48,605 - root - INFO - new workloads:
+2021-01-20 14:33:48,606 - root - INFO - --> ssd-rw_buf_2mb_oneshot2-2000
+2021-01-20 14:33:48,606 - root - INFO - new adapter configs:
+2021-01-20 14:33:48,606 - root - INFO - calculate new run definitions
+2021-01-20 14:33:48,606 - root - INFO - adapter run defs: 0 new - 0 checkpointed
+2021-01-20 14:33:48,607 - root - INFO - static run defs: 2 new - 0 checkpointed
+2021-01-20 14:34:21,451 - root - INFO - static run 0/2: ssd-rw_buf_2mb_oneshot2-2000 with size 56
+2021-01-20 14:34:21,451 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files static 56
+2021-01-20 14:43:00,070 - root - INFO - static run 1/2: ssd-rw_buf_2mb_oneshot2-2000 with size 64
+2021-01-20 14:43:00,071 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files static 64
+2021-01-20 14:50:52,722 - root - INFO - saving results
+2021-01-20 14:50:52,751 - root - INFO - DONT FORGET TO MANUALLY UPDATE NEW RESULT JSONS
+2021-01-20 14:50:52,751 - root - INFO - AND THEN GEN REPORTS + DO LAST MAIN STEPS
