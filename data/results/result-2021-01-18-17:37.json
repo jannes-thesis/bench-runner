@@ -6,7 +6,74 @@
         "ssd": {
             "rw_sync_10mb-node": {
                 "2000": {
-                    "with_adapter": [],
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 141.10705441141667,
+                            "runtime_stddev": 17.691339412484883,
+                            "avg_pool_size": 2.979020979020979,
+                            "total_thread_creates": 43
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.97"
+                            ],
+                            "avg_runtime_seconds": 128.45450589459332,
+                            "runtime_stddev": 6.180416384233283,
+                            "avg_pool_size": 3.036144578313253,
+                            "total_thread_creates": 47
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 120.33768183839999,
+                            "runtime_stddev": 6.0464254654193725,
+                            "avg_pool_size": 2.9,
+                            "total_thread_creates": 31
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "800",
+                                "0.93"
+                            ],
+                            "avg_runtime_seconds": 136.85323441344667,
+                            "runtime_stddev": 5.669185112889238,
+                            "avg_pool_size": 3.1675675675675676,
+                            "total_thread_creates": 50
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.95"
+                            ],
+                            "avg_runtime_seconds": 159.87355749837002,
+                            "runtime_stddev": 10.543034536521805,
+                            "avg_pool_size": 2.2244897959183674,
+                            "total_thread_creates": 33
+                        },
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1000",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 136.27745671647332,
+                            "runtime_stddev": 8.493303659662866,
+                            "avg_pool_size": 3.142857142857143,
+                            "total_thread_creates": 43
+                        }
+                    ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
