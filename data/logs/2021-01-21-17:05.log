@@ -1,0 +1,72 @@
+2021-01-21 17:05:09,407 - root - INFO - get new workload/adapter info
+2021-01-21 17:05:09,418 - submodules - INFO - updating submodules
+2021-01-21 17:05:12,167 - submodules - INFO - found 2 untracked adapter versions
+2021-01-21 17:05:16,975 - root - INFO - new workloads:
+2021-01-21 17:05:16,976 - root - INFO - new adapter configs:
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-6, params: 1000,0.95
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-5, params: 1000,0.95
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-6, params: 2000,0.95
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-5, params: 2000,0.95
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-6, params: 800,0.97
+2021-01-21 17:05:16,976 - root - INFO - --> version: v-5, params: 800,0.97
+2021-01-21 17:05:16,976 - root - INFO - calculate new run definitions
+2021-01-21 17:05:16,978 - root - INFO - adapter run defs: 18 new - 0 checkpointed
+2021-01-21 17:05:16,978 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-01-21 17:05:16,978 - root - INFO - adapter run 0/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-5, params: 800,0.97
+2021-01-21 17:05:16,981 - root - INFO - compile adapter version v-5
+2021-01-21 17:05:23,480 - root - INFO - recompile benchmarks
+2021-01-21 17:05:59,702 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 800,0.97
+2021-01-21 17:19:28,160 - root - INFO - adapter run 1/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-5, params: 1000,0.95
+2021-01-21 17:19:28,217 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 17:19:28,218 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2021-01-21 17:34:37,496 - root - INFO - adapter run 2/18: ssd-rw_sync_10mb-node-2000 with version: v-5, params: 1000,0.95
+2021-01-21 17:34:37,547 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 17:34:37,548 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95
+2021-01-21 17:43:22,098 - root - INFO - adapter run 3/18: ssd-fillseq-50000000 with version: v-5, params: 1000,0.95
+2021-01-21 17:43:22,145 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 17:43:22,146 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95
+2021-01-21 17:59:21,813 - root - INFO - adapter run 4/18: ssd-fillseq-50000000 with version: v-5, params: 2000,0.95
+2021-01-21 17:59:21,838 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 17:59:21,838 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 2000,0.95
+2021-01-21 18:14:55,527 - root - INFO - adapter run 5/18: ssd-rw_sync_10mb-node-2000 with version: v-5, params: 2000,0.95
+2021-01-21 18:14:55,551 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 18:14:55,552 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 2000,0.95
+2021-01-21 18:24:08,652 - root - INFO - adapter run 6/18: ssd-fillseq-50000000 with version: v-5, params: 800,0.97
+2021-01-21 18:24:08,698 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 18:24:08,699 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 800,0.97
+2021-01-21 18:40:07,230 - root - INFO - adapter run 7/18: ssd-rw_sync_10mb-node-2000 with version: v-5, params: 800,0.97
+2021-01-21 18:40:07,257 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 18:40:07,258 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 800,0.97
+2021-01-21 18:49:07,205 - root - INFO - adapter run 8/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-5, params: 2000,0.95
+2021-01-21 18:49:07,261 - root - INFO - already on branch for v-5, no compilation needed
+2021-01-21 18:49:07,262 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2021-01-21 19:05:11,565 - root - INFO - adapter run 9/18: ssd-fillseq-50000000 with version: v-6, params: 1000,0.95
+2021-01-21 19:05:11,608 - root - INFO - compile adapter version v-6
+2021-01-21 19:05:18,857 - root - INFO - recompile benchmarks
+2021-01-21 19:05:55,546 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95
+2021-01-21 19:21:37,442 - root - INFO - adapter run 10/18: ssd-rw_sync_10mb-node-2000 with version: v-6, params: 1000,0.95
+2021-01-21 19:21:37,478 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 19:21:37,478 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95
+2021-01-21 19:29:22,737 - root - INFO - adapter run 11/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-6, params: 2000,0.95
+2021-01-21 19:29:22,783 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 19:29:22,783 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 2000,0.95
+2021-01-21 19:45:33,152 - root - INFO - adapter run 12/18: ssd-fillseq-50000000 with version: v-6, params: 800,0.97
+2021-01-21 19:45:33,198 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 19:45:33,199 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 800,0.97
+2021-01-21 20:01:28,885 - root - INFO - adapter run 13/18: ssd-rw_sync_10mb-node-2000 with version: v-6, params: 800,0.97
+2021-01-21 20:01:28,910 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 20:01:28,911 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 800,0.97
+2021-01-21 20:09:21,021 - root - INFO - adapter run 14/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-6, params: 1000,0.95
+2021-01-21 20:09:21,078 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 20:09:21,079 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.95
+2021-01-21 20:24:37,309 - root - INFO - adapter run 15/18: ssd-rw_buf_2mb_oneshot-2000 with version: v-6, params: 800,0.97
+2021-01-21 20:24:37,356 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 20:24:37,357 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 800,0.97
+2021-01-21 20:38:26,774 - root - INFO - adapter run 16/18: ssd-fillseq-50000000 with version: v-6, params: 2000,0.95
+2021-01-21 20:38:26,819 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 20:38:26,820 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 2000,0.95
+2021-01-21 20:54:21,069 - root - INFO - adapter run 17/18: ssd-rw_sync_10mb-node-2000 with version: v-6, params: 2000,0.95
+2021-01-21 20:54:21,097 - root - INFO - already on branch for v-6, no compilation needed
+2021-01-21 20:54:21,098 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 2000,0.95
+2021-01-21 21:03:20,768 - root - INFO - saving results
+2021-01-21 21:03:20,778 - root - INFO - generating report

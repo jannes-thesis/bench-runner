@@ -204,5 +204,47 @@
             "32",
             "1000"
         ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1000",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-5",
+        "param_values": [
+            "1000",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "2000",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-5",
+        "param_values": [
+            "2000",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "800",
+            "0.97"
+        ]
+    },
+    {
+        "version": "v-5",
+        "param_values": [
+            "800",
+            "0.97"
+        ]
     }
 ]
