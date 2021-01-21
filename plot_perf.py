@@ -12,17 +12,17 @@ BIGGER_SIZE = 18
 plt.rc('font', size=20)          # controls default text sizes
 plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
 plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
-plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
-plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
-plt.rc('legend', fontsize=BIGGER_SIZE)    # legend fontsize
+plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=BIGGER_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=24)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
 watermark_version = 'v-watermark-1,64,1000'
-adapter_version = 'v-4-1000,0.9'
+adapter_version = 'v-4-800,0.97'
 
 # key: workload, value: optimal static size
 workload_map = {'ssd-rw_2mb_oneshot-20000': 16,
-                'ssd-rw_buf_2mb_oneshot-2000': 32,
+                'ssd-rw_buf_2mb_oneshot-2000': 64,
                 'ssd-read_2mb_oneshot-30000': 4}
 
 
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     x = np.arange(len(workload_names))  # the label locations
     width = 0.25  # the width of the bars
     
-    fig, (ax, ax2) = plt.subplots(figsize=(20, 20), nrows=2)
+    fig, (ax, ax2) = plt.subplots(figsize=(25, 20), nrows=2)
     rects1 = ax.bar(x - width, fixed_runtime_means, width, label='fixed', yerr=fixed_runtime_stddevs)
     rects2 = ax.bar(x, watermark_runtime_means, width, label='watermark', yerr=watermark_runtime_stddevs)
     rects3 = ax.bar(x + width, adapter_runtime_means, width, label='adaptive', yerr=adapter_runtime_stddevs)
