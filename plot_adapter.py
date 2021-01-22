@@ -4,6 +4,18 @@ import sys
 from matplotlib.axes import Axes
 import matplotlib.pyplot as plt
 
+SMALL_SIZE = 14
+MEDIUM_SIZE = 16
+BIGGER_SIZE = 18
+
+plt.rc('font', size=20)          # controls default text sizes
+plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=BIGGER_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=24)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
 
 def plot_adapter_timeseries(name: str, axm1: Axes,
                             psizes: list[tuple[int, int]],
@@ -12,12 +24,15 @@ def plot_adapter_timeseries(name: str, axm1: Axes,
 
     ts1, psizes = list(zip(*psizes))
     ts2, m1s = list(zip(*m1s))
+    m1s = [m1 * 1000 for m1 in m1s]
+    ts1 = [t1 / 1000 for t1 in ts1]
+    ts2 = [t2 / 1000 for t2 in ts2]
     p2a, = axm1.plot(ts1, psizes, "b-", label="pool size")
     p2b, = ax_m1.plot(ts2, m1s, "r-", label="rwchar rate")
 
-    axm1.set_xlabel("time in millis")
+    axm1.set_xlabel("time in seconds")
     axm1.set_ylabel("pool size")
-    ax_m1.set_ylabel("rwchar rate bytes/ms")
+    ax_m1.set_ylabel("rwchar rate bytes/sec")
     axm1.yaxis.label.set_color(p2a.get_color())
     ax_m1.yaxis.label.set_color(p2b.get_color())
 
@@ -45,6 +60,7 @@ def generate_adapter_logs_figure(json_path: str, adapter_version: str, workload:
                         m1s = adapter_entry['metric_one']
                         plot_adapter_timeseries(a, ax, psizes, m1s)
                         return
+    raise Exception(f'adapter logs for {adapter_version} not found')
 
 
 if __name__ == '__main__':
@@ -53,7 +69,7 @@ if __name__ == '__main__':
         fig, ax = plt.subplots(figsize=(20, 10))
         axs = [ax]
     elif n == 2:
-        fig, axs = plt.subplots(figsize=(25, 10), ncols=2)
+        fig, axs = plt.subplots(figsize=(25, 15), nrows=2)
     else:
         raise Exception('support only one or two')
 
