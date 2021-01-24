@@ -122,7 +122,88 @@
                             "total_thread_creates": 107
                         }
                     ],
-                    "without_adapter": []
+                    "without_adapter": [
+                        {
+                            "pool_size": 1,
+                            "avg_runtime_seconds": 311.28986421374333,
+                            "runtime_stddev": 8.939894279830119
+                        },
+                        {
+                            "pool_size": 2,
+                            "avg_runtime_seconds": 303.0483393942433,
+                            "runtime_stddev": 3.0790947145562395
+                        },
+                        {
+                            "pool_size": 4,
+                            "avg_runtime_seconds": 304.2936274927617,
+                            "runtime_stddev": 4.407238759194338
+                        },
+                        {
+                            "pool_size": 6,
+                            "avg_runtime_seconds": 301.24366595658506,
+                            "runtime_stddev": 0.008321315499859934
+                        },
+                        {
+                            "pool_size": 8,
+                            "avg_runtime_seconds": 303.5541291094983,
+                            "runtime_stddev": 3.9844655647197977
+                        },
+                        {
+                            "pool_size": 10,
+                            "avg_runtime_seconds": 301.275296192275,
+                            "runtime_stddev": 0.02027434439976281
+                        },
+                        {
+                            "pool_size": 12,
+                            "avg_runtime_seconds": 301.25793319034506,
+                            "runtime_stddev": 0.015468091600777957
+                        },
+                        {
+                            "pool_size": 14,
+                            "avg_runtime_seconds": 302.8909149310433,
+                            "runtime_stddev": 2.0203007954653978
+                        },
+                        {
+                            "pool_size": 16,
+                            "avg_runtime_seconds": 301.4472456564283,
+                            "runtime_stddev": 0.14971730243849526
+                        },
+                        {
+                            "pool_size": 20,
+                            "avg_runtime_seconds": 303.00817757350666,
+                            "runtime_stddev": 1.6686847207127204
+                        },
+                        {
+                            "pool_size": 24,
+                            "avg_runtime_seconds": 301.99135549349506,
+                            "runtime_stddev": 1.1734937475587173
+                        },
+                        {
+                            "pool_size": 28,
+                            "avg_runtime_seconds": 301.6391463222583,
+                            "runtime_stddev": 0.5904903620963909
+                        },
+                        {
+                            "pool_size": 32,
+                            "avg_runtime_seconds": 302.1430655161266,
+                            "runtime_stddev": 1.3484951469685387
+                        },
+                        {
+                            "pool_size": 36,
+                            "avg_runtime_seconds": 301.3057336207483,
+                            "runtime_stddev": 0.010219873557079642
+                        },
+                        {
+                            "pool_size": 40,
+                            "avg_runtime_seconds": 306.4606141818716,
+                            "runtime_stddev": 4.439071273854066
+                        },
+                        {
+                            "pool_size": 48,
+                            "avg_runtime_seconds": 305.38958786576165,
+                            "runtime_stddev": 4.0130363148051575
+                        }
+                    ]
                 }
             }
         }

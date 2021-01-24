@@ -34,3 +34,10 @@ workloads:
   #     - [ 30000 ]
   #   parameter_combos_hdd: [ ]
   #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
+  - name: rw_2mb_every30ms
+    adapter_params: [ every30ms, read_write_2mb_sync ]
+    no_adapter_params: [ every30ms, read_write_2mb_sync ]
+    parameter_combos_ssd:
+      - [ 10000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
