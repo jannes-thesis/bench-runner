@@ -13,3 +13,10 @@ workloads:
       - [ 2000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48]
+  - name: rw_nosync_2mb-node 
+    adapter_params: [ rw_nosync_2mb.mjs ]
+    no_adapter_params: [ rw_nosync_2mb.mjs ]
+    parameter_combos_ssd:
+      - [ 20000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48]
