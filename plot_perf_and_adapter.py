@@ -18,11 +18,15 @@ plt.rc('ytick', labelsize=BIGGER_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=24)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
-workload = 'ssd-rw_rwbuf_rw_2mb_oneshot-15000'
-workload_no_amount = 'rw_rwbuf_rw_2mb_oneshot'
+# workload = 'ssd-rw_rwbuf_rw_2mb_oneshot-15000'
+workload = 'ssd-rw2mb_30ms_oneshot-10000'
+# workload_no_amount = 'rw_rwbuf_rw_2mb_oneshot'
+workload_no_amount = 'rw2mb_30ms_oneshot'
 adapter_version = 'v-4-800,0.97'
-adapter_logs = 'data/results/result-2021-01-20-19:47-alogs.json'
-static_sizes = [16, 64, 32]
+# adapter_logs = 'data/results/result-2021-01-20-19:47-alogs.json'
+adapter_logs = 'data/results/result-2021-01-25-21:48-alogs.json'
+# static_sizes = [16, 64, 32]
+static_sizes = [10, 16, 24]
 
 def find_results(workload: str, results) -> Tuple[AdapterResult, list[StaticResult]]:
     """ return adapter, watermark, optimal static results """
@@ -45,6 +49,8 @@ if __name__ == '__main__':
     adapter_res, fixed_ress = find_results(workload, results)
     adapter_runtime_mean = adapter_res.runtime_seconds
     adapter_runtime_stddev = adapter_res.std_deviation
+    
+    print(adapter_res.avg_pool_size)
 
     for fixed_res in fixed_ress:
         fixed_runtime_means.append(fixed_res.runtime_seconds)
@@ -64,10 +70,9 @@ if __name__ == '__main__':
     
     # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_ylabel('Runtime in seconds')
-    ax.set_title('Comparison optimal fixed size / watermark / adaptive')
     ax.set_xticks(x)
     ax.set_xticklabels([workload])
-    ax.legend()
+    ax.legend(loc='lower center')
     ax.set_aspect('auto')
     
     max_stddev = max(max(fixed_runtime_stddevs), adapter_runtime_stddev)

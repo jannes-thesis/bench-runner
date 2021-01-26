@@ -4,5 +4,3 @@ v-3
 v-2
 v-4b
 v-5 
-v-6
-v-watermark

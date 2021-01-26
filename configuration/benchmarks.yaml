@@ -15,20 +15,20 @@ benchmarks:
       hdd: /hdd/adapter-benchmark/files
       ssd: /ssd2/adapter-benchmark/files
     workloads_definition: rust-threadpool-multi-phase.yaml
-  - name: node-io-benchmark
-    description: benchmark executable for node
-    runner_script: node-io-benchmark.sh
-    parameters: [ number of items ]
-    disk_params:
-      hdd: /hdd/deno-io-benchmark/files
-      # ssd: /ssd2/deno-io-benchmark/files CHANGE THIS BACK LATER
-      ssd: /ssd2/adapter-benchmark/files/2mb
-    workloads_definition: node-io-benchmark.yaml
-  - name: rocks-io-benchmark
-    description: benchmark executable for rocks
-    runner_script: rocks-io-benchmark.sh
-    parameters: [ number of items ]
-    disk_params:
-      hdd: /hdd/rocks-io-benchmark
-      ssd: /ssd2/rocks-io-benchmark
-    workloads_definition: rocks-io-benchmark.yaml
+  # - name: node-io-benchmark
+  #   description: benchmark executable for node
+  #   runner_script: node-io-benchmark.sh
+  #   parameters: [ number of items ]
+  #   disk_params:
+  #     hdd: /hdd/deno-io-benchmark/files
+  #     # ssd: /ssd2/deno-io-benchmark/files CHANGE THIS BACK LATER
+  #     ssd: /ssd2/adapter-benchmark/files/2mb
+  #   workloads_definition: node-io-benchmark.yaml
+  # - name: rocks-io-benchmark
+  #   description: benchmark executable for rocks
+  #   runner_script: rocks-io-benchmark.sh
+  #   parameters: [ number of items ]
+  #   disk_params:
+  #     hdd: /hdd/rocks-io-benchmark
+  #     ssd: /ssd2/rocks-io-benchmark
+  #   workloads_definition: rocks-io-benchmark.yaml

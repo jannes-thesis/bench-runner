@@ -13,6 +13,13 @@ workloads:
       - [ 15000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64]
+  - name: rw2mb_30ms_oneshot
+    adapter_params: [ rw2mb_30ms_oneshot ]
+    no_adapter_params: [ rw2mb_30ms_oneshot ]
+    parameter_combos_ssd:
+      - [ 10000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48 ]
   # - name: lml-rw_100kb
   #   adapter_params: [ lml-rw_100kb ]
   #   no_adapter_params: [ lml-rw_100kb ]
