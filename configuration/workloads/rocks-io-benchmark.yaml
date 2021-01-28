@@ -5,14 +5,14 @@ workloads:
   #   parameter_combos_ssd:
   #     - [ 10000000 ]
   #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 4 ]
-  # - name: bulkload
-  #   adapter_params: [ bulkload ]
-  #   no_adapter_params: [ bulkload ]
-  #   parameter_combos_ssd:
-  #     - [ 50000000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48]
+    # static_sizes: [ 1, 4 ]
+  - name: bulkload
+    adapter_params: [ bulkload ]
+    no_adapter_params: [ bulkload ]
+    parameter_combos_ssd:
+      - [ 50000000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48]
   - name: fillseq
     adapter_params: [ fillseq_disable_wal ]
     no_adapter_params: [ fillseq_disable_wal ]
@@ -20,17 +20,17 @@ workloads:
       - [ 50000000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48]
-  # - name: bulkload_nocompact
-  #   adapter_params: [ bulkload_nocompact ]
-  #   no_adapter_params: [ bulkload_nocompact ]
-  #   parameter_combos_ssd:
-  #     - [ 50000000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32]
-  # - name: readwriterandom
-  #   adapter_params: [ readrandomwriterandom ]
-  #   no_adapter_params: [readrandomwriterandom ]
-  #   parameter_combos_ssd:
-  #     - [ 2500000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16]
+  - name: bulkload_nocompact
+    adapter_params: [ bulkload_nocompact ]
+    no_adapter_params: [ bulkload_nocompact ]
+    parameter_combos_ssd:
+      - [ 50000000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32]
+  - name: readwriterandom
+    adapter_params: [ readrandomwriterandom ]
+    no_adapter_params: [readrandomwriterandom ]
+    parameter_combos_ssd:
+      - [ 2500000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16]

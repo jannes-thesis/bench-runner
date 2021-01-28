@@ -19,7 +19,8 @@ plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
 def plot_adapter_timeseries(name: str, axm1: Axes,
                             psizes: list[tuple[int, int]],
-                            m1s: list[tuple[int, float]]):
+                            m1s: list[tuple[int, float]],
+                            metric_name: str):
     ax_m1 = axm1.twinx()
 
     ts1, psizes = list(zip(*psizes))
@@ -28,11 +29,11 @@ def plot_adapter_timeseries(name: str, axm1: Axes,
     ts1 = [t1 / 1000 for t1 in ts1]
     ts2 = [t2 / 1000 for t2 in ts2]
     p2a, = axm1.plot(ts1, psizes, "b-", label="pool size")
-    p2b, = ax_m1.plot(ts2, m1s, "r-", label="rwchar rate")
+    p2b, = ax_m1.plot(ts2, m1s, "r-", label=metric_name)
 
     axm1.set_xlabel("time in seconds")
     axm1.set_ylabel("pool size")
-    ax_m1.set_ylabel("rwchar rate bytes/sec")
+    ax_m1.set_ylabel(metric_name)
     axm1.yaxis.label.set_color(p2a.get_color())
     ax_m1.yaxis.label.set_color(p2b.get_color())
 
@@ -43,7 +44,7 @@ def plot_adapter_timeseries(name: str, axm1: Axes,
     axm1.legend(lines, [l.get_label() for l in lines])
 
 
-def generate_adapter_logs_figure(json_path: str, adapter_version: str, workload: str, ax: Axes):
+def generate_adapter_logs_figure(json_path: str, adapter_version: str, workload: str, ax: Axes, metric: str, metric_name: str):
     with open(json_path) as f:
         logs_json = json.load(f)
     for b in logs_json.keys():
@@ -57,30 +58,23 @@ def generate_adapter_logs_figure(json_path: str, adapter_version: str, workload:
                             continue
                         adapter_entry = logs_json[b][d][w][p][a]
                         psizes = adapter_entry['pool_size']
-                        m1s = adapter_entry['metric_one']
-                        plot_adapter_timeseries(a, ax, psizes, m1s)
+                        ms = adapter_entry[metric]
+                        plot_adapter_timeseries(a, ax, psizes, ms, metric_name)
                         ax.set_title(f'{workload} {adapter_version}')
                         return
     raise Exception(f'adapter logs for {adapter_version} not found')
 
 
 if __name__ == '__main__':
-    n = int(sys.argv[1])
-    if n == 1:
-        fig, ax = plt.subplots(figsize=(20, 10))
-        axs = [ax]
-    elif n == 2:
-        fig, axs = plt.subplots(figsize=(25, 15), nrows=2)
-    else:
-        raise Exception('support only one or two')
+    json_path = sys.argv[1]
+    adapter_version = sys.argv[2]
+    workload = sys.argv[3]
+    output_path = sys.argv[4]
 
-    for i in range(n):
-        base = i * 3 + 2
-        json_path = sys.argv[base]
-        adapter_version = sys.argv[base + 1]
-        workload = sys.argv[base + 2]
-        generate_adapter_logs_figure(json_path, adapter_version, workload, axs[i])
-    output_path = sys.argv[n * 3 + 2]
+    fig, axs = plt.subplots(figsize=(25, 15), nrows=2)
+
+    generate_adapter_logs_figure(json_path, adapter_version, workload, axs[0], 'metric_one', 'rwchar rate')
+    generate_adapter_logs_figure(json_path, adapter_version, workload, axs[1], 'metric_two', 'avg syscalltime')
 
     fig.tight_layout()
     fig.savefig(output_path)

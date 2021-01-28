@@ -1,18 +1,18 @@
 workloads:
-  # - name: rw_4kb_oneshot
-  #   adapter_params: [ oneshot, read_write_4kb_sync ]
-  #   no_adapter_params: [ oneshot, read_write_4kb_sync ]
-  #   parameter_combos_ssd:
-  #     - [ 1000000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64]
-  # - name: rw_2mb_oneshot
-  #   adapter_params: [ oneshot, read_write_2mb_sync ]
-  #   no_adapter_params: [ oneshot, read_write_2mb_sync ]
-  #   parameter_combos_ssd:
-  #     - [ 20000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
+  - name: rw_4kb_oneshot
+    adapter_params: [ oneshot, read_write_4kb_sync ]
+    no_adapter_params: [ oneshot, read_write_4kb_sync ]
+    parameter_combos_ssd:
+      - [ 1000000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64]
+  - name: rw_2mb_oneshot
+    adapter_params: [ oneshot, read_write_2mb_sync ]
+    no_adapter_params: [ oneshot, read_write_2mb_sync ]
+    parameter_combos_ssd:
+      - [ 20000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
   - name: rw_nosync_2mb_oneshot
     adapter_params: [ oneshot, read_write_2mb_nosync ]
     no_adapter_params: [ oneshot, read_write_2mb_nosync ]
@@ -27,13 +27,13 @@ workloads:
       - [ 2000 ]
     parameter_combos_hdd: [ ]
     static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
-  # - name: read_2mb_oneshot
-  #   adapter_params: [ oneshot, read_2mb ]
-  #   no_adapter_params: [ oneshot, read_2mb ]
-  #   parameter_combos_ssd:
-  #     - [ 30000 ]
-  #   parameter_combos_hdd: [ ]
-  #   static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
+  - name: read_2mb_oneshot
+    adapter_params: [ oneshot, read_2mb ]
+    no_adapter_params: [ oneshot, read_2mb ]
+    parameter_combos_ssd:
+      - [ 30000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48]
   - name: rw_2mb_every30ms
     adapter_params: [ every30ms, read_write_2mb_sync ]
     no_adapter_params: [ every30ms, read_write_2mb_sync ]
