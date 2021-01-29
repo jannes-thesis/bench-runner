@@ -1,8 +1,10 @@
 import dataclasses
 import logging
 from datetime import datetime
+from os import name
 from subprocess import run
 import shutil
+import sys
 
 import submodules
 from adapter_log_parser import log_to_avg_pool_size, log_to_total_thread_creates
@@ -142,28 +144,49 @@ def main():
     submodules.update_submodules()
     new_adapter_configs = get_new_adapter_configs(known_adapter_configs)
 
-    logger.info("new workloads:")
-    for w in new_workloads:
-        logger.info(f"--> {w.description()}")
+    if len(sys.argv) == 2:
+        if not sys.argv[1] == 'selected':
+            raise Exception('wrong arg')
+        with open('configuration/selected_runs.txt') as f:
+            lines = f.readlines()[1:]
+        print('to run:')
+        for line in lines:
+            print(line)
+        static_runs = []
+        adapter_runs = []
+        all_adapter_configs = known_adapter_configs.union(new_adapter_configs)
+        for line in lines:
+            name, adapter_versions, include_static = [s.strip() for s in line.split(':')]
+            adapter_versions = [v.strip() for v in adapter_versions[1:-1].split(' ')]
+            workload = next(iter([w for w in all_workloads if w.description() == name]))
+            adapter_configs = {c for c in all_adapter_configs if c.short_description() in adapter_versions}
+            adapter_runs.extend(get_new_adapter_run_definitions(set(), {workload}, set(), adapter_configs))
+            if include_static == 'static':
+                static_runs.extend(get_new_static_run_definitions({workload}))
+    else:
+        raise Exception('comment out for auto running')
+        logger.info("new workloads:")
+        for w in new_workloads:
+            logger.info(f"--> {w.description()}")
 
-    logger.info("new adapter configs:")
-    for c in new_adapter_configs:
-        logger.info(f"--> {c.description()}")
+        logger.info("new adapter configs:")
+        for c in new_adapter_configs:
+            logger.info(f"--> {c.description()}")
 
-    logger.info("calculate new run definitions")
-    adapter_runs = get_new_adapter_run_definitions(known_workloads,
-                                                   new_workloads,
-                                                   known_adapter_configs,
-                                                   new_adapter_configs)
-    static_runs = get_new_static_run_definitions(new_workloads)
+        logger.info("calculate new run definitions")
+        adapter_runs = get_new_adapter_run_definitions(known_workloads,
+                                                       new_workloads,
+                                                       known_adapter_configs,
+                                                       new_adapter_configs)
+        static_runs = get_new_static_run_definitions(new_workloads)
 
-    # filter out dummy/ignored adapter versions
-    ignored_adapter_versions = get_ignored_adapter_versions()
-    adapter_runs = [
-        run for run in adapter_runs
-        if run.adapter_config.adapter_version.startswith(
-            "v-") and run.adapter_config.adapter_version not in ignored_adapter_versions
-    ]
+        # filter out dummy/ignored adapter versions
+        ignored_adapter_versions = get_ignored_adapter_versions()
+        adapter_runs = [
+            run for run in adapter_runs
+            if run.adapter_config.adapter_version.startswith(
+                "v-") and run.adapter_config.adapter_version not in ignored_adapter_versions
+        ]
 
     n_adapter_runs = len(adapter_runs)
     n_static_runs = len(static_runs)
@@ -173,8 +196,10 @@ def main():
     static_runs = [run for run in static_runs if not is_checkpointed(run)]
     n_adapter_checkpointed = n_adapter_runs - len(adapter_runs)
     n_static_checkpointed = n_static_runs - len(static_runs)
-    logger.info(f"adapter run defs: {n_adapter_runs} new - {n_adapter_checkpointed} checkpointed")
-    logger.info(f"static run defs: {n_static_runs} new - {n_static_checkpointed} checkpointed")
+    logger.info(
+        f"adapter run defs: {n_adapter_runs} new - {n_adapter_checkpointed} checkpointed")
+    logger.info(
+        f"static run defs: {n_static_runs} new - {n_static_checkpointed} checkpointed")
 
     # sort adapter runs by version to minimize compilations
     adapter_runs = sorted(
