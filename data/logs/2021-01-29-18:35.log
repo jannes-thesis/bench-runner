@@ -1,0 +1,5 @@
+2021-01-29 18:35:14,567 - root - INFO - get new workload/adapter info
+2021-01-29 18:35:14,596 - submodules - INFO - updating submodules
+2021-01-29 18:35:17,137 - submodules - INFO - found 0 untracked adapter versions
+2021-01-29 18:35:21,677 - root - INFO - adapter run defs: 5 new - 5 checkpointed
+2021-01-29 18:35:21,677 - root - INFO - static run defs: 0 new - 0 checkpointed

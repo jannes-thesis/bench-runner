@@ -1,0 +1,23 @@
+2021-01-29 18:37:44,629 - root - INFO - get new workload/adapter info
+2021-01-29 18:37:44,659 - submodules - INFO - updating submodules
+2021-01-29 18:37:47,194 - submodules - INFO - found 0 untracked adapter versions
+2021-01-29 18:37:51,717 - root - INFO - adapter run defs: 5 new - 0 checkpointed
+2021-01-29 18:37:51,717 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-01-29 18:37:51,717 - root - INFO - adapter run 0/5: ssd-fillseq-50000000 with version: v-4, params: 1500,0.95
+2021-01-29 18:37:51,720 - root - INFO - compile adapter version v-4
+2021-01-29 18:37:58,115 - root - INFO - recompile benchmarks
+2021-01-29 18:38:30,607 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1500,0.95
+2021-01-29 18:48:56,594 - root - INFO - adapter run 1/5: ssd-fillseq-50000000 with version: v-4, params: 1000,0.9
+2021-01-29 18:48:56,624 - root - INFO - already on branch for v-4, no compilation needed
+2021-01-29 18:48:56,625 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9
+2021-01-29 18:59:42,466 - root - INFO - adapter run 2/5: ssd-fillseq-50000000 with version: v-4, params: 1000,0.95
+2021-01-29 18:59:42,494 - root - INFO - already on branch for v-4, no compilation needed
+2021-01-29 18:59:42,495 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95
+2021-01-29 19:12:15,606 - root - INFO - adapter run 3/5: ssd-fillseq-50000000 with version: v-4, params: 1500,0.9
+2021-01-29 19:12:15,635 - root - INFO - already on branch for v-4, no compilation needed
+2021-01-29 19:12:15,636 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1500,0.9
+2021-01-29 19:23:19,949 - root - INFO - adapter run 4/5: ssd-fillseq-50000000 with version: v-4, params: 800,0.97
+2021-01-29 19:23:19,975 - root - INFO - already on branch for v-4, no compilation needed
+2021-01-29 19:23:19,976 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 800,0.97
+2021-01-29 19:33:51,912 - root - INFO - saving results
+2021-01-29 19:33:51,924 - root - INFO - generating report

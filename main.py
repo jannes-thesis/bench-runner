@@ -138,55 +138,26 @@ def main():
     logger.info("get new workload/adapter info")
     all_workloads = get_all_workloads()
     new_workloads = get_new_workloads(all_workloads)
-    known_workloads = get_known_workloads(all_workloads)
     known_adapter_configs = get_known_adapter_configs()
-    # TODO: update node/rocks repos as well
     submodules.update_submodules()
     new_adapter_configs = get_new_adapter_configs(known_adapter_configs)
 
-    if len(sys.argv) == 2:
-        if not sys.argv[1] == 'selected':
-            raise Exception('wrong arg')
-        with open('configuration/selected_runs.txt') as f:
-            lines = f.readlines()[1:]
-        print('to run:')
-        for line in lines:
-            print(line)
-        static_runs = []
-        adapter_runs = []
-        all_adapter_configs = known_adapter_configs.union(new_adapter_configs)
-        for line in lines:
-            name, adapter_versions, include_static = [s.strip() for s in line.split(':')]
-            adapter_versions = [v.strip() for v in adapter_versions[1:-1].split(' ')]
-            workload = next(iter([w for w in all_workloads if w.description() == name]))
-            adapter_configs = {c for c in all_adapter_configs if c.short_description() in adapter_versions}
-            adapter_runs.extend(get_new_adapter_run_definitions(set(), {workload}, set(), adapter_configs))
-            if include_static == 'static':
-                static_runs.extend(get_new_static_run_definitions({workload}))
-    else:
-        raise Exception('comment out for auto running')
-        logger.info("new workloads:")
-        for w in new_workloads:
-            logger.info(f"--> {w.description()}")
-
-        logger.info("new adapter configs:")
-        for c in new_adapter_configs:
-            logger.info(f"--> {c.description()}")
-
-        logger.info("calculate new run definitions")
-        adapter_runs = get_new_adapter_run_definitions(known_workloads,
-                                                       new_workloads,
-                                                       known_adapter_configs,
-                                                       new_adapter_configs)
-        static_runs = get_new_static_run_definitions(new_workloads)
-
-        # filter out dummy/ignored adapter versions
-        ignored_adapter_versions = get_ignored_adapter_versions()
-        adapter_runs = [
-            run for run in adapter_runs
-            if run.adapter_config.adapter_version.startswith(
-                "v-") and run.adapter_config.adapter_version not in ignored_adapter_versions
-        ]
+    with open('configuration/selected_runs.txt') as f:
+        lines = [line for line in f.readlines() if line[0] != '#']
+    print('to run:')
+    for line in lines:
+        print(line)
+    static_runs = []
+    adapter_runs = []
+    all_adapter_configs = known_adapter_configs.union(new_adapter_configs)
+    for line in lines:
+        name, adapter_versions, include_static = [s.strip() for s in line.split(':')]
+        adapter_versions = [v.strip() for v in adapter_versions[1:-1].split(' ')]
+        workload = next(iter([w for w in all_workloads if w.description() == name]))
+        adapter_configs = {c for c in all_adapter_configs if c.short_description() in adapter_versions}
+        adapter_runs.extend(get_new_adapter_run_definitions(set(), {workload}, set(), adapter_configs))
+        if include_static == 'static':
+            static_runs.extend(get_new_static_run_definitions({workload}))
 
     n_adapter_runs = len(adapter_runs)
     n_static_runs = len(static_runs)
