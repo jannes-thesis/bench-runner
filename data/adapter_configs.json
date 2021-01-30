@@ -246,5 +246,61 @@
             "800",
             "0.97"
         ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "2000",
+            "0.9"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1500",
+            "0.95"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1500",
+            "0.97"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "500",
+            "0.97"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1500",
+            "0.9"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1000",
+            "0.9"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "2000",
+            "0.97"
+        ]
+    },
+    {
+        "version": "v-6",
+        "param_values": [
+            "1000",
+            "0.97"
+        ]
     }
 ]
