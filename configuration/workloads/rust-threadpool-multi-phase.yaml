@@ -1,4 +1,11 @@
 workloads:
+  - name: rw2mb_sync-nosync  
+    adapter_params: [ rwnosync_rwsync_2mb ]
+    no_adapter_params: [ rwnosync_rwsync_2mb ]
+    parameter_combos_ssd:
+      - [ 40000 ]
+    parameter_combos_hdd: [ ]
+    static_sizes: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64 ]
   - name: r_rw_r_2mb_oneshot
     adapter_params: [ r_rw_r_2mb ]
     no_adapter_params: [ r_rw_r_2mb ]
