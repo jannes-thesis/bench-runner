@@ -6,6 +6,7 @@ rocks-io-benchmark-ssd-fillseq-50000000
 rocks-io-benchmark-ssd-readwriterandom-2500000
 rust-threadpool-multi-phase-ssd-r_rw_r_2mb_oneshot-30000
 rust-threadpool-multi-phase-ssd-rw2mb_30ms_oneshot-10000
+rust-threadpool-multi-phase-ssd-rw2mb_sync-nosync-40000
 rust-threadpool-multi-phase-ssd-rw_rwbuf_rw_2mb_oneshot-15000
 rust-threadpool-single-phase-ssd-read_2mb_oneshot-30000
 rust-threadpool-single-phase-ssd-rw_2mb_every30ms-10000

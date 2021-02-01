@@ -6,7 +6,42 @@
         "ssd": {
             "rw2mb_sync-nosync": {
                 "40000": {
-                    "with_adapter": [],
+                    "with_adapter": [
+                        {
+                            "adapter_version": "v-4",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 357.6192693066367,
+                            "runtime_stddev": 37.175793997094594,
+                            "avg_pool_size": 8.94915254237288,
+                            "total_thread_creates": 92
+                        },
+                        {
+                            "adapter_version": "v-watermark",
+                            "adapter_params": [
+                                "1",
+                                "64",
+                                "1000"
+                            ],
+                            "avg_runtime_seconds": 435.30859686952664,
+                            "runtime_stddev": 34.83251330072585,
+                            "avg_pool_size": 0,
+                            "total_thread_creates": 0
+                        },
+                        {
+                            "adapter_version": "v-6",
+                            "adapter_params": [
+                                "1500",
+                                "0.9"
+                            ],
+                            "avg_runtime_seconds": 322.53305321726504,
+                            "runtime_stddev": 12.35743887619908,
+                            "avg_pool_size": 9.684684684684685,
+                            "total_thread_creates": 87
+                        }
+                    ],
                     "without_adapter": [
                         {
                             "pool_size": 1,
