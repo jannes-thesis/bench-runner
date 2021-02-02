@@ -1,0 +1,49 @@
+2021-02-02 11:24:33,224 - root - INFO - get new workload/adapter info
+2021-02-02 11:24:33,257 - submodules - INFO - updating submodules
+2021-02-02 11:24:35,779 - submodules - INFO - found 0 untracked adapter versions
+2021-02-02 11:24:40,285 - root - INFO - adapter run defs: 5 new - 0 checkpointed
+2021-02-02 11:24:40,285 - root - INFO - static run defs: 13 new - 0 checkpointed
+2021-02-02 11:24:40,285 - root - INFO - adapter run 0/5: ssd-bulkload_nocompact-50000000 with version: v-4, params: 1500,0.95
+2021-02-02 11:24:40,288 - root - INFO - compile adapter version v-4
+2021-02-02 11:24:47,587 - root - INFO - recompile benchmarks
+2021-02-02 11:25:23,455 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1500,0.95
+2021-02-02 11:36:35,251 - root - INFO - adapter run 1/5: ssd-bulkload_nocompact-50000000 with version: v-4, params: 1000,0.9
+2021-02-02 11:36:35,272 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-02 11:36:35,272 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9
+2021-02-02 11:47:56,260 - root - INFO - adapter run 2/5: ssd-bulkload_nocompact-50000000 with version: v-4, params: 1500,0.9
+2021-02-02 11:47:56,283 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-02 11:47:56,283 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1500,0.9
+2021-02-02 11:59:32,663 - root - INFO - adapter run 3/5: ssd-bulkload_nocompact-50000000 with version: v-4, params: 1000,0.95
+2021-02-02 11:59:32,689 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-02 11:59:32,690 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95
+2021-02-02 12:10:49,919 - root - INFO - adapter run 4/5: ssd-bulkload_nocompact-50000000 with version: v-4, params: 800,0.97
+2021-02-02 12:10:49,948 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-02 12:10:49,949 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 800,0.97
+2021-02-02 12:24:39,830 - root - INFO - static run 0/13: ssd-bulkload_nocompact-50000000 with size 1
+2021-02-02 12:24:39,830 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 1
+2021-02-02 12:37:43,974 - root - INFO - static run 1/13: ssd-bulkload_nocompact-50000000 with size 2
+2021-02-02 12:37:43,975 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 2
+2021-02-02 12:48:24,320 - root - INFO - static run 2/13: ssd-bulkload_nocompact-50000000 with size 4
+2021-02-02 12:48:24,321 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 4
+2021-02-02 12:56:25,665 - root - INFO - static run 3/13: ssd-bulkload_nocompact-50000000 with size 6
+2021-02-02 12:56:25,666 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 6
+2021-02-02 13:03:48,354 - root - INFO - static run 4/13: ssd-bulkload_nocompact-50000000 with size 8
+2021-02-02 13:03:48,355 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 8
+2021-02-02 13:10:59,459 - root - INFO - static run 5/13: ssd-bulkload_nocompact-50000000 with size 10
+2021-02-02 13:10:59,460 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 10
+2021-02-02 13:18:11,354 - root - INFO - static run 6/13: ssd-bulkload_nocompact-50000000 with size 12
+2021-02-02 13:18:11,355 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 12
+2021-02-02 13:25:23,628 - root - INFO - static run 7/13: ssd-bulkload_nocompact-50000000 with size 14
+2021-02-02 13:25:23,629 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 14
+2021-02-02 13:32:41,590 - root - INFO - static run 8/13: ssd-bulkload_nocompact-50000000 with size 16
+2021-02-02 13:32:41,591 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 16
+2021-02-02 13:39:44,238 - root - INFO - static run 9/13: ssd-bulkload_nocompact-50000000 with size 20
+2021-02-02 13:39:44,239 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 20
+2021-02-02 13:46:21,051 - root - INFO - static run 10/13: ssd-bulkload_nocompact-50000000 with size 24
+2021-02-02 13:46:21,052 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 24
+2021-02-02 13:53:40,983 - root - INFO - static run 11/13: ssd-bulkload_nocompact-50000000 with size 28
+2021-02-02 13:53:40,983 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 28
+2021-02-02 14:00:43,474 - root - INFO - static run 12/13: ssd-bulkload_nocompact-50000000 with size 32
+2021-02-02 14:00:43,475 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark static 32
+2021-02-02 14:07:56,814 - root - INFO - saving results
+2021-02-02 14:07:56,830 - root - INFO - generating report
