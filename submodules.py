@@ -152,6 +152,7 @@ def compile_benchmarks(adaptive: bool):
     if adaptive:
         run_silent(['git', '-C', 'submodules/node-io-benchmark', 'checkout', 'adaptive'])
         run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'adaptive'])
+        # run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'adaptive-nomanager'])
     else:
         run_silent(['git', '-C', 'submodules/node-io-benchmark', 'checkout', 'master'])
         run_silent(['git', '-C', 'submodules/rocks-io-benchmark', 'checkout', 'master'])
