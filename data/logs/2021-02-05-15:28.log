@@ -1,0 +1,26 @@
+2021-02-05 15:28:23,644 - root - INFO - get new workload/adapter info
+2021-02-05 15:28:23,675 - submodules - INFO - updating submodules
+2021-02-05 15:28:26,122 - submodules - INFO - found 0 untracked adapter versions
+2021-02-05 15:28:31,301 - root - INFO - adapter run defs: 6 new - 0 checkpointed
+2021-02-05 15:28:31,301 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-02-05 15:28:31,302 - root - INFO - adapter run 0/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.95,3000
+2021-02-05 15:28:31,305 - root - INFO - compile adapter version v-7
+2021-02-05 15:28:37,662 - root - INFO - recompile benchmarks
+2021-02-05 15:29:13,521 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95,3000
+2021-02-05 15:37:46,332 - root - INFO - adapter run 1/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.97,3000
+2021-02-05 15:37:46,386 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-05 15:37:46,387 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.97,3000
+2021-02-05 15:46:03,726 - root - INFO - adapter run 2/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1500,0.95,5000
+2021-02-05 15:46:03,776 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-05 15:46:03,777 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1500,0.95,5000
+2021-02-05 15:54:13,913 - root - INFO - adapter run 3/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.95,5000
+2021-02-05 15:54:13,956 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-05 15:54:13,957 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.95,5000
+2021-02-05 16:02:14,816 - root - INFO - adapter run 4/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.97,5000
+2021-02-05 16:02:14,877 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-05 16:02:14,878 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1000,0.97,5000
+2021-02-05 16:10:45,136 - root - INFO - adapter run 5/6: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1500,0.95,3000
+2021-02-05 16:10:45,191 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-05 16:10:45,192 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/deno-io-benchmark/files adaptive 1500,0.95,3000
+2021-02-05 16:19:32,091 - root - INFO - saving results
+2021-02-05 16:19:32,105 - root - INFO - generating report

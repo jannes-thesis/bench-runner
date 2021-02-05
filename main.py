@@ -151,11 +151,17 @@ def main():
     adapter_runs = []
     all_adapter_configs = known_adapter_configs.union(new_adapter_configs)
     for line in lines:
-        name, adapter_versions, include_static = [s.strip() for s in line.split(':')]
-        adapter_versions = [v.strip() for v in adapter_versions[1:-1].split(' ')]
-        workload = next(iter([w for w in all_workloads if w.description() == name]))
-        adapter_configs = {c for c in all_adapter_configs if c.short_description() in adapter_versions}
-        adapter_runs.extend(get_new_adapter_run_definitions(set(), {workload}, set(), adapter_configs))
+        name, adapter_versions, include_static = [
+            s.strip() for s in line.split(':')]
+        adapter_versions = [v.strip()
+                            for v in adapter_versions[1:-1].split(' ')]
+        print(name)
+        workload = next(
+            iter([w for w in all_workloads if w.description() == name]))
+        adapter_configs = {
+            c for c in all_adapter_configs if c.short_description() in adapter_versions}
+        adapter_runs.extend(get_new_adapter_run_definitions(
+            set(), {workload}, set(), adapter_configs))
         if include_static == 'static':
             static_runs.extend(get_new_static_run_definitions({workload}))
 
