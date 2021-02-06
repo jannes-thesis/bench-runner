@@ -1,0 +1,73 @@
+2021-02-05 21:53:05,352 - root - INFO - get new workload/adapter info
+2021-02-05 21:53:05,387 - submodules - INFO - updating submodules
+2021-02-05 21:53:08,052 - submodules - INFO - found 0 untracked adapter versions
+2021-02-05 21:53:13,346 - root - INFO - adapter run defs: 10 new - 0 checkpointed
+2021-02-05 21:53:13,347 - root - INFO - static run defs: 17 new - 0 checkpointed
+2021-02-05 21:53:13,347 - root - INFO - adapter run 0/10: ssd-read_2mb-node-20000 with version: v-4, params: 1000,0.95
+2021-02-05 21:53:13,350 - root - INFO - compile adapter version v-4
+2021-02-05 21:53:20,687 - root - INFO - recompile benchmarks
+2021-02-05 21:53:56,839 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95
+2021-02-05 22:10:54,455 - root - INFO - adapter run 1/10: ssd-read_2mb-node-20000 with version: v-4, params: 1500,0.95
+2021-02-05 22:10:54,500 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-05 22:10:54,501 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95
+2021-02-05 22:25:25,636 - root - INFO - adapter run 2/10: ssd-read_2mb-node-20000 with version: v-4, params: 1500,0.9
+2021-02-05 22:25:25,692 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-05 22:25:25,693 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.9
+2021-02-05 22:40:57,069 - root - INFO - adapter run 3/10: ssd-read_2mb-node-20000 with version: v-4, params: 800,0.97
+2021-02-05 22:40:57,119 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-05 22:40:57,120 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 800,0.97
+2021-02-05 22:58:09,161 - root - INFO - adapter run 4/10: ssd-read_2mb-node-20000 with version: v-4, params: 1000,0.9
+2021-02-05 22:58:09,215 - root - INFO - already on branch for v-4, no compilation needed
+2021-02-05 22:58:09,216 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9
+2021-02-05 23:15:20,054 - root - INFO - adapter run 5/10: ssd-read_2mb-node-20000 with version: v-6, params: 1500,0.9
+2021-02-05 23:15:20,110 - root - INFO - compile adapter version v-6
+2021-02-05 23:15:27,616 - root - INFO - recompile benchmarks
+2021-02-05 23:16:03,870 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.9
+2021-02-05 23:30:44,328 - root - INFO - adapter run 6/10: ssd-read_2mb-node-20000 with version: v-6, params: 800,0.97
+2021-02-05 23:30:44,385 - root - INFO - already on branch for v-6, no compilation needed
+2021-02-05 23:30:44,386 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 800,0.97
+2021-02-05 23:44:54,689 - root - INFO - adapter run 7/10: ssd-read_2mb-node-20000 with version: v-6, params: 1000,0.9
+2021-02-05 23:44:54,744 - root - INFO - already on branch for v-6, no compilation needed
+2021-02-05 23:44:54,745 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9
+2021-02-06 00:00:29,030 - root - INFO - adapter run 8/10: ssd-read_2mb-node-20000 with version: v-6, params: 1000,0.95
+2021-02-06 00:00:29,087 - root - INFO - already on branch for v-6, no compilation needed
+2021-02-06 00:00:29,088 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95
+2021-02-06 00:16:10,054 - root - INFO - adapter run 9/10: ssd-read_2mb-node-20000 with version: v-6, params: 1500,0.95
+2021-02-06 00:16:10,109 - root - INFO - already on branch for v-6, no compilation needed
+2021-02-06 00:16:10,110 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95
+2021-02-06 00:31:24,134 - root - INFO - static run 0/17: ssd-read_2mb-node-20000 with size 1
+2021-02-06 00:31:24,134 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 1
+2021-02-06 00:50:56,296 - root - INFO - static run 1/17: ssd-read_2mb-node-20000 with size 2
+2021-02-06 00:50:56,297 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 2
+2021-02-06 01:07:02,317 - root - INFO - static run 2/17: ssd-read_2mb-node-20000 with size 4
+2021-02-06 01:07:02,317 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 4
+2021-02-06 01:17:17,642 - root - INFO - static run 3/17: ssd-read_2mb-node-20000 with size 6
+2021-02-06 01:17:17,642 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 6
+2021-02-06 01:27:18,824 - root - INFO - static run 4/17: ssd-read_2mb-node-20000 with size 8
+2021-02-06 01:27:18,825 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 8
+2021-02-06 01:37:12,231 - root - INFO - static run 5/17: ssd-read_2mb-node-20000 with size 10
+2021-02-06 01:37:12,232 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 10
+2021-02-06 01:47:00,877 - root - INFO - static run 6/17: ssd-read_2mb-node-20000 with size 12
+2021-02-06 01:47:00,877 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 12
+2021-02-06 01:56:48,087 - root - INFO - static run 7/17: ssd-read_2mb-node-20000 with size 14
+2021-02-06 01:56:48,088 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 14
+2021-02-06 02:06:28,570 - root - INFO - static run 8/17: ssd-read_2mb-node-20000 with size 16
+2021-02-06 02:06:28,570 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 16
+2021-02-06 02:16:07,323 - root - INFO - static run 9/17: ssd-read_2mb-node-20000 with size 20
+2021-02-06 02:16:07,324 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 20
+2021-02-06 02:25:45,287 - root - INFO - static run 10/17: ssd-read_2mb-node-20000 with size 24
+2021-02-06 02:25:45,288 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 24
+2021-02-06 02:35:23,435 - root - INFO - static run 11/17: ssd-read_2mb-node-20000 with size 28
+2021-02-06 02:35:23,435 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 28
+2021-02-06 02:44:58,563 - root - INFO - static run 12/17: ssd-read_2mb-node-20000 with size 32
+2021-02-06 02:44:58,564 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 32
+2021-02-06 02:54:28,102 - root - INFO - static run 13/17: ssd-read_2mb-node-20000 with size 36
+2021-02-06 02:54:28,103 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 36
+2021-02-06 03:03:54,038 - root - INFO - static run 14/17: ssd-read_2mb-node-20000 with size 40
+2021-02-06 03:03:54,039 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 40
+2021-02-06 03:13:07,778 - root - INFO - static run 15/17: ssd-read_2mb-node-20000 with size 44
+2021-02-06 03:13:07,778 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 44
+2021-02-06 03:22:26,561 - root - INFO - static run 16/17: ssd-read_2mb-node-20000 with size 48
+2021-02-06 03:22:26,562 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh read_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb static 48
+2021-02-06 03:31:27,684 - root - INFO - saving results
+2021-02-06 03:31:27,711 - root - INFO - generating report

@@ -1,3 +1,4 @@
+node-io-benchmark-ssd-read_2mb-node-20000
 node-io-benchmark-ssd-rw_nosync_2mb-node-20000
 node-io-benchmark-ssd-rw_sync_10mb-node-2000
 rocks-io-benchmark-ssd-bulkload-50000000
