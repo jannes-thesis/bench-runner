@@ -21,8 +21,8 @@ benchmarks:
     parameters: [ number of items ]
     disk_params:
       hdd: /hdd/deno-io-benchmark/files
-      # ssd: /ssd2/deno-io-benchmark/files
-      ssd: /ssd2/adapter-benchmark/files/2mb
+      ssd: /ssd2/deno-io-benchmark/files
+      # ssd: /ssd2/adapter-benchmark/files/2mb
     workloads_definition: node-io-benchmark.yaml
   - name: rocks-io-benchmark
     description: benchmark executable for rocks
