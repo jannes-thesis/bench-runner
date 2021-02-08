@@ -1,0 +1,56 @@
+2021-02-07 23:14:35,489 - root - INFO - get new workload/adapter info
+2021-02-07 23:14:35,523 - submodules - INFO - updating submodules
+2021-02-07 23:14:38,165 - submodules - INFO - found 0 untracked adapter versions
+2021-02-07 23:14:43,886 - root - INFO - adapter run defs: 16 new - 0 checkpointed
+2021-02-07 23:14:43,886 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-02-07 23:14:43,886 - root - INFO - adapter run 0/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.95,10000
+2021-02-07 23:14:43,889 - root - INFO - compile adapter version v-7
+2021-02-07 23:14:51,186 - root - INFO - recompile benchmarks
+2021-02-07 23:15:27,266 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95,10000
+2021-02-07 23:31:13,186 - root - INFO - adapter run 1/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.95,8000
+2021-02-07 23:31:13,243 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-07 23:31:13,244 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95,8000
+2021-02-07 23:47:09,945 - root - INFO - adapter run 2/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1500,0.95,8000
+2021-02-07 23:47:09,988 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-07 23:47:09,989 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95,8000
+2021-02-08 00:05:17,716 - root - INFO - adapter run 3/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 2000,0.95,8000
+2021-02-08 00:05:17,760 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 00:05:17,761 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 2000,0.95,8000
+2021-02-08 00:22:27,096 - root - INFO - adapter run 4/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.9,8000
+2021-02-08 00:22:27,153 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 00:22:27,154 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,8000
+2021-02-08 00:37:48,581 - root - INFO - adapter run 5/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.9,10000
+2021-02-08 00:37:48,636 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 00:37:48,637 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,10000
+2021-02-08 00:53:13,563 - root - INFO - adapter run 6/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 2000,0.95,10000
+2021-02-08 00:53:13,617 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 00:53:13,618 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 2000,0.95,10000
+2021-02-08 01:08:55,269 - root - INFO - adapter run 7/16: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1500,0.95,10000
+2021-02-08 01:08:55,316 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:08:55,317 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95,10000
+2021-02-08 01:25:22,429 - root - INFO - adapter run 8/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1500,0.95,10000
+2021-02-08 01:25:22,484 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:25:22,485 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95,10000
+2021-02-08 01:33:48,050 - root - INFO - adapter run 9/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1500,0.95,8000
+2021-02-08 01:33:48,102 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:33:48,103 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1500,0.95,8000
+2021-02-08 01:43:12,814 - root - INFO - adapter run 10/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.95,10000
+2021-02-08 01:43:12,872 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:43:12,873 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95,10000
+2021-02-08 01:51:46,422 - root - INFO - adapter run 11/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.95,8000
+2021-02-08 01:51:46,478 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:51:46,479 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.95,8000
+2021-02-08 01:59:50,211 - root - INFO - adapter run 12/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 2000,0.95,10000
+2021-02-08 01:59:50,266 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 01:59:50,267 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 2000,0.95,10000
+2021-02-08 02:08:41,046 - root - INFO - adapter run 13/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 2000,0.95,8000
+2021-02-08 02:08:41,095 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 02:08:41,096 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 2000,0.95,8000
+2021-02-08 02:17:10,110 - root - INFO - adapter run 14/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.9,8000
+2021-02-08 02:17:10,168 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 02:17:10,169 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,8000
+2021-02-08 02:25:16,577 - root - INFO - adapter run 15/16: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.9,10000
+2021-02-08 02:25:16,617 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 02:25:16,617 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,10000
+2021-02-08 02:34:05,883 - root - INFO - saving results
+2021-02-08 02:34:05,900 - root - INFO - generating report
