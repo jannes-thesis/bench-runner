@@ -1,0 +1,62 @@
+2021-02-08 14:41:32,817 - root - INFO - get new workload/adapter info
+2021-02-08 14:41:32,849 - submodules - INFO - updating submodules
+2021-02-08 14:41:35,317 - submodules - INFO - found 0 untracked adapter versions
+2021-02-08 14:41:40,738 - root - INFO - adapter run defs: 18 new - 0 checkpointed
+2021-02-08 14:41:40,738 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-02-08 14:41:40,738 - root - INFO - adapter run 0/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.95,10000
+2021-02-08 14:41:40,741 - root - INFO - compile adapter version v-7
+2021-02-08 14:41:47,133 - root - INFO - recompile benchmarks
+2021-02-08 14:42:21,575 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,10000
+2021-02-08 14:52:23,646 - root - INFO - adapter run 1/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.9,10000
+2021-02-08 14:52:23,678 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 14:52:23,679 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,10000
+2021-02-08 15:02:15,472 - root - INFO - adapter run 2/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.9,5000
+2021-02-08 15:02:15,496 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:02:15,496 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,5000
+2021-02-08 15:11:26,319 - root - INFO - adapter run 3/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.9,8000
+2021-02-08 15:11:26,348 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:11:26,348 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,8000
+2021-02-08 15:20:48,958 - root - INFO - adapter run 4/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.95,8000
+2021-02-08 15:20:48,992 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:20:48,993 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,8000
+2021-02-08 15:30:23,147 - root - INFO - adapter run 5/18: ssd-bulkload_nocompact-50000000 with version: v-7, params: 1000,0.9,3000
+2021-02-08 15:30:23,176 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:30:23,177 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh bulkload_nocompact 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,3000
+2021-02-08 15:40:29,892 - root - INFO - adapter run 6/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.95,8000
+2021-02-08 15:40:29,920 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:40:29,921 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,8000
+2021-02-08 15:49:56,216 - root - INFO - adapter run 7/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.95,3000
+2021-02-08 15:49:56,248 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:49:56,249 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,3000
+2021-02-08 15:58:55,221 - root - INFO - adapter run 8/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.9,3000
+2021-02-08 15:58:55,246 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 15:58:55,247 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,3000
+2021-02-08 16:08:16,627 - root - INFO - adapter run 9/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.95,10000
+2021-02-08 16:08:16,651 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:08:16,651 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,10000
+2021-02-08 16:17:50,662 - root - INFO - adapter run 10/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.9,10000
+2021-02-08 16:17:50,685 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:17:50,686 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,10000
+2021-02-08 16:27:34,055 - root - INFO - adapter run 11/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.9,5000
+2021-02-08 16:27:34,082 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:27:34,083 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,5000
+2021-02-08 16:36:43,095 - root - INFO - adapter run 12/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.9,8000
+2021-02-08 16:36:43,125 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:36:43,126 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.9,8000
+2021-02-08 16:45:45,034 - root - INFO - adapter run 13/18: ssd-fillseq-50000000 with version: v-7, params: 1000,0.95,5000
+2021-02-08 16:45:45,062 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:45:45,063 - root - INFO - command: helper_scripts/benchmark_runners/rocks-io-benchmark.sh fillseq_disable_wal 50000000 /ssd2/rocks-io-benchmark adaptive 1000,0.95,5000
+2021-02-08 16:55:11,220 - root - INFO - adapter run 14/18: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.9,3000
+2021-02-08 16:55:11,245 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 16:55:11,246 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,3000
+2021-02-08 17:10:40,702 - root - INFO - adapter run 15/18: ssd-rw_nosync_2mb-node-20000 with version: v-7, params: 1000,0.9,5000
+2021-02-08 17:10:40,755 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 17:10:40,756 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_nosync_2mb.mjs 20000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,5000
+2021-02-08 17:26:27,050 - root - INFO - adapter run 16/18: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.9,3000
+2021-02-08 17:26:27,096 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 17:26:27,097 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,3000
+2021-02-08 17:35:09,837 - root - INFO - adapter run 17/18: ssd-rw_sync_10mb-node-2000 with version: v-7, params: 1000,0.9,5000
+2021-02-08 17:35:09,884 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-08 17:35:09,885 - root - INFO - command: helper_scripts/benchmark_runners/node-io-benchmark.sh rw_sync_10mb.mjs 2000 /ssd2/adapter-benchmark/files/2mb adaptive 1000,0.9,5000
+2021-02-08 17:44:14,091 - root - INFO - saving results
+2021-02-08 17:44:14,109 - root - INFO - generating report
