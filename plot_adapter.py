@@ -8,13 +8,22 @@ SMALL_SIZE = 14
 MEDIUM_SIZE = 16
 BIGGER_SIZE = 18
 
-plt.rc('font', size=20)          # controls default text sizes
-plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
-plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
-plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
-plt.rc('ytick', labelsize=BIGGER_SIZE)    # fontsize of the tick labels
-plt.rc('legend', fontsize=24)    # legend fontsize
-plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+# plt.rc('font', size=20)          # controls default text sizes
+# plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+# plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+# plt.rc('xtick', labelsize=MEDIUM_SIZE)    # fontsize of the tick labels
+# plt.rc('ytick', labelsize=BIGGER_SIZE)    # fontsize of the tick labels
+# plt.rc('legend', fontsize=24)    # legend fontsize
+# plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
+plt.rc('font', size=40)          # controls default text sizes
+plt.rc('axes', titlesize=35)     # fontsize of the axes title
+plt.rc('axes', labelsize=35)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=40)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=40)    # fontsize of the tick labels
+plt.rc('legend', fontsize=30)    # legend fontsize
+plt.rc('figure', titlesize=40)  # fontsize of the figure title
+plt.rcParams['lines.linewidth'] = 2
 
 
 def plot_adapter_timeseries(name: str, axm1: Axes,
@@ -59,7 +68,8 @@ def generate_adapter_logs_figure(json_path: str, adapter_version: str, workload:
                         psizes = adapter_entry['pool_size']
                         m1s = adapter_entry['metric_one']
                         plot_adapter_timeseries(a, ax, psizes, m1s)
-                        ax.set_title(f'{workload} {adapter_version}')
+                        # ax.set_title(f'{workload} {adapter_version}')
+                        # ax.set_title(f'rw2mb-nosync-sync')
                         return
     raise Exception(f'adapter logs for {adapter_version} not found')
 
@@ -82,5 +92,7 @@ if __name__ == '__main__':
         generate_adapter_logs_figure(json_path, adapter_version, workload, axs[i])
     output_path = sys.argv[n * 3 + 2]
 
+    axs[0].set_title('Sync 10Mb')
+    axs[1].set_title('Nosync 2Mb')
     fig.tight_layout()
     fig.savefig(output_path)
