@@ -1,0 +1,98 @@
+2021-02-09 22:51:09,936 - root - INFO - get new workload/adapter info
+2021-02-09 22:51:09,968 - submodules - INFO - updating submodules
+2021-02-09 22:51:12,510 - submodules - INFO - found 0 untracked adapter versions
+2021-02-09 22:51:18,400 - root - INFO - adapter run defs: 30 new - 0 checkpointed
+2021-02-09 22:51:18,400 - root - INFO - static run defs: 0 new - 0 checkpointed
+2021-02-09 22:51:18,400 - root - INFO - adapter run 0/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1500,0.95,5000
+2021-02-09 22:51:18,403 - root - INFO - compile adapter version v-7
+2021-02-09 22:51:24,785 - root - INFO - recompile benchmarks
+2021-02-09 22:51:59,449 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,5000
+2021-02-09 23:19:19,412 - root - INFO - adapter run 1/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1000,0.9,3000
+2021-02-09 23:19:19,467 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-09 23:19:19,468 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,3000
+2021-02-09 23:44:24,607 - root - INFO - adapter run 2/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1000,0.95,5000
+2021-02-09 23:44:24,659 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-09 23:44:24,660 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,5000
+2021-02-10 00:10:41,969 - root - INFO - adapter run 3/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1500,0.95,3000
+2021-02-10 00:10:42,001 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 00:10:42,002 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,3000
+2021-02-10 00:35:35,277 - root - INFO - adapter run 4/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1000,0.9,5000
+2021-02-10 00:35:35,335 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 00:35:35,336 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,5000
+2021-02-10 01:00:31,811 - root - INFO - adapter run 5/30: ssd-rw_2mb_oneshot-20000 with version: v-7, params: 1000,0.95,3000
+2021-02-10 01:00:31,866 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 01:00:31,867 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_2mb_sync 20000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,3000
+2021-02-10 01:24:54,612 - root - INFO - adapter run 6/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1000,0.9,3000
+2021-02-10 01:24:54,671 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 01:24:54,672 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,3000
+2021-02-10 02:04:53,388 - root - INFO - adapter run 7/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1500,0.95,3000
+2021-02-10 02:04:53,439 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 02:04:53,440 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,3000
+2021-02-10 02:22:05,044 - root - INFO - adapter run 8/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1000,0.9,5000
+2021-02-10 02:22:05,100 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 02:22:05,101 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,5000
+2021-02-10 03:11:49,485 - root - INFO - adapter run 9/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1000,0.95,3000
+2021-02-10 03:11:49,528 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 03:11:49,528 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,3000
+2021-02-10 03:42:45,747 - root - INFO - adapter run 10/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1500,0.95,5000
+2021-02-10 03:42:45,802 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 03:42:45,803 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,5000
+2021-02-10 04:08:32,863 - root - INFO - adapter run 11/30: ssd-rw_buf_2mb_oneshot-2000 with version: v-7, params: 1000,0.95,5000
+2021-02-10 04:08:32,915 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 04:08:32,916 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_write_buf_sync_2mb 2000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,5000
+2021-02-10 04:49:26,246 - root - INFO - adapter run 12/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1000,0.9,5000
+2021-02-10 04:49:26,300 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 04:49:26,301 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,5000
+2021-02-10 04:58:25,901 - root - INFO - adapter run 13/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1500,0.95,5000
+2021-02-10 04:58:25,952 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 04:58:25,953 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,5000
+2021-02-10 05:07:11,402 - root - INFO - adapter run 14/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1000,0.95,3000
+2021-02-10 05:07:11,457 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 05:07:11,458 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,3000
+2021-02-10 05:15:55,598 - root - INFO - adapter run 15/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1000,0.9,3000
+2021-02-10 05:15:55,642 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 05:15:55,643 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,3000
+2021-02-10 05:24:39,321 - root - INFO - adapter run 16/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1000,0.95,5000
+2021-02-10 05:24:39,378 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 05:24:39,379 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,5000
+2021-02-10 05:33:23,486 - root - INFO - adapter run 17/30: ssd-read_2mb_oneshot-30000 with version: v-7, params: 1500,0.95,3000
+2021-02-10 05:33:23,533 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 05:33:23,534 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-single-phase.sh oneshot read_2mb 30000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,3000
+2021-02-10 05:42:08,247 - root - INFO - adapter run 18/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1500,0.95,5000
+2021-02-10 05:42:08,301 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 05:42:08,302 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,5000
+2021-02-10 06:26:20,204 - root - INFO - adapter run 19/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1000,0.95,5000
+2021-02-10 06:26:20,255 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 06:26:20,256 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,5000
+2021-02-10 07:04:46,073 - root - INFO - adapter run 20/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1000,0.9,3000
+2021-02-10 07:04:46,131 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 07:04:46,132 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,3000
+2021-02-10 07:45:29,761 - root - INFO - adapter run 21/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1500,0.95,3000
+2021-02-10 07:45:29,818 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 07:45:29,819 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,3000
+2021-02-10 08:19:57,393 - root - INFO - adapter run 22/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1000,0.9,5000
+2021-02-10 08:19:57,441 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 08:19:57,442 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,5000
+2021-02-10 09:07:19,309 - root - INFO - adapter run 23/30: ssd-rw_rwbuf_rw_2mb_oneshot-15000 with version: v-7, params: 1000,0.95,3000
+2021-02-10 09:07:19,368 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 09:07:19,369 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw_rwb_rw_2mb 15000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,3000
+2021-02-10 09:40:53,054 - root - INFO - adapter run 24/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1000,0.9,5000
+2021-02-10 09:40:53,114 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 09:40:53,115 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,5000
+2021-02-10 09:58:03,370 - root - INFO - adapter run 25/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1000,0.95,3000
+2021-02-10 09:58:03,419 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 09:58:03,420 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,3000
+2021-02-10 10:15:23,681 - root - INFO - adapter run 26/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1500,0.95,5000
+2021-02-10 10:15:23,739 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 10:15:23,740 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,5000
+2021-02-10 10:32:01,603 - root - INFO - adapter run 27/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1000,0.95,5000
+2021-02-10 10:32:01,659 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 10:32:01,660 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.95,5000
+2021-02-10 10:49:21,513 - root - INFO - adapter run 28/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1000,0.9,3000
+2021-02-10 10:49:21,561 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 10:49:21,562 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1000,0.9,3000
+2021-02-10 11:06:20,462 - root - INFO - adapter run 29/30: ssd-rw2mb_30ms_oneshot-10000 with version: v-7, params: 1500,0.95,3000
+2021-02-10 11:06:20,511 - root - INFO - already on branch for v-7, no compilation needed
+2021-02-10 11:06:20,512 - root - INFO - command: helper_scripts/benchmark_runners/rust-threadpool-multi-phase.sh rw2mb_30ms_oneshot 10000 /ssd2/adapter-benchmark/files adaptive 1500,0.95,3000
+2021-02-10 11:23:31,553 - root - INFO - saving results
+2021-02-10 11:23:31,574 - root - INFO - generating report

@@ -123,7 +123,7 @@ def plot_adaptive(results: list[AdapterResult], ax: Axes, ylim_top: float,
     assert len({res.adapter_run.workload for res in results}) == 1
     if not len({res.adapter_run.adapter_config for res in results}) == len(results):
         print([res.adapter_run.adapter_config for res in results])
-        assert False
+        # assert False
 
     xs = []
     ys = []
